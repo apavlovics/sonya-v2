@@ -1,0 +1,42 @@
+/* Custom properties */
+
+:root {
+  --normal-font-size: 18px;
+
+  --normal-font-weight: 400;
+  --bold-font-weight: 700;
+}
+
+/* General styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: var(--normal-font-weight) var(--normal-font-size) Helvetica, Arial, sans-serif;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: var(--bold-font-weight);
+}
+
+nav > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 1.5em 10px;
+}
+
+nav > ul > li {
+  padding-right: 2em;
+}
+
+nav > ul > li:last-child {
+  padding-right: 0;
+}
