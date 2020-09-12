@@ -26,17 +26,33 @@ strong {
   font-weight: var(--bold-font-weight);
 }
 
-nav > ul {
+/* Section-specific styles */
+
+nav {
+  padding: 1.5em 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#main-menu, #main-menu ul {
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
-  padding: 1.5em 10px;
 }
 
-nav > ul > li {
+#main-menu ul {
+  position: absolute;
+}
+
+#main-menu li {
   padding-right: 2em;
 }
 
-nav > ul > li:last-child {
+#main-menu li:last-child {
   padding-right: 0;
+}
+
+#language-menu {
+  list-style: none;
+  text-align: center;
 }
