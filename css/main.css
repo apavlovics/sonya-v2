@@ -6,6 +6,7 @@
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --green: 137, 151, 75;
+  --purple: 151, 75, 99;
 
   --smaller-font-size: 16px;
   --normal-font-size: 18px;
@@ -15,13 +16,14 @@
   --normal-font-weight: 400;
   --bold-font-weight: 700;
 
-  --mid-opacity: .2;
+  --mid-opacity: .15;
 
   --default-width: 960px;
   --default-spacing: 18px;
 
   --aspect-ratio: 1.5;
   --border: 1px solid;
+  --radius: 5px;
 }
 
 /* General */
@@ -44,8 +46,8 @@ a {
 }
 
 a:hover, a:focus {
-  color: rgb(var(--green));
-  border-color: rgba(var(--green), var(--mid-opacity));
+  color: rgb(var(--purple));
+  border-color: rgba(var(--purple), var(--mid-opacity));
   transition-duration: 0s;
   outline: none;
 }
@@ -79,17 +81,22 @@ nav {
   padding: 1.5em var(--default-spacing);
   display: flex;
   justify-content: space-between;
+  line-height: 1.5;
 }
 
 nav a {
   color: rgb(var(--black));
 }
 
+nav a:hover, nav a:visited {
+  color: rgb(var(--green));
+  border-color: rgba(var(--green), var(--mid-opacity));
+}
+
 #main-menu, #main-menu ul {
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
-  line-height: 1.5;
 }
 
 #main-menu ul {
@@ -97,20 +104,37 @@ nav a {
 }
 
 #main-menu li {
-  padding-right: 2em;
+  position: relative;
+  margin-right: 2em;
+}
+
+#main-menu .selected {
+  color: rgb(var(--green));
+}
+
+#sub-menu {
+  z-index: 10;
+}
+
+#sub-menu li {
+  position: relative;
+  left: calc(0px - var(--radius));
+}
+
+#sub-menu li, #language-menu li {
+  padding: 0 var(--radius);
+  border-radius: var(--radius);
+}
+
+#sub-menu .selected, #language-menu .selected {
+  color: rgb(var(--green));
+  background-color: rgba(var(--green), var(--mid-opacity));
 }
 
 #language-menu {
   font-size: var(--smaller-font-size);
   list-style: none;
   text-align: center;
-}
-
-#language-menu .selected {
-  background-color: rgba(var(--green), var(--mid-opacity));
-  color: rgb(var(--green));
-  padding: 0 5px;
-  border-radius: 5px;
 }
 
 /* Main */
@@ -136,7 +160,7 @@ main {
 
 .preview-large, .preview-medium {
   position: relative;
-  border-radius: 5px;
+  border-radius: var(--radius);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
