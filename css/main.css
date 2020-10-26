@@ -3,15 +3,25 @@
 /* Custom properties */
 
 :root {
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+  --green: 137, 151, 75;
+
+  --smaller-font-size: 16px;
   --normal-font-size: 18px;
+  --larger-font-size: 22px;
 
   --light-font-weight: 300;
   --normal-font-weight: 400;
   --bold-font-weight: 700;
 
+  --mid-opacity: .2;
+
   --default-width: 960px;
   --default-spacing: 18px;
+
   --aspect-ratio: 1.5;
+  --border: 1px solid;
 }
 
 /* General */
@@ -23,6 +33,31 @@
 
 body {
   font: var(--normal-font-weight) var(--normal-font-size) 'Noto Sans', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: rgb(var(--green));
+  border-bottom: var(--border);
+  border-color: rgba(var(--green), var(--mid-opacity));
+  text-decoration: none;
+  transition-duration: .5s;
+}
+
+a:hover, a:focus {
+  color: rgb(var(--green));
+  border-color: rgba(var(--green), var(--mid-opacity));
+  transition-duration: 0s;
+  outline: none;
+}
+
+p {
+  padding-top: .5em;
+  font-weight: var(--light-font-weight);
+}
+
+h2 {
+  font-size: var(--larger-font-size);
+  font-weight: var(--bold-font-weight);
 }
 
 em {
@@ -46,10 +81,15 @@ nav {
   justify-content: space-between;
 }
 
+nav a {
+  color: rgb(var(--black));
+}
+
 #main-menu, #main-menu ul {
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
+  line-height: 1.5;
 }
 
 #main-menu ul {
@@ -61,8 +101,16 @@ nav {
 }
 
 #language-menu {
+  font-size: var(--smaller-font-size);
   list-style: none;
   text-align: center;
+}
+
+#language-menu .selected {
+  background-color: rgba(var(--green), var(--mid-opacity));
+  color: rgb(var(--green));
+  padding: 0 5px;
+  border-radius: 5px;
 }
 
 /* Main */
@@ -103,14 +151,13 @@ main {
   position: absolute;
   bottom: 0;
   padding: var(--default-spacing);
-  padding-top: calc(var(--default-spacing) * 5);
+  padding-top: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
-  color: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(255, 255, 255, .95) 0%, rgba(255, 255, 255, 0) 100%);
+  color: rgb(var(--black));
+  background: linear-gradient(0deg, rgba(var(--white), .95) 30%, rgba(var(--white), 0) 100%);
 }
 
 .details p {
-  font-weight: var(--light-font-weight);
   max-width: calc(var(--default-width) * .6);
 }
 
@@ -118,4 +165,5 @@ main {
 
 footer {
   margin-top: calc(var(--default-spacing) * 2);
+  font-weight: var(--light-font-weight);
 }
