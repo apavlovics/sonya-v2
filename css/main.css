@@ -1,8 +1,11 @@
+@import 'fonts.css';
+
 /* Custom properties */
 
 :root {
   --normal-font-size: 18px;
 
+  --light-font-weight: 300;
   --normal-font-weight: 400;
   --bold-font-weight: 700;
 
@@ -19,7 +22,7 @@
 }
 
 body {
-  font: var(--normal-font-weight) var(--normal-font-size) Helvetica, Arial, sans-serif;
+  font: var(--normal-font-weight) var(--normal-font-size) 'Noto Sans', Helvetica, Arial, sans-serif;
 }
 
 em {
@@ -57,10 +60,6 @@ nav {
   padding-right: 2em;
 }
 
-#main-menu li:last-child {
-  padding-right: 0;
-}
-
 #language-menu {
   list-style: none;
   text-align: center;
@@ -77,7 +76,6 @@ main {
 .preview-large a > div, .preview-medium a > div {
   height: 100%;
   width: 100%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, .95) 0px, rgba(255, 255, 255, 0) calc(var(--default-spacing) * 10));
 }
 
 .preview-large {
@@ -105,11 +103,14 @@ main {
   position: absolute;
   bottom: 0;
   padding: var(--default-spacing);
+  padding-top: calc(var(--default-spacing) * 5);
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(255, 255, 255, .95) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .details p {
+  font-weight: var(--light-font-weight);
   max-width: calc(var(--default-width) * .6);
 }
 
