@@ -1,7 +1,9 @@
 $(document).ready(() => {
-  const togglePreviewContents = event => {
+  const togglePreview = event => {
     const previewContents = $(event.currentTarget)
-    previewContents.find('.details').toggleClass("details-visible")
+    previewContents.toggleClass('z-index-maximized')
+    previewContents.find('.details').toggleClass('details-visible')
+    $('.fog').toggleClass('fog-visible')
   }
-  $('.preview-contents').hover(togglePreviewContents, togglePreviewContents)
+  $('.preview-large, .preview-medium').hover(togglePreview, togglePreview)
 })

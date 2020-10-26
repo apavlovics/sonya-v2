@@ -6,11 +6,10 @@
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --green: 137, 151, 75;
-  --purple: 151, 75, 99;
+  --orange: 236, 110, 35;
 
   --smaller-font-size: 16px;
   --normal-font-size: 18px;
-  --larger-font-size: 22px;
 
   --light-font-weight: 300;
   --normal-font-weight: 400;
@@ -46,8 +45,8 @@ a {
 }
 
 a:hover, a:focus {
-  color: rgb(var(--purple));
-  border-color: rgba(var(--purple), var(--mid-opacity));
+  color: rgb(var(--orange));
+  border-color: rgba(var(--orange), var(--mid-opacity));
   transition-duration: 0s;
   outline: none;
 }
@@ -58,7 +57,7 @@ p {
 }
 
 h2 {
-  font-size: var(--larger-font-size);
+  font-size: var(--normal-font-size);
   font-weight: var(--bold-font-weight);
 }
 
@@ -145,6 +144,21 @@ main {
   justify-content: space-between;
 }
 
+.fog {
+  opacity: 0%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(var(--black), .7);
+  transition-duration: .5s;
+  pointer-events: none;
+}
+
+.fog-visible {
+  opacity: 100%;
+  z-index: 20;
+}
+
 .preview-contents {
   height: 100%;
   width: 100%;
@@ -169,6 +183,7 @@ main {
   height: calc(100vw / var(--aspect-ratio));
   max-width: var(--max-width);
   max-height: calc(var(--max-width) / var(--aspect-ratio));
+  overflow: hidden;
 }
 
 .details {
@@ -176,10 +191,10 @@ main {
   position: absolute;
   bottom: 0;
   padding: var(--default-spacing);
-  padding-top: calc(var(--default-spacing) * 7);
+  padding-top: calc(var(--default-spacing) * 5);
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(var(--black));
-  background: linear-gradient(0deg, rgba(var(--white), .95) 30%, rgba(var(--white), 0) 100%);
+  background: linear-gradient(0deg, rgba(var(--white), .95) 0%, rgba(var(--white), 0) 100%);
   transition-duration: .5s;
 }
 
@@ -187,13 +202,13 @@ main {
   opacity: 100%;
 }
 
-.details p {
-  max-width: calc(var(--default-width) * .6);
+.z-index-maximized {
+  z-index: 30;
 }
 
 /* Footer */
 
 footer {
-  margin-top: calc(var(--default-spacing) * 2);
+  margin: calc(var(--default-spacing) * 2) auto;
   font-weight: var(--light-font-weight);
 }
