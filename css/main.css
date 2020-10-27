@@ -125,14 +125,10 @@ nav a:hover, nav a:visited {
   white-space: nowrap;
 }
 
-.main-menu, .main-menu ul {
+.main-menu, .submenu {
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
-}
-
-.main-menu ul {
-  position: absolute;
 }
 
 .main-menu li {
@@ -144,6 +140,7 @@ nav a:hover, nav a:visited {
 }
 
 .submenu {
+  position: absolute;
   font-weight: var(--light-font-weight);
   z-index: 10;
 }
@@ -290,8 +287,11 @@ main {
     padding-bottom: 1em;
   }
 
-  .logo {
+  .logo, .main-menu, .language-menu {
     width: 100%;
+  }
+
+  .logo, .main-menu li, .submenu li {
     margin-right: 0;
   }
 
@@ -299,24 +299,28 @@ main {
     display: block;
   }
 
-  .main-menu {
-    margin-top: .2em;
-  }
-
   .main-menu, .language-menu {
     display: none;
   }
 
-  .main-menu, .main-menu ul {
+  .main-menu, .submenu {
     flex-direction: column;
   }
 
-  .main-menu ul {
+  .submenu {
     position: static;
+  }
+
+  .main-menu li {
+    margin-top: .2em;
   }
 
   .submenu li {
     left: 0;
+  }
+
+  .language-menu {
+    margin-top: 1em;
   }
 
   .menu-visible {
