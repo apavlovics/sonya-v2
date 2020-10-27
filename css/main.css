@@ -81,6 +81,7 @@ nav > div, footer {
 }
 
 footer {
+  font-size: var(--smaller-font-size);
   font-weight: var(--light-font-weight);
 }
 
@@ -135,10 +136,6 @@ nav a:hover, nav a:visited {
   position: relative;
 }
 
-.main-menu .selected {
-  color: rgb(var(--green));
-}
-
 .submenu {
   position: absolute;
   font-weight: var(--light-font-weight);
@@ -147,23 +144,16 @@ nav a:hover, nav a:visited {
 
 .submenu li {
   position: relative;
-  left: calc(0px - var(--radius));
-}
-
-.submenu li, .language-menu li {
-  padding: 0 var(--radius);
-  border-radius: var(--radius);
-}
-
-.submenu .selected, .language-menu .selected {
-  color: rgb(var(--green));
-  background-color: rgba(var(--green), var(--default-opacity));
 }
 
 .language-menu {
   font-size: var(--smaller-font-size);
   list-style: none;
   text-align: center;
+}
+
+.selected {
+  color: rgb(var(--green));
 }
 
 /* Main */
@@ -279,6 +269,7 @@ main {
 
   nav {
     height: auto;
+    background-color: rgb(var(--white));
   }
 
   nav > div {
@@ -314,16 +305,14 @@ main {
 
   .main-menu li {
     margin-top: .2em;
-    text-align: center;
-  }
-
-  .submenu li {
-    left: 0;
   }
 
   .language-menu {
     margin-top: var(--default-spacing);
-    justify-content: center;
+  }
+
+  .language-menu li {
+    margin-right: .5em;
   }
 
   .menu-visible {
