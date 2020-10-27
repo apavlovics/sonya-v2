@@ -74,10 +74,17 @@ nav, main, footer {
   max-width: var(--default-width);
 }
 
+nav, footer {
+  padding: 1.5em var(--default-spacing);
+}
+
+footer {
+  font-weight: var(--light-font-weight);
+}
+
 /* Navigation */
 
 nav {
-  padding: 1.5em var(--default-spacing);
   display: flex;
   justify-content: space-between;
   line-height: 1.5;
@@ -112,6 +119,7 @@ nav a:hover, nav a:visited {
 }
 
 #submenu {
+  font-weight: var(--light-font-weight);
   z-index: 10;
 }
 
@@ -145,17 +153,17 @@ main {
 }
 
 .fog {
-  opacity: 0%;
+  opacity: 0;
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: rgba(var(--black), .7);
+  background-color: rgba(var(--black), .5);
   transition-duration: .5s;
   pointer-events: none;
 }
 
 .fog-visible {
-  opacity: 100%;
+  opacity: 1;
   z-index: 20;
 }
 
@@ -177,17 +185,18 @@ main {
   border-radius: var(--radius);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   margin-bottom: var(--default-spacing);
   width: 100%;
   height: calc(100vw / var(--aspect-ratio));
   max-width: var(--max-width);
   max-height: calc(var(--max-width) / var(--aspect-ratio));
   overflow: hidden;
+  transition-duration: .1s;
 }
 
 .details {
-  opacity: 0%;
+  opacity: 0;
   position: absolute;
   bottom: 0;
   padding: var(--default-spacing);
@@ -199,16 +208,23 @@ main {
 }
 
 .details-visible {
-  opacity: 100%;
+  opacity: 1;
 }
 
-.z-index-maximized {
+.preview-focused {
+  background-size: 102%;
   z-index: 30;
 }
 
-/* Footer */
+/* Adaptive styles for smaller screens and windows */
 
-footer {
-  margin: calc(var(--default-spacing) * 2) auto;
-  font-weight: var(--light-font-weight);
+@media only screen and (max-width: 960px) {
+
+  .preview-large, .preview-medium {
+    border-radius: 0;
+  }
+
+  .preview-medium {
+    --max-width: var(--default-width);
+  }
 }

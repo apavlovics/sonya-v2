@@ -1,9 +1,13 @@
 $(document).ready(() => {
-  const togglePreview = event => {
-    const previewContents = $(event.currentTarget)
-    previewContents.toggleClass('z-index-maximized')
-    previewContents.find('.details').toggleClass('details-visible')
-    $('.fog').toggleClass('fog-visible')
-  }
-  $('.preview-large, .preview-medium').hover(togglePreview, togglePreview)
+  $('.preview-large, .preview-medium').hover(event => {
+    const preview = $(event.currentTarget)
+    preview.addClass('preview-focused')
+    preview.find('.details').addClass('details-visible')
+    $('.fog').addClass('fog-visible')
+  }, event => {
+    const preview = $(event.currentTarget)
+    preview.removeClass('preview-focused')
+    preview.find('.details').removeClass('details-visible')
+    $('.fog').removeClass('fog-visible')
+  })
 })
