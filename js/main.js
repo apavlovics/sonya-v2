@@ -7,13 +7,17 @@ $(document).ready(() => {
 
   $('.preview-large, .preview-medium').hover(event => {
     const preview = $(event.currentTarget)
+    const otherPreviews = $('.preview-large, .preview-medium')
+
     preview.addClass('preview-focused')
     preview.find('.details').addClass('details-visible')
-    $('.fog').addClass('fog-visible')
+    otherPreviews.addClass('desaturated')
   }, event => {
     const preview = $(event.currentTarget)
+    const otherPreviews = $('.preview-large, .preview-medium')
+
     preview.removeClass('preview-focused')
     preview.find('.details').removeClass('details-visible')
-    $('.fog').removeClass('fog-visible')
+    otherPreviews.removeClass('desaturated')
   })
 })

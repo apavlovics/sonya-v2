@@ -49,7 +49,7 @@ a {
 a:hover, a:focus {
   color: rgb(var(--orange));
   border-color: rgba(var(--orange), var(--default-opacity));
-  transition-duration: 0s;
+  transition-duration: .1s;
   outline: none;
 }
 
@@ -85,13 +85,17 @@ footer {
   font-weight: var(--light-font-weight);
 }
 
+.desaturated {
+  filter: grayscale(100%);
+}
+
 /* Navigation */
 
 nav {
   position: fixed;
   top: 0;
-  z-index: 40;
-  background-color: rgba(var(--white), .9);
+  z-index: 20;
+  background-color: rgb(var(--white), .95);
   width: 100%;
   height: var(--nav-height);
   line-height: var(--nav-line-height);
@@ -165,22 +169,6 @@ main {
   justify-content: space-between;
 }
 
-.fog {
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(var(--black), .5);
-  transition-duration: .5s;
-  pointer-events: none;
-}
-
-.fog-visible {
-  opacity: 1;
-  z-index: 20;
-}
-
 .preview-contents {
   height: 100%;
   width: 100%;
@@ -206,16 +194,16 @@ main {
   max-width: var(--max-width);
   max-height: calc(var(--max-width) / var(--aspect-ratio));
   overflow: hidden;
-  transition-duration: .1s;
+  transition-duration: .5s;
 }
 
 .details {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  opacity: 0;
   position: absolute;
-  bottom: 0;
+  opacity: 0;
+  bottom: calc(0px - var(--default-spacing));
   padding: var(--default-spacing);
   padding-top: calc(var(--default-spacing) * 3);
   width: calc(100% - var(--default-spacing) * 2);
@@ -230,13 +218,14 @@ main {
 
 .details-visible {
   opacity: 1;
-  transition-duration: 0s;
+  bottom: 0;
+  transition-duration: .1s;
 }
 
 .preview-focused {
   /* background-size: 102%; To enlarge background on hover */
-  z-index: 30;
-  transition-duration: 0s;
+  transition-duration: .1s;
+  filter: none;
 }
 
 /* Adaptive styles for touch devices */
@@ -245,10 +234,7 @@ main {
 
   .details {
     opacity: 1;
-  }
-
-  .fog-visible {
-    opacity: 0;
+    bottom: 0;
   }
 }
 
