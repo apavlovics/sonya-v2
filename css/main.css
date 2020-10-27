@@ -38,6 +38,9 @@ body {
   font: var(--normal-font-weight) var(--normal-font-size) 'Noto Sans', Helvetica, Arial, sans-serif;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+  min-width: 320px;
+
+  /* Disable automatic text scaling on iOS */
   -webkit-text-size-adjust: 100%;
 }
 
@@ -226,7 +229,6 @@ main {
 }
 
 .preview-focused {
-  /* background-size: 102%; To enlarge background on hover */
   transition-duration: .1s;
   filter: none;
 }
@@ -274,6 +276,7 @@ main {
 
   .main-menu, .language-menu {
     display: none;
+    margin-top: var(--default-spacing);
   }
 
   .main-menu, .submenu {
@@ -289,8 +292,8 @@ main {
     margin-top: .2em;
   }
 
-  .language-menu {
-    margin-top: var(--default-spacing);
+  .main-menu > li:first-child {
+    margin-top: 0;
   }
 
   .language-menu li {
