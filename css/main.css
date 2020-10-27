@@ -15,14 +15,15 @@
   --normal-font-weight: 400;
   --bold-font-weight: 700;
 
-  --mid-opacity: .15;
-
   --default-width: 960px;
   --default-spacing: 18px;
+  --default-opacity: .15;
 
   --aspect-ratio: 1.5;
   --border: 1px solid;
   --radius: 5px;
+
+  --menu-height: 5.5em;
 }
 
 /* General */
@@ -39,14 +40,14 @@ body {
 a {
   color: rgb(var(--green));
   border-bottom: var(--border);
-  border-color: rgba(var(--green), var(--mid-opacity));
+  border-color: rgba(var(--green), var(--default-opacity));
   text-decoration: none;
   transition-duration: .5s;
 }
 
 a:hover, a:focus {
   color: rgb(var(--orange));
-  border-color: rgba(var(--orange), var(--mid-opacity));
+  border-color: rgba(var(--orange), var(--default-opacity));
   transition-duration: 0s;
   outline: none;
 }
@@ -69,12 +70,12 @@ strong {
   font-weight: var(--bold-font-weight);
 }
 
-nav, main, footer {
+nav > div, main, footer {
   margin: 0 auto 0;
   max-width: var(--default-width);
 }
 
-nav, footer {
+nav > div, footer {
   padding: 1.5em var(--default-spacing);
 }
 
@@ -85,6 +86,15 @@ footer {
 /* Navigation */
 
 nav {
+  position: fixed;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(var(--white), .9);
+  width: 100%;
+  height: var(--menu-height);
+}
+
+nav > div {
   display: flex;
   justify-content: space-between;
   line-height: 1.5;
@@ -96,7 +106,7 @@ nav a {
 
 nav a:hover, nav a:visited {
   color: rgb(var(--green));
-  border-color: rgba(var(--green), var(--mid-opacity));
+  border-color: rgba(var(--green), var(--default-opacity));
 }
 
 #main-menu, #main-menu ul {
@@ -135,7 +145,7 @@ nav a:hover, nav a:visited {
 
 #submenu .selected, #language-menu .selected {
   color: rgb(var(--green));
-  background-color: rgba(var(--green), var(--mid-opacity));
+  background-color: rgba(var(--green), var(--default-opacity));
 }
 
 #language-menu {
@@ -147,6 +157,7 @@ nav a:hover, nav a:visited {
 /* Main */
 
 main {
+  margin-top: calc(var(--menu-height) + .5em);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -155,9 +166,10 @@ main {
 .fog {
   opacity: 0;
   position: fixed;
+  top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(var(--black), .5);
+  background-color: rgba(var(--black), .4);
   transition-duration: .5s;
   pointer-events: none;
 }
@@ -165,7 +177,6 @@ main {
 .fog-visible {
   opacity: 1;
   z-index: 20;
-  transition-duration: 0s;
 }
 
 .preview-contents {
@@ -221,8 +232,9 @@ main {
 }
 
 .preview-focused {
-  transform: matrix(1.01, 0, 0, 1.01, 0, 0);
+  background-size: 102%;
   z-index: 30;
+  transition-duration: 0s;
 }
 
 /* Adaptive styles for smaller screens and windows */
