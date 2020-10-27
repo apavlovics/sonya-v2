@@ -96,6 +96,7 @@ nav {
 
 nav > div {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
   line-height: 1.5;
 }
@@ -107,6 +108,15 @@ nav a {
 nav a:hover, nav a:visited {
   color: rgb(var(--green));
   border-color: rgba(var(--green), var(--default-opacity));
+}
+
+#logo, #main-menu li {
+  margin-right: 2em;
+}
+
+#logo {
+  font-weight: var(--bold-font-weight);
+  white-space: nowrap;
 }
 
 #main-menu, #main-menu ul {
@@ -121,7 +131,6 @@ nav a:hover, nav a:visited {
 
 #main-menu li {
   position: relative;
-  margin-right: 2em;
 }
 
 #main-menu .selected {
@@ -157,7 +166,7 @@ nav a:hover, nav a:visited {
 /* Main */
 
 main {
-  margin-top: calc(var(--menu-height) + .5em);
+  margin-top: calc(var(--menu-height) + var(--default-spacing));
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -232,9 +241,22 @@ main {
 }
 
 .preview-focused {
-  background-size: 102%;
+  /* background-size: 102%; To enlarge background on hover */
   z-index: 30;
   transition-duration: 0s;
+}
+
+/* Adaptive styles for touch devices */
+
+@media (hover: none) {
+
+  .details {
+    opacity: 1;
+  }
+
+  .fog-visible {
+    opacity: 0;
+  }
 }
 
 /* Adaptive styles for smaller screens and windows */
@@ -247,5 +269,32 @@ main {
 
   .preview-medium {
     --max-width: var(--default-width);
+  }
+}
+
+@media only screen and (max-width: 720px) {
+
+  nav {
+    height: auto;
+  }
+
+  nav > div {
+    flex-wrap: wrap;
+  }
+
+  #logo {
+    width: 100%;
+  }
+
+  #main-menu, #main-menu ul {
+    flex-direction: column;
+  }
+
+  #main-menu ul {
+    position: static;
+  }
+
+  #submenu li {
+    left: 0;
   }
 }
