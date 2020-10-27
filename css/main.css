@@ -131,7 +131,7 @@ nav a:hover, nav a:visited {
   list-style: none;
 }
 
-.main-menu li {
+.main-menu > li {
   position: relative;
 }
 
@@ -291,7 +291,7 @@ main {
     width: 100%;
   }
 
-  .logo, .main-menu li, .submenu li {
+  .logo, .main-menu li {
     margin-right: 0;
   }
 
@@ -309,10 +309,12 @@ main {
 
   .submenu {
     position: static;
+    margin-bottom: var(--default-spacing);
   }
 
   .main-menu li {
     margin-top: .2em;
+    text-align: center;
   }
 
   .submenu li {
@@ -320,7 +322,8 @@ main {
   }
 
   .language-menu {
-    margin-top: 1em;
+    margin-top: var(--default-spacing);
+    justify-content: center;
   }
 
   .menu-visible {
