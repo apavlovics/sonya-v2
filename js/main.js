@@ -1,4 +1,10 @@
 $(document).ready(() => {
+
+  $('#menu').click(event => {
+    $('.main-menu').toggleClass('menu-visible')
+    $('.language-menu').toggleClass('menu-visible')
+  })
+
   $('.preview-large, .preview-medium').hover(event => {
     const preview = $(event.currentTarget)
     preview.addClass('preview-focused')
