@@ -203,12 +203,12 @@ main {
   transition-duration: .5s;
 }
 
-.preview-contents {
+.preview .contents {
   height: 100%;
   width: 100%;
 }
 
-.details {
+.preview .details {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -223,11 +223,11 @@ main {
   transition-duration: .5s;
 }
 
-.details h2 {
+.preview .details h2 {
   margin-right: var(--default-spacing);
 }
 
-.details.visible {
+.preview .details.visible {
   opacity: 1;
   bottom: 0;
   transition-duration: .1s;
