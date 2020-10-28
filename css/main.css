@@ -88,6 +88,7 @@ nav > div, footer {
 footer {
   font-size: var(--smaller-font-size);
   font-weight: var(--light-font-weight);
+  padding-bottom: 3em;
 }
 
 .desaturated {
