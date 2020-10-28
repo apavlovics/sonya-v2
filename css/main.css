@@ -36,8 +36,6 @@
 
 body {
   font: var(--normal-font-weight) var(--normal-font-size) 'Noto Sans', Helvetica, Arial, sans-serif;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
   min-width: 320px;
 
   /* Disable automatic text scaling on iOS */
@@ -83,7 +81,7 @@ nav > div, main, footer {
 }
 
 nav > div, footer {
-  padding: 1.5em calc(var(--default-spacing) + env(safe-area-inset-right)) 1.5em calc(var(--default-spacing) + env(safe-area-inset-left));
+  padding: 1.5em var(--default-spacing);
 }
 
 footer {
