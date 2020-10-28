@@ -18,6 +18,7 @@
   --default-width: 960px;
   --default-spacing: 18px;
   --default-opacity: .15;
+  --default-animation-height: calc(0px - var(--default-spacing));
 
   --aspect-ratio: 1.5;
   --border: 1px solid;
@@ -81,7 +82,7 @@ nav > div, main, footer {
 }
 
 nav > div, footer {
-  padding: 1.5em var(--default-spacing);
+  padding: 1em var(--default-spacing);
 }
 
 footer {
@@ -216,7 +217,7 @@ main {
   justify-content: space-between;
   position: absolute;
   opacity: 0;
-  bottom: calc(0px - var(--default-spacing));
+  bottom: var(--default-animation-height);
   padding: var(--default-spacing);
   padding-top: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
@@ -265,8 +266,6 @@ main {
 
   nav > div {
     flex-wrap: wrap;
-    padding-top: 1em;
-    padding-bottom: 1em;
   }
 
   .nav-minimized {
@@ -282,17 +281,15 @@ main {
 
   .nav-maximized {
     visibility: hidden;
-    top: -100px;
+    top: var(--default-animation-height);
     opacity: 0;
     transition-duration: .2s;
-    transition-timing-function: ease-in;
   }
 
   .nav-maximized-visible {
     visibility: visible;
     opacity: 1;
     top: 0;
-    transition-timing-function: ease-out;
   }
 
   .logo, .language-menu {
@@ -326,6 +323,10 @@ main {
 
   .main-menu > li:first-child {
     margin-top: 0;
+  }
+
+  .language-menu {
+    display: flex;
   }
 
   .language-menu li {
