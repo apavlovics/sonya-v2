@@ -1,28 +1,28 @@
 $(document).ready(() => {
 
   $('#menu-open').click(event => {
-    $('.nav-minimized').addClass('nav-minimized-hidden')
-    $('.nav-maximized').addClass('nav-maximized-visible')
+    $('.nav-minimized').addClass('hidden')
+    $('.nav-maximized').addClass('visible')
   })
 
   $('#menu-close').click(event => {
-    $('.nav-minimized').removeClass('nav-minimized-hidden')
-    $('.nav-maximized').removeClass('nav-maximized-visible')
+    $('.nav-minimized').removeClass('hidden')
+    $('.nav-maximized').removeClass('visible')
   })
 
-  $('.preview-large, .preview-medium').hover(event => {
+  $('.preview').hover(event => {
     const preview = $(event.currentTarget)
-    const otherPreviews = $('.preview-large, .preview-medium')
+    const otherPreviews = $('.preview')
 
-    preview.addClass('preview-focused')
-    preview.find('.details').addClass('details-visible')
+    preview.addClass('focused')
+    preview.find('.details').addClass('visible')
     otherPreviews.addClass('desaturated')
   }, event => {
     const preview = $(event.currentTarget)
-    const otherPreviews = $('.preview-large, .preview-medium')
+    const otherPreviews = $('.preview')
 
-    preview.removeClass('preview-focused')
-    preview.find('.details').removeClass('details-visible')
+    preview.removeClass('focused')
+    preview.find('.details').removeClass('visible')
     otherPreviews.removeClass('desaturated')
   })
 })
