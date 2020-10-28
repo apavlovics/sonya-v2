@@ -121,6 +121,11 @@ nav a:hover, nav a:focus {
   border-color: rgba(var(--green), var(--default-opacity));
 }
 
+.nav-minimized {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .logo img {
   display: none;
 }
@@ -264,6 +269,32 @@ main {
     padding-bottom: 1em;
   }
 
+  .nav-minimized {
+    visibility: visible;
+    opacity: 1;
+    transition-duration: .2s;
+  }
+
+  .nav-minimized-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .nav-maximized {
+    visibility: hidden;
+    top: -100px;
+    opacity: 0;
+    transition-duration: .2s;
+    transition-timing-function: ease-in;
+  }
+
+  .nav-maximized-visible {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    transition-timing-function: ease-out;
+  }
+
   .logo, .language-menu {
     width: 100%;
   }
@@ -277,7 +308,6 @@ main {
   }
 
   .main-menu, .language-menu {
-    display: none;
     margin-top: var(--default-spacing);
   }
 
@@ -300,10 +330,6 @@ main {
 
   .language-menu li {
     margin-right: .5em;
-  }
-
-  .menu-visible {
-    display: flex;
   }
 
   main {

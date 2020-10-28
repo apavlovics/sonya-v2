@@ -1,8 +1,13 @@
 $(document).ready(() => {
 
-  $('#menu').click(event => {
-    $('.main-menu').toggleClass('menu-visible')
-    $('.language-menu').toggleClass('menu-visible')
+  $('#menu-open').click(event => {
+    $('.nav-minimized').addClass('nav-minimized-hidden')
+    $('.nav-maximized').addClass('nav-maximized-visible')
+  })
+
+  $('#menu-close').click(event => {
+    $('.nav-minimized').removeClass('nav-minimized-hidden')
+    $('.nav-maximized').removeClass('nav-maximized-visible')
   })
 
   $('.preview-large, .preview-medium').hover(event => {
