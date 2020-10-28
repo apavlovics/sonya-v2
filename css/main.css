@@ -136,6 +136,10 @@ nav a:hover, nav a:visited {
   white-space: nowrap;
 }
 
+.main-menu {
+  width: 100%;
+}
+
 .main-menu, .submenu {
   display: flex;
   flex-flow: row nowrap;
@@ -211,10 +215,10 @@ main {
   opacity: 0;
   bottom: calc(0px - var(--default-spacing));
   padding: var(--default-spacing);
-  padding-top: calc(var(--default-spacing) * 3);
+  padding-top: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(var(--black));
-  background: linear-gradient(0deg, rgba(var(--white), .95) 0%, rgba(var(--white), 0) 100%);
+  background: linear-gradient(0deg, rgba(var(--white), .7) 0%, rgba(var(--white), 0) 100%);
   transition-duration: .5s;
 }
 
@@ -262,7 +266,7 @@ main {
     padding-bottom: 1em;
   }
 
-  .logo, .main-menu, .language-menu {
+  .logo, .language-menu {
     width: 100%;
   }
 
