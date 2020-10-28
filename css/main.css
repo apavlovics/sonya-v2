@@ -118,7 +118,7 @@ nav a {
   color: rgb(var(--black));
 }
 
-nav a:hover, nav a:visited {
+nav a:hover, nav a:focus {
   color: rgb(var(--green));
   border-color: rgba(var(--green), var(--default-opacity));
 }
