@@ -44,7 +44,7 @@ class Previews extends React.Component {
   render() {
     return (
       <main>
-        {this.state.previews.forEach(this.renderPreview)}
+        {this.state.previews.map(this.renderPreview)}
       </main>
     )
   }
