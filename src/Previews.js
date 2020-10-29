@@ -1,38 +1,28 @@
+import Preview from './Preview'
+
 const Previews = () => {
   return (
     <main>
-      <div className="preview large" style={{backgroundImage: "url(/projects/jauna-teika/cover.jpg)"}}>
-        <a href="/design/jauna-teika/">
-          <div className="details">
-            <h2>Jauna Teika Apartment</h2>
-            <span>2020</span>
-          </div>
-        </a>
-      </div>
-      <div className="preview medium" style={{backgroundImage: "url(/projects/andrey-silchenko/cover.jpg)"}}>
-        <a href="/design/andrey-silchenko/">
-          <div className="details">
-            <h2>Andrey Silchenko Hair Salon</h2>
-            <span>2016</span>
-          </div>
-        </a>
-      </div>
-      <div className="preview medium" style={{backgroundImage: "url(/projects/open-space/cover.jpg)"}}>
-        <a href="/design/open-space/">
-          <div className="details">
-            <h2>Open Space in Central Riga</h2>
-            <span>2016</span>
-          </div>
-        </a>
-      </div>
-      <div className="preview large" style={{backgroundImage: "url(/projects/round-house/cover.jpg)"}}>
-        <a href="/design/jauna-teika/">
-          <div className="details">
-            <h2>Round House Apartment</h2>
-            <span>2012</span>
-          </div>
-        </a>
-      </div>
+      <Preview
+          size="large"
+          url="jauna-teika"
+          title="Jauna Teika Apartment"
+          year="2020" />
+      <Preview
+          size="medium"
+          url="andrey-silchenko"
+          title="Andrey Silchenko Hair Salon"
+          year="2016" />
+      <Preview
+          size="medium"
+          url="open-space"
+          title="Open Space in Central Riga"
+          year="2016" />
+      <Preview
+          size="large"
+          url="round-house"
+          title="Round House Apartment"
+          year="2012" />
     </main>
   )
 }

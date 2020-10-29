@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
