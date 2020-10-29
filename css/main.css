@@ -22,6 +22,10 @@
   --min-opacity: .15;
   --max-opacity: .7;
 
+  --min-transition-duration: .1s;
+  --mid-transition-duration: .2s;
+  --max-transition-duration: .5s;
+
   --aspect-ratio: 1.5;
   --border: 1px solid;
   --radius: 5px;
@@ -50,13 +54,13 @@ a {
   border-bottom: var(--border);
   border-color: rgba(var(--green), var(--min-opacity));
   text-decoration: none;
-  transition-duration: .5s;
+  transition-duration: var(--max-transition-duration);
 }
 
 a:hover, a:focus {
   color: rgb(var(--orange));
   border-color: rgba(var(--orange), var(--min-opacity));
-  transition-duration: .1s;
+  transition-duration: var(--min-transition-duration);
   outline: none;
 }
 
@@ -201,7 +205,7 @@ main {
   max-width: var(--max-width);
   max-height: calc(var(--max-width) / var(--aspect-ratio));
   overflow: hidden;
-  transition-duration: .5s;
+  transition-duration: var(--max-transition-duration);
 }
 
 .preview a {
@@ -226,7 +230,7 @@ main {
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(var(--black));
   background: linear-gradient(0deg, rgba(var(--white), var(--max-opacity)) 0%, rgba(var(--white), 0) 100%);
-  transition-duration: .5s;
+  transition-duration: var(--max-transition-duration);
 }
 
 .preview .details h2 {
@@ -236,7 +240,7 @@ main {
 .preview .details.visible {
   opacity: 1;
   bottom: 0;
-  transition-duration: .1s;
+  transition-duration: var(--min-transition-duration);
 }
 
 .preview.desaturated {
@@ -244,7 +248,7 @@ main {
 }
 
 .preview.focused {
-  transition-duration: .1s;
+  transition-duration: var(--min-transition-duration);
   filter: none;
 }
 
@@ -269,6 +273,7 @@ main {
 
   nav {
     height: auto;
+    transition-duration: var(--mid-transition-duration);
   }
 
   nav > div {
@@ -278,7 +283,6 @@ main {
   .nav-minimized {
     visibility: visible;
     opacity: 1;
-    transition-duration: .2s;
   }
 
   .nav-minimized.hidden {
@@ -290,7 +294,6 @@ main {
     visibility: hidden;
     top: var(--default-animation-height);
     opacity: 0;
-    transition-duration: .2s;
   }
 
   .nav-maximized.visible {
