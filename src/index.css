@@ -106,6 +106,7 @@ nav {
   width: 100%;
   height: var(--nav-height);
   line-height: var(--nav-line-height);
+  overflow: hidden;
 }
 
 nav > div, .logo {
@@ -270,7 +271,7 @@ main {
     --nav-height: calc(2em + var(--normal-font-size) * var(--nav-line-height));
   }
 
-  nav {
+  nav, .main-menu, .language-menu {
     transition: var(--mid-transition-duration);
   }
 
@@ -292,10 +293,6 @@ main {
 
   .main-menu, .submenu {
     flex-direction: column;
-  }
-
-  .main-menu, .language-menu {
-    transition: var(--mid-transition-duration);
   }
 
   .main-menu.maximized, .language-menu.maximized {
