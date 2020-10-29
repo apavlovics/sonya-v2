@@ -33,6 +33,7 @@ class Previews extends React.Component {
   renderPreview(preview) {
     return (
       <Preview
+        key={preview.url}
         size={preview.size}
         url={preview.url}
         title={preview.title}
