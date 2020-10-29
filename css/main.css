@@ -36,7 +36,7 @@
 }
 
 body {
-  font: var(--normal-font-weight) var(--normal-font-size) 'Noto Sans', Helvetica, Arial, sans-serif;
+  font: var(--normal-font-weight) var(--normal-font-size) 'Raleway', Helvetica, Arial, sans-serif;
   min-width: 320px;
 
   /* Disable automatic text scaling on iOS */

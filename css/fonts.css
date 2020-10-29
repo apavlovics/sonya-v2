@@ -1,41 +1,15 @@
 @font-face {
-  font-family: 'Noto Sans';
+  font-family: 'Raleway';
   font-style: normal;
-  font-weight: 300;
-  src: local('Noto Sans Light'), url('../assets/fonts/NotoSans-Light.woff') format('woff');
+  font-weight: 100 900;
+  src: url('../assets/fonts/Raleway-Variable.woff2') format('woff2 supports variations'),
+       url('../assets/fonts/Raleway-Variable.woff2') format('woff2-variations');
 }
 
 @font-face {
-  font-family: 'Noto Sans';
+  font-family: 'Raleway';
   font-style: italic;
-  font-weight: 300;
-  src: local('Noto Sans Light Italic'), url('../assets/fonts/NotoSans-LightItalic.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Noto Sans Regular'), url('../assets/fonts/NotoSans-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Noto Sans Italic'), url('../assets/fonts/NotoSans-Italic.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Noto Sans Bold'), url('../assets/fonts/NotoSans-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Noto Sans Bold Italic'), url('../assets/fonts/NotoSans-BoldItalic.woff') format('woff');
+  font-weight: 100 900;
+  src: url('../assets/fonts/Raleway-Italic-Variable.woff2') format('woff2 supports variations'),
+       url('../assets/fonts/Raleway-Italic-Variable.woff2') format('woff2-variations');
 }
