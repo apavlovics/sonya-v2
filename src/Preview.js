@@ -18,10 +18,10 @@ class Preview extends React.Component {
     const extraClassName = this.state.focused ? "focused" : this.state.desaturated ? "desaturated" : ""
     return (
       <div
-          className={`preview ${this.state.size} ${extraClassName}`}
-          style={{backgroundImage: `url(/projects/${this.state.url}/cover.jpg)`}}
-          onMouseEnter={() => this.setState({focused: true})}
-          onMouseLeave={() => this.setState({focused: false})}>
+        className={`preview ${this.state.size} ${extraClassName}`}
+        style={{backgroundImage: `url(/projects/${this.state.url}/cover.jpg)`}}
+        onMouseEnter={() => this.setState({focused: true})}
+        onMouseLeave={() => this.setState({focused: false})}>
         <a href={`/design/${this.state.url}/`}>
           <div className={`details ${this.state.focused ? "visible" : ""}`}>
             <h2>{this.state.title}</h2>
