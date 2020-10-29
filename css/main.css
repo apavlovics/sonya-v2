@@ -124,7 +124,7 @@ nav a:hover, nav a:focus {
   border-color: rgba(var(--green), var(--min-opacity));
 }
 
-.nav-minimized {
+.nav.minimized {
   visibility: hidden;
   opacity: 0;
 }
@@ -280,23 +280,23 @@ main {
     flex-wrap: wrap;
   }
 
-  .nav-minimized {
+  nav.minimized {
     visibility: visible;
     opacity: 1;
   }
 
-  .nav-minimized.hidden {
+  nav.minimized.hidden {
     visibility: hidden;
     opacity: 0;
   }
 
-  .nav-maximized {
+  nav.maximized {
     visibility: hidden;
     top: var(--default-animation-height);
     opacity: 0;
   }
 
-  .nav-maximized.visible {
+  nav.maximized.visible {
     visibility: visible;
     opacity: 1;
     top: 0;
