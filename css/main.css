@@ -17,8 +17,10 @@
 
   --default-width: 960px;
   --default-spacing: 18px;
-  --default-opacity: .15;
   --default-animation-height: calc(0px - var(--default-spacing));
+
+  --min-opacity: .15;
+  --max-opacity: .7;
 
   --aspect-ratio: 1.5;
   --border: 1px solid;
@@ -46,14 +48,14 @@ body {
 a {
   color: rgb(var(--green));
   border-bottom: var(--border);
-  border-color: rgba(var(--green), var(--default-opacity));
+  border-color: rgba(var(--green), var(--min-opacity));
   text-decoration: none;
   transition-duration: .5s;
 }
 
 a:hover, a:focus {
   color: rgb(var(--orange));
-  border-color: rgba(var(--orange), var(--default-opacity));
+  border-color: rgba(var(--orange), var(--min-opacity));
   transition-duration: .1s;
   outline: none;
 }
@@ -115,7 +117,7 @@ nav a {
 
 nav a:hover, nav a:focus {
   color: rgb(var(--green));
-  border-color: rgba(var(--green), var(--default-opacity));
+  border-color: rgba(var(--green), var(--min-opacity));
 }
 
 .nav-minimized {
@@ -202,9 +204,14 @@ main {
   transition-duration: .5s;
 }
 
-.preview .contents {
+.preview a {
+  display: block;
   height: 100%;
   width: 100%;
+}
+
+.preview a:focus {
+  box-shadow: inset 0 0 var(--default-spacing) rgba(var(--black), var(--max-opacity));
 }
 
 .preview .details {
@@ -218,7 +225,7 @@ main {
   padding-top: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(var(--black));
-  background: linear-gradient(0deg, rgba(var(--white), .7) 0%, rgba(var(--white), 0) 100%);
+  background: linear-gradient(0deg, rgba(var(--white), var(--max-opacity)) 0%, rgba(var(--white), 0) 100%);
   transition-duration: .5s;
 }
 
