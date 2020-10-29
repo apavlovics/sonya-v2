@@ -294,6 +294,19 @@ main {
     flex-direction: column;
   }
 
+  .main-menu, .language-menu {
+    transition: var(--mid-transition-duration);
+  }
+
+  .main-menu.maximized, .language-menu.maximized {
+    margin-top: var(--default-spacing);
+    opacity: 1;
+  }
+
+  .main-menu.minimized, .language-menu.minimized {
+    opacity: 0;
+  }
+
   .submenu {
     position: static;
     margin-bottom: var(--default-spacing);
@@ -314,25 +327,5 @@ main {
 
   .language-menu li {
     margin-right: .5em;
-  }
-
-  @keyframes appear-from-top {
-    0% {
-      opacity: 0;
-      transform: translateY(var(--default-animation-height));
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  nav.maximized .main-menu, nav.maximized .language-menu {
-    margin-top: var(--default-spacing);
-    animation: appear-from-top var(--mid-transition-duration) ease 0s;
-  }
-
-  nav.minimized .main-menu, nav.minimized .language-menu {
-    display: none;
   }
 }

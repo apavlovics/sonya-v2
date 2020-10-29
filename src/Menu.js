@@ -10,8 +10,9 @@ class Menu extends React.Component {
   }
 
   render() {
+    const className = this.state.maximized ? "maximized" : "minimized"
     return (
-      <nav className={this.state.maximized ? "maximized" : "minimized"}>
+      <nav className={className}>
         <div>
           <div className="logo">
             <div>Smart Casual</div>
@@ -21,7 +22,7 @@ class Menu extends React.Component {
                 alt={this.state.maximized ? "Close main menu" : "Open main menu"}
                 onClick={() => this.setState({maximized: !this.state.maximized})} />
           </div>
-          <ul className="main-menu">
+          <ul className={`main-menu ${className}`}>
             <li className="selected">Interior Design
               <ul className="submenu">
                 <li className="selected">All</li>
@@ -32,7 +33,7 @@ class Menu extends React.Component {
             <li><a href="/photography/">Interior Photo</a></li>
             <li><a href="/contacts/">Contacts</a></li>
           </ul>
-          <ul className="language-menu">
+          <ul className={`language-menu ${className}`}>
             <li className="selected">EN</li>
             <li><a href="/lv/">LV</a></li>
           </ul>
