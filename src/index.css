@@ -294,22 +294,6 @@ main {
     display: block;
   }
 
-  @keyframes appear-from-top {
-    0% {
-      opacity: 0;
-      transform: translateY(var(--default-animation-height));
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .main-menu, .language-menu {
-    margin-top: var(--default-spacing);
-    animation: appear-from-top var(--mid-transition-duration) ease 0s;
-  }
-
   .main-menu, .submenu {
     flex-direction: column;
   }
@@ -333,5 +317,25 @@ main {
 
   .language-menu li {
     margin-right: .5em;
+  }
+
+  @keyframes appear-from-top {
+    0% {
+      opacity: 0;
+      transform: translateY(var(--default-animation-height));
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  nav.maximized .main-menu, nav.maximized .language-menu {
+    margin-top: var(--default-spacing);
+    animation: appear-from-top var(--mid-transition-duration) ease 0s;
+  }
+
+  nav.minimized .main-menu, nav.minimized .language-menu {
+    display: none;
   }
 }

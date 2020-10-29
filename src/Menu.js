@@ -22,25 +22,21 @@ class Menu extends React.Component {
                 alt={this.state.maximized ? "Close main menu" : "Open main menu"}
                 onClick={() => this.setState({maximized: !this.state.maximized})} />
           </div>
-          { this.state.maximized &&
-            <ul className="main-menu">
-              <li className="selected">Interior Design
-                <ul className="submenu">
-                  <li className="selected">All</li>
-                  <li><a href="/residential/">Residential</a></li>
-                  <li><a href="/retail/">Retail</a></li>
-                </ul>
-              </li>
-              <li><a href="/photography/">Interior Photo</a></li>
-              <li><a href="/contacts/">Contacts</a></li>
-            </ul>
-          }
-          { this.state.maximized &&
-            <ul className="language-menu">
-              <li className="selected">EN</li>
-              <li><a href="/lv/">LV</a></li>
-            </ul>
-          }
+          <ul className="main-menu">
+            <li className="selected">Interior Design
+              <ul className="submenu">
+                <li className="selected">All</li>
+                <li><a href="/residential/">Residential</a></li>
+                <li><a href="/retail/">Retail</a></li>
+              </ul>
+            </li>
+            <li><a href="/photography/">Interior Photo</a></li>
+            <li><a href="/contacts/">Contacts</a></li>
+          </ul>
+          <ul className="language-menu">
+            <li className="selected">EN</li>
+            <li><a href="/lv/">LV</a></li>
+          </ul>
         </div>
       </nav>
     )
