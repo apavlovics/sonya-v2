@@ -10,7 +10,7 @@ class Preview extends React.Component {
       title: props.title,
       year: props.year,
       focused: props.focused,
-      desaturated: props.desaturated
+      desaturated: props.desaturated,
     }
   }
 

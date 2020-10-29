@@ -1,4 +1,5 @@
 const Footer = () => {
+  // TODO Switch to server time
   const currentYear = new Date().getFullYear()
   return (
     <footer>

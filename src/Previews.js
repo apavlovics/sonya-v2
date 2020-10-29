@@ -10,22 +10,22 @@ class Previews extends React.Component {
         size: "large",
         url: "jauna-teika",
         title: "Jauna Teika Apartment",
-        year: "2020"
+        year: "2020",
       }, {
         size: "medium",
         url: "andrey-silchenko",
         title: "Andrey Silchenko Hair Salon",
-        year: "2016"
+        year: "2016",
       }, {
         size: "medium",
         url: "open-space",
         title: "Open Space in Central Riga",
-        year: "2015"
+        year: "2015",
       }, {
         size: "large",
         url: "round-house",
         title: "Round House Apartment",
-        year: "2012"
+        year: "2012",
       }]
     }
   }
