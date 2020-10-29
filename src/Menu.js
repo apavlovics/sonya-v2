@@ -6,8 +6,7 @@ class Menu extends React.Component {
 
   constructor(props) {
     super(props)
-    const maximized = window.innerWidth > 720 ? true : false
-    this.state = {maximized: maximized}
+    this.state = {maximized: false}
   }
 
   render() {

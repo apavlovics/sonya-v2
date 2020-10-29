@@ -286,12 +286,8 @@ main {
     width: 100%;
   }
 
-  .main-menu li {
-    margin-right: 0;
-  }
-
   .logo img {
-    display: block;
+    display: initial;
   }
 
   .main-menu, .submenu {
@@ -305,6 +301,7 @@ main {
 
   .main-menu li {
     margin-top: .2em;
+    margin-right: 0;
   }
 
   .main-menu > li:first-child {
