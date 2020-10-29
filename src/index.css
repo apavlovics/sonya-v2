@@ -44,7 +44,6 @@
 
 body {
   font: var(--normal-font-weight) var(--normal-font-size) 'Raleway', Helvetica, Arial, sans-serif;
-  min-width: 320px;
 
   /* Disable automatic text scaling on iOS */
   -webkit-text-size-adjust: 100%;
@@ -125,16 +124,11 @@ nav a:hover, nav a:focus {
   border-color: rgba(var(--green), var(--min-opacity));
 }
 
-.nav.minimized {
-  visibility: hidden;
-  opacity: 0;
-}
-
 .logo img {
   display: none;
 }
 
-.logo, .main-menu li {
+.logo div, .main-menu li {
   margin-right: 2em;
 }
 
@@ -272,42 +266,27 @@ main {
 
 @media only screen and (max-width: 720px) {
 
+  :root {
+    --nav-height: calc(2em + var(--normal-font-size) * var(--nav-line-height));
+  }
+
   nav {
-    height: auto;
-    transition-duration: var(--mid-transition-duration);
+    transition: var(--mid-transition-duration);
+  }
+
+  nav.maximized {
+    height: 100%;
   }
 
   nav > div {
     flex-wrap: wrap;
   }
 
-  nav.minimized {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  nav.minimized.hidden {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  nav.maximized {
-    visibility: hidden;
-    top: var(--default-animation-height);
-    opacity: 0;
-  }
-
-  nav.maximized.visible {
-    visibility: visible;
-    opacity: 1;
-    top: 0;
-  }
-
   .logo, .language-menu {
     width: 100%;
   }
 
-  .logo, .main-menu li {
+  .main-menu li {
     margin-right: 0;
   }
 
@@ -315,8 +294,20 @@ main {
     display: block;
   }
 
+  @keyframes appear-from-top {
+    0% {
+      opacity: 0;
+      transform: translateY(var(--default-animation-height));
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .main-menu, .language-menu {
     margin-top: var(--default-spacing);
+    animation: appear-from-top var(--mid-transition-duration) ease 0s;
   }
 
   .main-menu, .submenu {
@@ -342,9 +333,5 @@ main {
 
   .language-menu li {
     margin-right: .5em;
-  }
-
-  main {
-    margin-top: calc(2em + var(--normal-font-size) * var(--nav-line-height));
   }
 }

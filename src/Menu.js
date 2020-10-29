@@ -1,39 +1,50 @@
-function Menu() {
-  return (
-    <div>
-      <nav class="minimized">
+import React from 'react';
+import MenuOpen from './icons/menu-open.svg'
+import MenuClose from './icons/menu-close.svg'
+
+class Menu extends React.Component {
+
+  constructor(props) {
+    super(props)
+    const maximized = window.innerWidth > 720 ? true : false
+    this.state = {maximized: maximized}
+  }
+
+  render() {
+    return (
+      <nav className={this.state.maximized ? "maximized" : "minimized"}>
         <div>
-          <div class="logo">
+          <div className="logo">
             <div>Smart Casual</div>
-            <img id="menu-open" src="/assets/icons/menu-open.svg" alt="Open main menu" />
+            <img
+                id={this.state.maximized ? "menu-close" : "menu-open"} 
+                src={this.state.maximized ? MenuClose : MenuOpen}
+                alt={this.state.maximized ? "Close main menu" : "Open main menu"}
+                onClick={() => this.setState({maximized: !this.state.maximized})} />
           </div>
+          { this.state.maximized &&
+            <ul className="main-menu">
+              <li className="selected">Interior Design
+                <ul className="submenu">
+                  <li className="selected">All</li>
+                  <li><a href="/residential/">Residential</a></li>
+                  <li><a href="/retail/">Retail</a></li>
+                </ul>
+              </li>
+              <li><a href="/photography/">Interior Photo</a></li>
+              <li><a href="/contacts/">Contacts</a></li>
+            </ul>
+          }
+          { this.state.maximized &&
+            <ul className="language-menu">
+              <li className="selected">EN</li>
+              <li><a href="/lv/">LV</a></li>
+            </ul>
+          }
         </div>
       </nav>
-      <nav class="maximized">
-        <div>
-          <div class="logo">
-            <div>Smart Casual</div>
-            <img id="menu-close" src="/assets/icons/menu-close.svg" alt="Close main menu" />
-          </div>
-          <ul class="main-menu">
-            <li class="selected">Interior Design
-              <ul class="submenu">
-                <li class="selected">All</li>
-                <li><a href="/residential/">Residential</a></li>
-                <li><a href="/retail/">Retail</a></li>
-              </ul>
-            </li>
-            <li><a href="/photography/">Interior Photo</a></li>
-            <li><a href="/contacts/">Contacts</a></li>
-          </ul>
-          <ul class="language-menu">
-            <li class="selected">EN</li>
-            <li><a href="/lv/">LV</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  );
+    )
+  }
 }
 
-export default Menu;
+export default Menu
