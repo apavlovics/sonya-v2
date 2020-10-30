@@ -43,7 +43,9 @@
 }
 
 body {
-  font: var(--normal-font-weight) var(--normal-font-size) 'Raleway', Helvetica, Arial, sans-serif;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-size: var(--normal-font-size);
+  font-weight: var(--normal-font-weight);
 
   /* Disable automatic text scaling on iOS */
   -webkit-text-size-adjust: 100%;
