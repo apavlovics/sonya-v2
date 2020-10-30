@@ -17,11 +17,10 @@ class Menu extends React.Component {
           <div className="logo">
             <div>Smart Casual</div>
             <img
-              id={this.state.maximized ? "menu-close" : "menu-open"} 
-              src={this.state.maximized ? MenuClose : MenuOpen}
-              alt={this.state.maximized ? "Close main menu" : "Open main menu"}
-              onClick={() => this.setState({maximized: !this.state.maximized})}
-            />
+                id={this.state.maximized ? "menu-close" : "menu-open"} 
+                src={this.state.maximized ? MenuClose : MenuOpen}
+                alt={this.state.maximized ? "Close main menu" : "Open main menu"}
+                onClick={() => this.setState({maximized: !this.state.maximized})} />
           </div>
           <ul className={`main-menu ${className}`}>
             <li className="selected">Interior Design

@@ -38,21 +38,21 @@ class Previews extends React.Component {
     }
   }
 
-  togglePreviews(currentPreview, focused) {
-    const previews = this.state.previews.map(p => {
-      if (focused) {
-        if (p == currentPreview) {
-          p.focused = focused
-          p.desaturated = !focused
+  updatePreviews(currentPreview, onMouseEnter) {
+    const previews = this.state.previews.map(preview => {
+      if (onMouseEnter) {
+        if (preview === currentPreview) {
+          preview.focused = true
+          preview.desaturated = false
         } else {
-          p.focused = !focused
-          p.desaturated = focused
+          preview.focused = false
+          preview.desaturated = true
         }
       } else {
-          p.focused = false
-          p.desaturated = false
+          preview.focused = false
+          preview.desaturated = false
       }
-      return p
+      return preview
     })
     this.setState({previews: previews})
   }
@@ -62,16 +62,15 @@ class Previews extends React.Component {
       <main>
         {this.state.previews.map(preview => (
           <Preview
-            key={preview.url}
-            size={preview.size}
-            url={preview.url}
-            title={preview.title}
-            year={preview.year}
-            focused={preview.focused}
-            desaturated={preview.desaturated}
-            onMouseEnter={() => this.togglePreviews(preview, true)}
-            onMouseLeave={() => this.togglePreviews(preview, false)}
-          />
+              key={preview.url}
+              size={preview.size}
+              url={preview.url}
+              title={preview.title}
+              year={preview.year}
+              focused={preview.focused}
+              desaturated={preview.desaturated}
+              onMouseEnter={() => this.updatePreviews(preview, true)}
+              onMouseLeave={() => this.updatePreviews(preview, false)} />
         ))}
       </main>
     )
