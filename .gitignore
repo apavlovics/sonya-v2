@@ -1,3 +1,7 @@
+# React
+build/
 node_modules/
+
+# Scripts
 scripts/input/
 scripts/output/
