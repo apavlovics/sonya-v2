@@ -20,7 +20,16 @@ class Menu extends React.Component {
                 id={this.state.maximized ? "menu-close" : "menu-open"} 
                 src={this.state.maximized ? MenuClose : MenuOpen}
                 alt={this.state.maximized ? "Close main menu" : "Open main menu"}
-                onClick={() => this.setState({maximized: !this.state.maximized})} />
+                onClick={() => {
+                  const maximized = !this.state.maximized
+                  if (maximized) {
+                    document.body.classList.add('no-scroll')
+                  } else {
+                    // TODO Remove no-scroll class when window is resized
+                    document.body.classList.remove('no-scroll')
+                  }
+                  this.setState({maximized: maximized})
+                }} />
           </div>
           <ul className={`main-menu ${className}`}>
             <li className="selected">Interior Design

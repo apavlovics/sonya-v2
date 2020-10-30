@@ -98,6 +98,10 @@ footer {
   padding-bottom: 3em;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* Navigation */
 
 nav {
@@ -280,6 +284,7 @@ main {
 
   nav.maximized {
     height: 100%;
+    overflow: auto;
   }
 
   nav > div {
@@ -298,8 +303,11 @@ main {
     flex-direction: column;
   }
 
+  .main-menu {
+    margin-top: .5em;
+  }
+
   .main-menu.maximized, .language-menu.maximized {
-    margin-top: var(--default-spacing);
     opacity: 1;
   }
 
@@ -310,7 +318,7 @@ main {
 
   .submenu {
     position: static;
-    margin-bottom: var(--default-spacing);
+    margin-bottom: .5em;
   }
 
   .main-menu li {
@@ -323,6 +331,7 @@ main {
   }
 
   .language-menu {
+    margin-top: 1em;
     display: flex;
   }
 

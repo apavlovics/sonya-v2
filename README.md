@@ -1,21 +1,25 @@
 # Smart Casual V2
 
-## Testing
+## React
 
-To test the application, go to its root folder and execute:
+All the following commands should be executed from the project main folder.
+
+### Testing
+
+To test the application, execute:
 
     npm test
 
-## Running
+### Running
 
-To run the application, go to its root folder and execute:
+To run the application, execute:
 
     npm start
 
 The application starts at http://localhost:3000 by default.
 
-## Building
+### Packaging
 
-To build the application for production, go to its root folder and execute:
+To build and package the application for production use, execute:
 
     npm run build
