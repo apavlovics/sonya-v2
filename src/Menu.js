@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, withRouter} from 'react-router-dom';
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
@@ -11,11 +12,14 @@ class Menu extends React.Component {
 
   render() {
     const className = this.state.maximized ? "maximized" : "minimized"
+
+    // TODO Mark selected links
+    console.log(this.props.location)
     return (
       <nav className={className}>
         <div>
           <div className="logo">
-            <div>Smart Casual</div>
+            <div><Link to="/">Smart Casual</Link></div>
             <img
                 id={this.state.maximized ? "menu-close" : "menu-open"} 
                 src={this.state.maximized ? MenuClose : MenuOpen}
@@ -35,16 +39,16 @@ class Menu extends React.Component {
             <li className="selected">Interior Design
               <ul className="submenu">
                 <li className="selected">All</li>
-                <li><a href="/residential/">Residential</a></li>
-                <li><a href="/retail/">Retail</a></li>
+                <li><Link to="/residential/">Residential</Link></li>
+                <li><Link to="/retail/">Retail</Link></li>
               </ul>
             </li>
-            <li><a href="/photography/">Interior Photo</a></li>
-            <li><a href="/contacts/">Contacts</a></li>
+            <li><Link to="/interior-photo/">Interior Photo</Link></li>
+            <li><Link to="/contacts/">Contacts</Link></li>
           </ul>
           <ul className={`language-menu ${className}`}>
             <li className="selected">EN</li>
-            <li><a href="/lv/">LV</a></li>
+            <li><Link to="/lv/">LV</Link></li>
           </ul>
         </div>
       </nav>
@@ -52,4 +56,4 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu
+export default withRouter(Menu)
