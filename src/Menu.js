@@ -10,20 +10,28 @@ class Menu extends React.Component {
     this.state = {maximized: false}
   }
 
-  render() {
-    const className = this.state.maximized ? "maximized" : "minimized"
+  stripSlashes(pathname) {
+    if (pathname.charAt(0) === '/') {
+      pathname = pathname.substr(1)
+    }
+    if (pathname.charAt(pathname.length - 1) === '/') {
+      pathname = pathname.substr(0, pathname.length - 1)
+    }
+    return pathname
+  }
 
-    // TODO Mark selected links
-    console.log(this.props.location)
+  render() {
+    const currentPathname = this.stripSlashes(this.props.location.pathname)
+    const className = this.state.maximized ? 'maximized' : 'minimized'
     return (
       <nav className={className}>
         <div>
           <div className="logo">
             <div><Link to="/">Smart Casual</Link></div>
             <img
-                id={this.state.maximized ? "menu-close" : "menu-open"} 
+                id={this.state.maximized ? 'menu-close' : 'menu-open'} 
                 src={this.state.maximized ? MenuClose : MenuOpen}
-                alt={this.state.maximized ? "Close main menu" : "Open main menu"}
+                alt={this.state.maximized ? 'Close main menu' : 'Open main menu'}
                 onClick={() => {
                   const maximized = !this.state.maximized
                   if (maximized) {
@@ -36,15 +44,15 @@ class Menu extends React.Component {
                 }} />
           </div>
           <ul className={`main-menu ${className}`}>
-            <li className="selected">Interior Design
+            <MenuOption currentPathname={currentPathname} pathname="interior-design" title="Interior Design">
               <ul className="submenu">
                 <li className="selected">All</li>
                 <li><Link to="/residential/">Residential</Link></li>
                 <li><Link to="/retail/">Retail</Link></li>
               </ul>
-            </li>
-            <li><Link to="/interior-photo/">Interior Photo</Link></li>
-            <li><Link to="/contacts/">Contacts</Link></li>
+            </MenuOption>
+            <MenuOption currentPathname={currentPathname} pathname="interior-photo" title="Interior Photo"/>
+            <MenuOption currentPathname={currentPathname} pathname="contacts" title="Contacts" />
           </ul>
           <ul className={`language-menu ${className}`}>
             <li className="selected">EN</li>
@@ -53,6 +61,14 @@ class Menu extends React.Component {
         </div>
       </nav>
     )
+  }
+}
+
+const MenuOption = props => {
+  if (props.currentPathname === props.pathname) {
+    return <li className="selected">{props.title}{props.children}</li>
+  } else {
+    return <li><Link to={`/${props.pathname}/`}>{props.title}</Link></li>
   }
 }
 
