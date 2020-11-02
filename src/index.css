@@ -181,10 +181,15 @@ nav a:hover, nav a:focus {
   display: flex;
   font-size: var(--smaller-font-size);
   list-style: none;
+  letter-spacing: 1px;
 }
 
 .language-menu li {
   margin-right: .5em;
+}
+
+.language-menu li:last-child {
+  margin-right: 0;
 }
 
 .selected {

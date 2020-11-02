@@ -37,8 +37,7 @@ class Menu extends React.Component {
       <nav className={className}>
         <div>
           <div className="logo">
-            <div>
-              {currentPathname === '' ? 'Smart Casual' : <Link to="/" onClick={() => this.maximized = false}>Smart Casual</Link>}</div>
+            <div>Smart Casual</div>
             <img
                 id={this.state.maximized ? 'menu-close' : 'menu-open'} 
                 src={this.state.maximized ? MenuClose : MenuOpen}
