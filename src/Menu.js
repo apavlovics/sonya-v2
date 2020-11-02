@@ -44,15 +44,15 @@ class Menu extends React.Component {
                 }} />
           </div>
           <ul className={`main-menu ${className}`}>
-            <MenuOption currentPathname={currentPathname} pathname="interior-design" title="Interior Design">
+            <MenuItem currentPathname={currentPathname} pathname="interior-design" title="Interior Design">
               <ul className="submenu">
                 <li className="selected">All</li>
                 <li><Link to="/residential/">Residential</Link></li>
                 <li><Link to="/retail/">Retail</Link></li>
               </ul>
-            </MenuOption>
-            <MenuOption currentPathname={currentPathname} pathname="interior-photo" title="Interior Photo"/>
-            <MenuOption currentPathname={currentPathname} pathname="contacts" title="Contacts" />
+            </MenuItem>
+            <MenuItem currentPathname={currentPathname} pathname="interior-photo" title="Interior Photo"/>
+            <MenuItem currentPathname={currentPathname} pathname="contacts" title="Contacts" />
           </ul>
           <ul className={`language-menu ${className}`}>
             <li className="selected">EN</li>
@@ -64,7 +64,7 @@ class Menu extends React.Component {
   }
 }
 
-const MenuOption = props => {
+const MenuItem = props => {
   if (props.currentPathname === props.pathname) {
     return <li className="selected">{props.title}{props.children}</li>
   } else {
