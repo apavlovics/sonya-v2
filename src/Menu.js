@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom'
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
