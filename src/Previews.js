@@ -82,8 +82,8 @@ const Preview = props => {
     <div
         className={`preview ${props.size}${extraClassName}`}
         style={{backgroundImage: `url(/projects/${props.url}/cover.jpg)`}}
-        onMouseEnter={() => props.onMouseEnter()}
-        onMouseLeave={() => props.onMouseLeave()}>
+        onMouseEnter={props.onMouseEnter}
+        onMouseLeave={props.onMouseLeave}>
       <a href={`/design/${props.url}/`}>
         <div className={`details${props.focused ? " visible" : ""}`}>
           <h2>{props.title}</h2>

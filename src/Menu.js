@@ -20,6 +20,16 @@ class Menu extends React.Component {
     return pathname
   }
 
+  set maximized(maximized) {
+    if (maximized) {
+      document.body.classList.add('no-scroll')
+    } else {
+      // TODO Remove no-scroll class when window is resized
+      document.body.classList.remove('no-scroll')
+    }
+    this.setState({maximized: maximized})
+  }
+
   render() {
     const currentPathname = this.stripSlashes(this.props.location.pathname)
     const className = this.state.maximized ? 'maximized' : 'minimized'
@@ -27,32 +37,24 @@ class Menu extends React.Component {
       <nav className={className}>
         <div>
           <div className="logo">
-            <div><Link to="/">Smart Casual</Link></div>
+            <div>
+              {currentPathname === '' ? 'Smart Casual' : <Link to="/" onClick={() => this.maximized = false}>Smart Casual</Link>}</div>
             <img
                 id={this.state.maximized ? 'menu-close' : 'menu-open'} 
                 src={this.state.maximized ? MenuClose : MenuOpen}
                 alt={this.state.maximized ? 'Close main menu' : 'Open main menu'}
-                onClick={() => {
-                  const maximized = !this.state.maximized
-                  if (maximized) {
-                    document.body.classList.add('no-scroll')
-                  } else {
-                    // TODO Remove no-scroll class when window is resized
-                    document.body.classList.remove('no-scroll')
-                  }
-                  this.setState({maximized: maximized})
-                }} />
+                onClick={() => this.maximized = !this.state.maximized} />
           </div>
           <ul className={`main-menu ${className}`}>
-            <MenuItem currentPathname={currentPathname} pathname="interior-design" title="Interior Design">
+            <MenuItem onClick={() => this.maximized = false} currentPathname={currentPathname} pathname="interior-design" title="Interior Design">
               <ul className="submenu">
                 <li className="selected">All</li>
                 <li><Link to="/residential/">Residential</Link></li>
                 <li><Link to="/retail/">Retail</Link></li>
               </ul>
             </MenuItem>
-            <MenuItem currentPathname={currentPathname} pathname="interior-photo" title="Interior Photo"/>
-            <MenuItem currentPathname={currentPathname} pathname="contacts" title="Contacts" />
+            <MenuItem onClick={() => this.maximized = false} currentPathname={currentPathname} pathname="interior-photo" title="Interior Photo" />
+            <MenuItem onClick={() => this.maximized = false} currentPathname={currentPathname} pathname="contacts" title="Contacts" />
           </ul>
           <ul className={`language-menu ${className}`}>
             <li className="selected">EN</li>
@@ -68,7 +70,7 @@ const MenuItem = props => {
   if (props.currentPathname === props.pathname) {
     return <li className="selected">{props.title}{props.children}</li>
   } else {
-    return <li><Link to={`/${props.pathname}/`}>{props.title}</Link></li>
+    return <li><Link to={`/${props.pathname}/`} onClick={props.onClick}>{props.title}</Link></li>
   }
 }
 
