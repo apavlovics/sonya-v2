@@ -95,12 +95,9 @@ nav > div, main, footer {
   max-width: var(--default-width);
 }
 
-nav > div, footer {
-  padding: 1em var(--default-spacing);
-}
-
 footer {
   font-size: var(--smaller-font-size);
+  padding-top: 1em;
   padding-bottom: 3em;
 }
 
@@ -119,6 +116,11 @@ nav {
   height: var(--nav-height);
   line-height: var(--nav-line-height);
   overflow: hidden;
+}
+
+nav > div {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 nav > div, .logo {
@@ -267,7 +269,16 @@ main {
 
 /* Adaptive styles for smaller screens and windows */
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 996px) {
+
+  :root {
+    --default-width: 996px;
+  }
+
+  nav > div, main > h1, footer {
+    padding-right: var(--default-spacing);
+    padding-left: var(--default-spacing);
+  }
 
   .preview.large, .preview.medium {
     border-radius: 0;
