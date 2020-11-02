@@ -321,12 +321,12 @@ main {
     display: initial;
   }
 
-  .main-menu, .submenu {
-    flex-direction: column;
-  }
-
   .main-menu {
     margin-top: .5em;
+  }
+
+  .main-menu, .submenu {
+    flex-direction: column;
   }
 
   .main-menu.maximized, .language-menu.maximized {
@@ -338,11 +338,6 @@ main {
     opacity: 0;
   }
 
-  .submenu {
-    position: static;
-    margin-bottom: .5em;
-  }
-
   .main-menu li {
     margin-top: .2em;
     margin-right: 0;
@@ -350,6 +345,11 @@ main {
 
   .main-menu > li:first-child {
     margin-top: 0;
+  }
+
+  .submenu {
+    position: static;
+    margin-bottom: .5em;
   }
 
   .language-menu {
