@@ -47,11 +47,13 @@ class Menu extends React.Component {
           </div>
           <ul className={`main-menu ${className}`}>
             <MenuItem onClick={() => this.maximized = false} currentPathname={currentPathname} pathname="interior-design" title="Interior Design">
+              {/* TODO Allow filtering previews 
               <ul className="submenu">
                 <li className="selected">All</li>
                 <li><Link to="/residential/">Residential</Link></li>
                 <li><Link to="/retail/">Retail</Link></li>
               </ul>
+              */}
             </MenuItem>
             <MenuItem onClick={() => this.maximized = false} currentPathname={currentPathname} pathname="interior-photo" title="Interior Photo" />
             <MenuItem onClick={() => this.maximized = false} currentPathname={currentPathname} pathname="contacts" title="Contacts" />

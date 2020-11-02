@@ -31,8 +31,8 @@
   --border: 1px solid;
   --radius: 5px;
 
-  --nav-height: 5em;
   --nav-line-height: 1.5;
+  --nav-height: calc(2em + var(--normal-font-size) * var(--nav-line-height));
 }
 
 /* General */
@@ -127,7 +127,7 @@ nav > div, .logo {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 nav a {
@@ -178,9 +178,13 @@ nav a:hover, nav a:focus {
 }
 
 .language-menu {
+  display: flex;
   font-size: var(--smaller-font-size);
   list-style: none;
-  text-align: center;
+}
+
+.language-menu li {
+  margin-right: .5em;
 }
 
 .selected {
@@ -291,10 +295,6 @@ main {
 
 @media only screen and (max-width: 720px) {
 
-  :root {
-    --nav-height: calc(2em + var(--normal-font-size) * var(--nav-line-height));
-  }
-
   nav, .main-menu, .language-menu {
     transition: var(--mid-transition-duration);
   }
@@ -349,10 +349,5 @@ main {
 
   .language-menu {
     margin-top: 1em;
-    display: flex;
-  }
-
-  .language-menu li {
-    margin-right: .5em;
   }
 }
