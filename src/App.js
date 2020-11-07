@@ -2,10 +2,10 @@ import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom
 
 // TODO Migrate to react-helmet-async once React 17 is supported
 import Helmet from 'react-helmet'
+import {useTranslation} from 'react-i18next'
 import Menu from './Menu'
 import Previews from './Previews'
 import Footer from './Footer'
-import {useTranslation} from 'react-i18next';
 
 const App = () => {
   const [t] = useTranslation()
