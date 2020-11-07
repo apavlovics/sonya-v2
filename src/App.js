@@ -1,10 +1,14 @@
-import Helmet from 'react-helmet'
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+
+// TODO Migrate to react-helmet-async once React 17 is supported
+import Helmet from 'react-helmet'
 import Menu from './Menu'
 import Previews from './Previews'
 import Footer from './Footer'
+import {useTranslation} from 'react-i18next';
 
 const App = () => {
+  const [t] = useTranslation()
   return (
     <Router>
       {formatTitle('')}
@@ -12,18 +16,18 @@ const App = () => {
 
       <Switch>
         <Route path="/interior-design">
-          {formatTitle('Interior Design')}
+          {formatTitle(t('Interior Design'))}
           <Previews />
         </Route>
 
         <Route path="/interior-photo">
-          {formatTitle('Interior Photo')}
-          <main><h1>Interior Photo</h1></main>
+          {formatTitle(t('Interior Photo'))}
+          <main><h1>{t('Architectural Photo')}</h1></main>
         </Route>
 
         <Route path="/contacts">
-          {formatTitle('Contacts')}
-          <main><h1>Contacts</h1></main>
+          {formatTitle(t('Contacts'))}
+          <main><h1>{t('Contacts')}</h1></main>
         </Route>
 
         <Route path="/">
