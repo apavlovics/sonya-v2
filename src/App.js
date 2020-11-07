@@ -7,8 +7,12 @@ import Menu from './Menu'
 import Previews from './Previews'
 import Footer from './Footer'
 
-const App = () => {
+export default function App() {
   const [t] = useTranslation()
+  const formatTitle = title => {
+    const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
+    return <Helmet><title>{fullTitle}</title></Helmet>
+  }
   return (
     <Router>
       {formatTitle('')}
@@ -38,10 +42,3 @@ const App = () => {
     </Router>
   )
 }
-
-const formatTitle = title => {
-  const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
-  return <Helmet><title>{fullTitle}</title></Helmet>
-}
-
-export default App

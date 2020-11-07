@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next'
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
-const Menu = props => {
+function Menu(props) {
   const [t] = useTranslation()
   const [maximized, setMaximized] = useState(false)
 
@@ -63,7 +63,7 @@ const Menu = props => {
   )
 }
 
-const MenuItem = props => {
+function MenuItem(props) {
   if (props.currentPathname === props.pathname) {
     return <li className="selected">{props.title}{props.children}</li>
   } else {

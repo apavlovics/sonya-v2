@@ -1,4 +1,5 @@
-const Footer = () => {
+export default function Footer() {
+
   // TODO Switch to server time
   const currentYear = new Date().getFullYear()
   return (
@@ -7,5 +8,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer

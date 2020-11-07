@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const Previews = props => {
+export default function Previews() {
   const [previews, setPreviews] = useState(
     [{
       size: "large",
@@ -70,7 +70,7 @@ const Previews = props => {
   )
 }
 
-const Preview = props => {
+function Preview(props) {
   const extraClassName = props.focused ? " focused" : props.desaturated ? " desaturated" : ""
   return (
     <div
@@ -87,5 +87,3 @@ const Preview = props => {
     </div>
   )
 }
-
-export default Previews
