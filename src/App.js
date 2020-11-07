@@ -21,7 +21,7 @@ const App = () => {
         </Route>
 
         <Route path="/interior-photo">
-          {formatTitle(t('Interior Photo'))}
+          {formatTitle(t('Architectural Photo'))}
           <main><h1>{t('Architectural Photo')}</h1></main>
         </Route>
 

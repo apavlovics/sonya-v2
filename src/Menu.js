@@ -51,7 +51,7 @@ const Menu = props => {
             </ul>
             */}
           </MenuItem>
-          <MenuItem onClick={() => updateMaximized(false)} currentPathname={currentPathname} pathname="interior-photo" title={t('Interior Photo')} />
+          <MenuItem onClick={() => updateMaximized(false)} currentPathname={currentPathname} pathname="interior-photo" title={t('Architectural Photo')} />
           <MenuItem onClick={() => updateMaximized(false)} currentPathname={currentPathname} pathname="contacts" title={t('Contacts')} />
         </ul>
         <ul className={`language-menu ${className}`}>
