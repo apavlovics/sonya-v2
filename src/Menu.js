@@ -52,7 +52,7 @@ function Menu(props) {
         </ul>
         <ul className={`language-menu ${className}`}>
 
-          {/* Menu languages are sorted alphabetically */}
+          {/* Menu languages are sorted alphabetically to have constant ordering */}
           {[...i18n.languages].sort().map(language => (
             <LanguageMenuItem
                 key={language}

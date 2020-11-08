@@ -11,7 +11,6 @@ export default function App() {
   const [t, i18n] = useTranslation()
 
   // All website sections are defined below
-  // TODO Move outside of App once t() is not called directly
   const sections = [{
     path: 'interior-design',
     title: 'Interior Design',
