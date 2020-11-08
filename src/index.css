@@ -116,6 +116,7 @@ nav {
   height: var(--nav-height);
   line-height: var(--nav-line-height);
   overflow: hidden;
+  cursor: default;
 }
 
 nav > div {
@@ -139,6 +140,12 @@ nav a:hover, nav a:focus {
   border-color: rgba(var(--green), var(--min-opacity));
 }
 
+.logo {
+  font-weight: var(--bold-font-weight);
+  white-space: nowrap;
+  cursor: auto;
+}
+
 .logo img {
   display: none;
   cursor: pointer;
@@ -146,11 +153,6 @@ nav a:hover, nav a:focus {
 
 .logo div, .main-menu li {
   margin-right: 2em;
-}
-
-.logo {
-  font-weight: var(--bold-font-weight);
-  white-space: nowrap;
 }
 
 .main-menu {

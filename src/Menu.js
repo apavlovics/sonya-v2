@@ -27,6 +27,8 @@ function Menu(props) {
       <div>
         <div className="logo">
           <div>Smart Casual</div>
+
+          {/* TODO Increase tap target size */}
           <img
               id={maximized ? 'menu-close' : 'menu-open'} 
               src={maximized ? MenuClose : MenuOpen}
