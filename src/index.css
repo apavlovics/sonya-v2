@@ -6,7 +6,6 @@
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --green: 137, 151, 75;
-  --orange: 236, 110, 35;
 
   --smaller-font-size: 16px;
   --normal-font-size: 18px;
@@ -53,16 +52,16 @@ body {
 }
 
 a {
-  color: rgb(var(--green));
+  color: rgb(var(--black));
   border-bottom: var(--border);
-  border-color: rgba(var(--green), var(--min-opacity));
+  border-color: rgba(var(--black), var(--min-opacity));
   text-decoration: none;
   transition-duration: var(--max-transition-duration);
 }
 
 a:hover, a:focus {
-  color: rgb(var(--orange));
-  border-color: rgba(var(--orange), var(--min-opacity));
+  color: rgb(var(--green));
+  border-color: rgba(var(--green), var(--min-opacity));
   transition-duration: var(--min-transition-duration);
   outline: none;
 }
@@ -111,7 +110,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 20;
-  background-color: rgb(var(--white), .95);
+  background-color: rgb(var(--white));
   width: 100%;
   height: var(--nav-height);
   line-height: var(--nav-line-height);
@@ -129,15 +128,6 @@ nav > div, .logo {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-}
-
-nav a {
-  color: rgb(var(--black));
-}
-
-nav a:hover, nav a:focus {
-  color: rgb(var(--green));
-  border-color: rgba(var(--green), var(--min-opacity));
 }
 
 .logo {
