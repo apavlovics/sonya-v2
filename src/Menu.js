@@ -5,7 +5,7 @@ import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
 function Menu(props) {
-  const [t] = useTranslation()
+  const [t, i18n] = useTranslation()
   const [maximized, setMaximized] = useState(false)
 
   const stripSlashes = (pathname) => {
@@ -29,6 +29,7 @@ function Menu(props) {
   }
 
   const currentPathname = stripSlashes(props.location.pathname)
+  const currentLanguage = i18n.language
   const className = maximized ? 'maximized' : 'minimized'
   return (
     <nav className={className}>
@@ -42,32 +43,48 @@ function Menu(props) {
               onClick={() => updateMaximized(!maximized)} />
         </div>
         <ul className={`main-menu ${className}`}>
-          <MenuItem onClick={() => updateMaximized(false)} currentPathname={currentPathname} pathname="interior-design" title={t('Interior Design')}>
-            {/* TODO Allow filtering previews 
+          {props.sections.map(section => (
+            <MainMenuItem
+                key={section.path}
+                currentPathname={currentPathname}
+                pathname={`${currentLanguage}/${section.path}`}
+                title={t(section.title)}
+                onClick={() => updateMaximized(false)} />
+          ))}
+          {/* TODO Allow filtering previews 
             <ul className="submenu">
               <li className="selected">All</li>
               <li><Link to="/residential/">Residential</Link></li>
               <li><Link to="/retail/">Retail</Link></li>
             </ul>
-            */}
-          </MenuItem>
-          <MenuItem onClick={() => updateMaximized(false)} currentPathname={currentPathname} pathname="interior-photo" title={t('Architectural Photo')} />
-          <MenuItem onClick={() => updateMaximized(false)} currentPathname={currentPathname} pathname="contacts" title={t('Contacts')} />
+          */}
         </ul>
         <ul className={`language-menu ${className}`}>
-          <li className="selected">EN</li>
-          <li><Link to="/lv/">LV</Link></li>
+          {i18n.languages.map(language => (
+            <LanguageMenuItem
+                key={language}
+                currentLanguage={currentLanguage}
+                language={language} />
+          ))}
         </ul>
       </div>
     </nav>
   )
 }
 
-function MenuItem(props) {
+function MainMenuItem(props) {
   if (props.currentPathname === props.pathname) {
     return <li className="selected">{props.title}{props.children}</li>
   } else {
     return <li><Link to={`/${props.pathname}/`} onClick={props.onClick}>{props.title}</Link></li>
+  }
+}
+
+function LanguageMenuItem(props) {
+  if (props.currentLanguage === props.language) {
+    return <li className="selected">{props.language.toUpperCase()}</li>
+  } else {
+    return <li><Link to={`/${props.language}/`}>{props.language.toUpperCase()}</Link></li>
   }
 }
 

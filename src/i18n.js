@@ -13,22 +13,23 @@ i18n
     resources: {
       en: {
         translation: {
-          "Interior Design": "Interior Design",
-          "Architectural Photo": "Architectural Photo",
-          "Contacts": "Contacts",
+          'Interior Design': 'Interior Design',
+          'Architectural Photo': 'Architectural Photo',
+          'Contacts': 'Contacts',
         }
       },
       lv: {
         translation: {
-          "Interior Design": "Interjera dizains",
-          "Architectural Photo": "Arhitektūras foto",
-          "Contacts": "Kontakti",
+          'Interior Design': 'Interjera dizains',
+          'Architectural Photo': 'Arhitektūras foto',
+          'Contacts': 'Kontakti',
         }
       },
     },
 
     // Default language hardcoded to English, consider using LanguageDetector instead
-    lng: "en",
+    lng: 'en',
+    fallbackLng: ['en', 'lv'],
 
     // Enable to debug configuration issues
     debug: false,

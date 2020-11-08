@@ -8,7 +8,24 @@ import Previews from './Previews'
 import Footer from './Footer'
 
 export default function App() {
-  const [t] = useTranslation()
+  const [t, i18n] = useTranslation()
+
+  // All website sections are defined below
+  const sections = [{
+    path: 'interior-design',
+    title: 'Interior Design',
+    body: <Previews />,
+  }, {
+    path: 'arhitectural-photo',
+    title: 'Architectural Photo',
+    body: <main><h1>{t('Architectural Photo')}</h1></main>,
+  }, {
+    path: 'contacts',
+    title: 'Contacts',
+    body: <main><h1>{t('Contacts')}</h1></main>,
+  }]
+
+  const currentLanguage = i18n.language
   const formatTitle = title => {
     const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
     return <Helmet><title>{fullTitle}</title></Helmet>
@@ -16,26 +33,17 @@ export default function App() {
   return (
     <Router>
       {formatTitle('')}
-      <Menu />
+      <Menu sections={sections} />
 
       <Switch>
-        <Route path="/interior-design">
-          {formatTitle(t('Interior Design'))}
-          <Previews />
-        </Route>
-
-        <Route path="/interior-photo">
-          {formatTitle(t('Architectural Photo'))}
-          <main><h1>{t('Architectural Photo')}</h1></main>
-        </Route>
-
-        <Route path="/contacts">
-          {formatTitle(t('Contacts'))}
-          <main><h1>{t('Contacts')}</h1></main>
-        </Route>
-
+        {sections.map(section => (
+          <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
+            {formatTitle(t(section.title))}
+            {section.body}
+          </Route>
+        ))}
         <Route path="/">
-          <Redirect to="/interior-design/" />
+          <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
         </Route>
       </Switch>
       <Footer />
