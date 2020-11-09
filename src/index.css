@@ -112,7 +112,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 20;
-  background-color: rgb(var(--white));
+  background-color: rgba(var(--white), 0.95);
   width: 100%;
   height: var(--nav-height);
   line-height: var(--nav-line-height);
