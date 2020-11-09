@@ -169,8 +169,10 @@ nav > div, .logo, .main-menu, .language-menu {
 }
 
 .language-menu li div {
+  --padding-top: calc(2 * var(--normal-font-size) - var(--smaller-font-size));
+
   margin: auto 0;
-  padding: 1em 0 1em .5em;
+  padding: var(--padding-top) 0 var(--normal-font-size) .5em;
 }
 
 .selected {

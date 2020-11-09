@@ -31,6 +31,7 @@ i18n
 
     // All supported languages: if the language is not detected, the first fallback is used
     fallbackLng: ['en', 'lv'],
+    supportedLngs: ['en', 'lv'],
 
     // All i18next language detection configuration options:
     // https://www.npmjs.com/package/i18next-browser-languagedetector
