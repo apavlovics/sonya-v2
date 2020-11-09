@@ -52,16 +52,18 @@ body {
 }
 
 a {
-  color: rgb(var(--black));
+  --link-color: var(--black);
+
+  color: rgb(var(--link-color));
   border-bottom: var(--border);
-  border-color: rgba(var(--black), var(--min-opacity));
+  border-color: rgba(var(--link-color), var(--min-opacity));
   text-decoration: none;
   transition-duration: var(--max-transition-duration);
 }
 
 a:hover, a:focus {
-  color: rgb(var(--green));
-  border-color: rgba(var(--green), var(--min-opacity));
+  --link-color: var(--green);
+
   transition-duration: var(--min-transition-duration);
   outline: none;
 }
@@ -118,16 +120,18 @@ nav {
   cursor: default;
 }
 
-nav > div {
-  padding-top: 1em;
-  padding-bottom: 1em;
+nav a {
+  border: none;
 }
 
-nav > div, .logo {
+nav a div span {
+  border-bottom: var(--border);
+  border-color: rgba(var(--link-color), var(--min-opacity));
+}
+
+nav > div, .logo, .main-menu, .language-menu {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .logo {
@@ -136,52 +140,35 @@ nav > div, .logo {
   cursor: auto;
 }
 
+.logo div {
+  margin: auto 0;
+  padding-right: 1em;
+}
+
 .logo img {
   display: none;
   cursor: pointer;
 }
 
-.logo div, .main-menu li {
-  margin-right: 2em;
-}
-
 .main-menu {
   width: 100%;
-}
-
-.main-menu, .submenu {
-  display: flex;
-  flex-flow: row nowrap;
   list-style: none;
 }
 
-.main-menu > li {
-  position: relative;
-}
-
-.submenu {
-  position: absolute;
-  font-weight: var(--light-font-weight);
-  z-index: 10;
-}
-
-.submenu li {
-  position: relative;
+.main-menu li div {
+  margin: auto 0;
+  padding: 1em;
 }
 
 .language-menu {
-  display: flex;
   font-size: var(--smaller-font-size);
   list-style: none;
   letter-spacing: 1px;
 }
 
-.language-menu li {
-  margin-right: .5em;
-}
-
-.language-menu li:last-child {
-  margin-right: 0;
+.language-menu li div {
+  margin: auto 0;
+  padding: 1em 0 1em .5em;
 }
 
 .selected {
@@ -315,9 +302,6 @@ main {
 
   .main-menu {
     margin-top: .5em;
-  }
-
-  .main-menu, .submenu {
     flex-direction: column;
   }
 
@@ -337,11 +321,6 @@ main {
 
   .main-menu > li:first-child {
     margin-top: 0;
-  }
-
-  .submenu {
-    position: static;
-    margin-bottom: .5em;
   }
 
   .language-menu {

@@ -85,19 +85,41 @@ const stripPrefix = (path, prefix) => {
 
 function MainMenuItem(props) {
   if (props.currentPath === props.path) {
-    return <li className="selected">{props.title}{props.children}</li>
+    return (
+      <li className="selected">
+        <div>{props.title}{props.children}</div>
+      </li>
+    )
   } else {
-    return <li><Link to={`/${props.path}/`} onClick={props.onClick}>{props.title}</Link></li>
+    return (
+      <li>
+        <Link to={`/${props.path}/`} onClick={props.onClick}>
+          <div>
+            <span>{props.title}</span>
+          </div>
+        </Link>
+      </li>
+    )
   }
 }
 
 function LanguageMenuItem(props) {
   const title = props.language.toUpperCase()
   if (props.currentLanguage === props.language) {
-    return <li className="selected">{title}</li>
+    return (
+      <li className="selected">
+        <div>{title}</div>
+      </li>
+    )
   } else {
     return (
-      <li><Link to={`/${props.language}/${props.currentPath}/`} onClick={props.onClick}>{title}</Link></li>
+      <li>
+        <Link to={`/${props.language}/${props.currentPath}/`} onClick={props.onClick}>
+          <div>
+            <span>{title}</span>
+          </div>
+        </Link>
+      </li>
     )
   }
 }
