@@ -135,6 +135,7 @@ nav > div, .logo, .main-menu, .language-menu {
 }
 
 .logo {
+  justify-content: space-between;
   font-weight: var(--bold-font-weight);
   white-space: nowrap;
   cursor: auto;
@@ -142,11 +143,12 @@ nav > div, .logo, .main-menu, .language-menu {
 
 .logo div {
   margin: auto 0;
-  padding-right: 1em;
+  padding: 1em 1em 1em 0;
 }
 
 .logo img {
   display: none;
+  padding: 1em 0 1em 1em;
   cursor: pointer;
 }
 
@@ -301,7 +303,6 @@ main {
   }
 
   .main-menu {
-    margin-top: .5em;
     flex-direction: column;
   }
 
@@ -314,16 +315,15 @@ main {
     opacity: 0;
   }
 
-  .main-menu li {
-    margin-top: .2em;
-    margin-right: 0;
-  }
-
-  .main-menu > li:first-child {
-    margin-top: 0;
+  .main-menu li div {
+    padding: .5em 0;
   }
 
   .language-menu {
     margin-top: 1em;
+  }
+
+  .language-menu li div {
+    padding: .5em .5em .5em 0;
   }
 }
