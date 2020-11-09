@@ -1,5 +1,6 @@
 import i18n from 'i18next'
 import {initReactI18next} from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
 // All i18next configuration options:
 // https://www.i18next.com/overview/configuration-options
@@ -8,6 +9,7 @@ import {initReactI18next} from 'react-i18next'
 // https://react.i18next.com/latest/using-with-hooks
 
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -27,9 +29,16 @@ i18n
       },
     },
 
-    // Default language hardcoded to English, consider using LanguageDetector instead
-    lng: 'en',
+    // All supported languages: if the language is not detected, the first fallback is used
     fallbackLng: ['en', 'lv'],
+
+    // All i18next language detection configuration options:
+    // https://www.npmjs.com/package/i18next-browser-languagedetector
+    detection: {
+      order: ['path', 'cookie'],
+      caches: ['cookie'],
+      excludeCacheFor: ['cimode'],
+    },
 
     // Enable to debug configuration issues
     debug: false,
