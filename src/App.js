@@ -1,9 +1,11 @@
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
-import Menu from './Menu'
-import Previews from './Previews'
+import Contacts from './Contacts'
 import Footer from './Footer'
+import Menu from './Menu'
+import Photo from './Photo'
+import Previews from './Previews'
 
 export default function App() {
   const [t, i18n] = useTranslation()
@@ -16,11 +18,11 @@ export default function App() {
   }, {
     path: 'arhitectural-photo',
     title: 'Architectural Photo',
-    body: <main><h1>{t('Architectural Photo')}</h1></main>,
+    body: <Photo />,
   }, {
     path: 'contacts',
     title: 'Contacts',
-    body: <main><h1>{t('Contacts')}</h1></main>,
+    body: <Contacts />,
   }]
 
   const currentLanguage = i18n.language
