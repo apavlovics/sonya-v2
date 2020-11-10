@@ -5,6 +5,7 @@
 :root {
   --white: 255, 255, 255;
   --black: 0, 0, 0;
+  --gray: 90, 90, 90;
   --green: 137, 151, 75;
 
   --smaller-font-size: 16px;
@@ -43,7 +44,7 @@
 }
 
 body {
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
   font-size: var(--normal-font-size);
   font-weight: var(--normal-font-weight);
 
@@ -75,7 +76,9 @@ p {
 
 h1 {
   font-size: var(--large-font-size);
+  font-style: italic;
   font-weight: var(--bold-font-weight);
+  padding-top: 1em;
 }
 
 h2 {
@@ -98,8 +101,14 @@ nav > div, main, footer {
 
 footer {
   font-size: var(--smaller-font-size);
+  font-weight: var(--light-font-weight);
+  color: rgb(var(--gray));
   padding-top: 1em;
   padding-bottom: 3em;
+}
+
+footer a {
+  --link-color: var(--gray);
 }
 
 .no-scroll {
@@ -267,7 +276,7 @@ main {
     --default-width: 996px;
   }
 
-  nav > div, main > h1, footer {
+  nav > div, main > h1, main > p, footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
   }

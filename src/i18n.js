@@ -18,6 +18,7 @@ i18n
           'Interior Design': 'Interior Design',
           'Architectural Photo': 'Architectural Photo',
           'Contacts': 'Contacts',
+          'Contacts Text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra, tortor vitae volutpat vehicula, massa neque porta diam, at convallis massa eros ac nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eget nibh quis velit bibendum imperdiet a sit amet justo.',
         }
       },
       lv: {
@@ -25,6 +26,7 @@ i18n
           'Interior Design': 'Interjera dizains',
           'Architectural Photo': 'Arhitektūras foto',
           'Contacts': 'Kontakti',
+          'Contacts Text': 'Sed id eleifend nisl. Cras bibendum ultricies sem in semper. Pellentesque vulputate turpis in mi venenatis, id volutpat metus venenatis. Mauris gravida ligula ut nunc aliquet, posuere vulputate magna bibendum. Integer pellentesque enim eu tempus consequat. Morbi urna mi, aliquet in ante non, porttitor pulvinar ex.',
         }
       },
     },

@@ -5,6 +5,7 @@ export default function Contacts() {
   return (
     <main>
       <h1>{t('Contacts')}</h1>
+      <p>{t('Contacts Text')}</p>
     </main>
   )
 }
