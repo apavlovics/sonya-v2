@@ -10,6 +10,7 @@
 
   --smaller-font-size: 16px;
   --normal-font-size: 18px;
+  --larger-font-size: 24px;
   --large-font-size: 36px;
 
   --light-font-weight: 300;
@@ -78,7 +79,7 @@ h1 {
   font-size: var(--large-font-size);
   font-style: italic;
   font-weight: var(--bold-font-weight);
-  padding-top: 1em;
+  margin-top: 1em;
 }
 
 h2 {
@@ -97,6 +98,13 @@ strong {
 nav > div, main, footer {
   margin: 0 auto 0;
   max-width: var(--default-width);
+}
+
+main {
+  margin-top: var(--nav-height);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 footer {
@@ -188,14 +196,7 @@ nav > div, .logo, .main-menu, .language-menu {
   color: rgb(var(--green));
 }
 
-/* Main */
-
-main {
-  margin-top: var(--nav-height);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
+/* Previews */
 
 .preview.large {
   --max-width: var(--default-width);
@@ -264,6 +265,17 @@ main {
   filter: none;
 }
 
+/* Contacts */
+
+.contacts {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: var(--larger-font-size);
+  font-weight: var(--light-font-weight);
+  text-align: center;
+  width: 100%;
+}
+
 /* Adaptive styles for touch devices */
 
 @media (hover: none) {}
@@ -276,7 +288,7 @@ main {
     --default-width: 996px;
   }
 
-  nav > div, main > h1, main > p, footer {
+  nav > div, main > h1, main > p, .contacts, footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
   }
