@@ -1,7 +1,5 @@
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
-
-// TODO Migrate to react-helmet-async once React 17 is supported
-import Helmet from 'react-helmet'
+import {Helmet, HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
 import Menu from './Menu'
 import Previews from './Previews'
@@ -27,23 +25,25 @@ export default function App() {
 
   const currentLanguage = i18n.language
   return (
-    <Router>
-      {formatTitle('')}
-      <Menu sections={sections} />
+    <HelmetProvider>
+      <Router>
+        {formatTitle('')}
+        <Menu sections={sections} />
 
-      <Switch>
-        {sections.map(section => (
-          <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
-            {formatTitle(t(section.title))}
-            {section.body}
+        <Switch>
+          {sections.map(section => (
+            <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
+              {formatTitle(t(section.title))}
+              {section.body}
+            </Route>
+          ))}
+          <Route path="/">
+            <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
           </Route>
-        ))}
-        <Route path="/">
-          <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
+        </Switch>
+        <Footer />
+      </Router>
+    </HelmetProvider>
   )
 }
 

@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
+
+// TODO Update react-resize-detector to remove deprecation warning in StrictMode
 import {withResizeDetector} from 'react-resize-detector'
 import {useTranslation} from 'react-i18next'
 import MenuOpen from './icons/menu-open.svg'
