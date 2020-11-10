@@ -1,5 +1,6 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
+import {withResizeDetector} from 'react-resize-detector'
 import {useTranslation} from 'react-i18next'
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
@@ -12,11 +13,15 @@ function Menu(props) {
     if (maximized) {
       document.body.classList.add('no-scroll')
     } else {
-      // TODO Remove no-scroll class when window is resized
       document.body.classList.remove('no-scroll')
     }
     setMaximized(maximized)
   }
+
+  // Minimize menu upon increasing window width to more than 720px
+  useEffect(() => {
+    if (props.width > 720) updateMaximized(false)
+  }, [props.width])
 
   const currentPath = stripSlashes(props.location.pathname)
   const currentLanguage = i18n.language
@@ -120,4 +125,4 @@ function LanguageMenuItem(props) {
   }
 }
 
-export default withRouter(Menu)
+export default withRouter(withResizeDetector(Menu))
