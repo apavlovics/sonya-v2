@@ -76,10 +76,10 @@ p {
 }
 
 h1 {
+  padding-top: 1em;
   font-size: var(--large-font-size);
   font-style: italic;
   font-weight: var(--bold-font-weight);
-  margin-top: 1em;
 }
 
 h2 {
