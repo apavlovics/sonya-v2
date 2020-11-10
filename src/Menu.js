@@ -1,14 +1,13 @@
 import {useState, useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
-
-// TODO Update react-resize-detector to remove deprecation warning in StrictMode
-import {withResizeDetector} from 'react-resize-detector'
+import {useWindowWidth} from '@react-hook/window-size'
 import {useTranslation} from 'react-i18next'
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
 function Menu(props) {
   const [t, i18n] = useTranslation()
+  const width = useWindowWidth()
   const [maximized, setMaximized] = useState(false)
 
   const updateMaximized = (maximized) => {
@@ -22,8 +21,8 @@ function Menu(props) {
 
   // Minimize menu upon increasing window width to more than 720px
   useEffect(() => {
-    if (props.width > 720) updateMaximized(false)
-  }, [props.width])
+    if (width > 720) updateMaximized(false)
+  }, [width])
 
   const currentPath = stripSlashes(props.location.pathname)
   const currentLanguage = i18n.language
@@ -127,4 +126,4 @@ function LanguageMenuItem(props) {
   }
 }
 
-export default withRouter(withResizeDetector(Menu))
+export default withRouter(Menu)
