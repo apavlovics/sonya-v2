@@ -47,7 +47,7 @@
 body {
   font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
   font-size: var(--normal-font-size);
-  font-weight: var(--normal-font-weight);
+  font-weight: var(--light-font-weight);
 
   /* Disable automatic text scaling on iOS */
   -webkit-text-size-adjust: 100%;
@@ -72,7 +72,6 @@ a:hover, a:focus {
 
 p {
   padding-top: .5em;
-  font-weight: var(--light-font-weight);
 }
 
 h1 {
@@ -108,8 +107,6 @@ main {
 }
 
 footer {
-  font-size: var(--smaller-font-size);
-  font-weight: var(--light-font-weight);
   color: rgb(var(--gray));
   padding-top: 1em;
   padding-bottom: 3em;
@@ -132,6 +129,7 @@ nav {
   background-color: rgba(var(--white), 0.95);
   width: 100%;
   height: var(--nav-height);
+  font-weight: var(--normal-font-weight);
   line-height: var(--nav-line-height);
   overflow: hidden;
   cursor: default;
@@ -271,7 +269,6 @@ nav > div, .logo, .main-menu, .language-menu {
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: var(--larger-font-size);
-  font-weight: var(--light-font-weight);
   text-align: center;
   width: 100%;
 }
