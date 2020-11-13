@@ -53,7 +53,7 @@ export default function Previews() {
   }
 
   return (
-    <main>
+    <main className="previews">
       {previews.map(preview => (
         <Preview
             key={preview.url}

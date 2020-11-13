@@ -54,7 +54,7 @@ body {
 }
 
 a {
-  --link-color: var(--black);
+  --link-color: var(--green);
 
   color: rgb(var(--link-color));
   border-bottom: var(--border);
@@ -66,18 +66,20 @@ a {
 a:hover, a:focus {
   --link-color: var(--green);
 
+  background-color: rgba(var(--link-color), var(--min-opacity));
   transition-duration: var(--min-transition-duration);
   outline: none;
 }
 
 p {
-  padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 h1 {
   padding-top: 1em;
+  padding-bottom: .3em;
   font-size: var(--large-font-size);
-  font-weight: var(--light-font-weight);
+  font-weight: var(--bold-font-weight);
 }
 
 h2 {
@@ -101,7 +103,7 @@ nav > div, main, footer {
 main {
   margin-top: var(--nav-height);
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
 }
 
@@ -109,10 +111,6 @@ footer {
   color: rgb(var(--gray));
   padding-top: 1em;
   padding-bottom: 3em;
-}
-
-footer a {
-  --link-color: var(--gray);
 }
 
 .no-scroll {
@@ -135,6 +133,8 @@ nav {
 }
 
 nav a {
+  --link-color: var(--black);
+
   border: none;
 }
 
@@ -195,6 +195,10 @@ nav > div, .logo, .main-menu, .language-menu {
 
 /* Previews */
 
+main.previews {
+  flex-flow: row wrap;
+}
+
 .preview.large {
   --max-width: var(--default-width);
 }
@@ -222,6 +226,7 @@ nav > div, .logo, .main-menu, .language-menu {
   display: block;
   height: 100%;
   width: 100%;
+  background-color: initial;
 }
 
 .preview a:focus {
@@ -269,7 +274,18 @@ nav > div, .logo, .main-menu, .language-menu {
   margin-bottom: 1em;
   font-size: var(--larger-font-size);
   text-align: center;
-  width: 100%;
+}
+
+.requisites {
+  display: grid;
+  grid-template-columns: min-content auto;
+  margin-bottom: 1em;
+}
+
+.requisites .key {
+  color: rgb(var(--gray));
+  white-space: nowrap;
+  padding-right: 2em;
 }
 
 /* Adaptive styles for touch devices */
@@ -284,7 +300,7 @@ nav > div, .logo, .main-menu, .language-menu {
     --default-width: 996px;
   }
 
-  nav > div, main > h1, main > p, .contacts, footer {
+  nav > div, main > h1, main > p, .contacts, .requisites, footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
   }
