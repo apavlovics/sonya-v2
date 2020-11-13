@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer>
       ©&nbsp;{currentYear} Smart Casual SIA<br />
-      +371 2238 0067<br />
+      <a href="tel:+37122380067">+371 2238 0067</a><br />
       <a href="mailto:info@smartcasual.lv">info@smartcasual.lv</a>
     </footer>
   )

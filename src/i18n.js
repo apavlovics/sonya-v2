@@ -19,6 +19,13 @@ i18n
           'Architectural Photo': 'Architectural Photo',
           'Contacts': 'Contacts',
           'Contacts Text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra, tortor vitae volutpat vehicula, massa neque porta diam, at convallis massa eros ac nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eget nibh quis velit bibendum imperdiet justo.',
+          'Requisites': 'Requisites',
+          'Registration Number': 'Registration Number',
+          'VAT Number': 'VAT Number',
+          'Legal Address': 'Legal Address',
+          'Legal Address Value': 'Talivalza iela 21A-20, Riga, <1>LV-1006, Latvia</1>',
+          'Bank': 'Bank',
+          'SWIFT Code': 'SWIFT Code',
         }
       },
       lv: {
@@ -27,6 +34,13 @@ i18n
           'Architectural Photo': 'Arhitektūras foto',
           'Contacts': 'Kontakti',
           'Contacts Text': 'Sed id eleifend nisl. Cras bibendum ultricies sem in semper. Pellentesque vulputate turpis in mi venenatis, id volutpat metus venenatis. Mauris gravida ligula ut nunc aliquet, posuere vulputate magna bibendum. Integer pellentesque enim eu tempus consequat. Morbi urna mi, aliquet in ante non, porttitor.',
+          'Requisites': 'Rekvizīti',
+          'Registration Number': 'Reģistrācijas numurs',
+          'VAT Number': 'PVN numurs',
+          'Legal Address': 'Juridiskā adrese',
+          'Legal Address Value': 'Tālivalža iela 21A-20, Rīga, <1>LV-1006, Latvija</1>',
+          'Bank': 'Banka',
+          'SWIFT Code': 'SWIFT kods',
         }
       },
     },

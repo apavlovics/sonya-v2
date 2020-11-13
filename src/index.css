@@ -117,6 +117,10 @@ footer {
   overflow: hidden;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 /* Navigation */
 
 nav {
@@ -360,5 +364,13 @@ main.previews {
 
   .language-menu li div {
     padding: .5em .5em .5em 0;
+  }
+
+  .requisites {
+    grid-template-columns: auto;
+  }
+
+  .requisites .value {
+    padding-bottom: .5em;
   }
 }
