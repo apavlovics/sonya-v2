@@ -1,4 +1,6 @@
 import {useTranslation, Trans} from 'react-i18next'
+import Phone from './icons/phone.svg'
+import Email from './icons/email.svg'
 
 export default function Contacts() {
   const [t] = useTranslation()
@@ -7,8 +9,12 @@ export default function Contacts() {
       <h1>{t('Contacts')}</h1>
       <p>{t('Contacts Text')}</p>
       <div className="contacts">
-        <a href="tel:+37122380067">+371 2238 0067</a><br />
-        <a href="mailto:info@smartcasual.lv">info@smartcasual.lv</a>
+        <a href="tel:+37122380067">
+          <img src={Phone} alt="Phone" /> +371 2238 0067
+        </a>
+        <a href="mailto:info@smartcasual.lv">
+          <img src={Email} alt="Email" /> info@smartcasual.lv
+        </a>
       </div>
       <h1>{t('Requisites')}</h1>
       <div className="requisites">
