@@ -28,12 +28,13 @@
   --mid-transition-duration: .2s;
   --max-transition-duration: .5s;
 
+  --large-line-height: 1.7;
+
   --aspect-ratio: 1.5;
   --border: 1px solid;
   --radius: 5px;
 
-  --nav-line-height: 1.5;
-  --nav-height: calc(2em + var(--normal-font-size) * var(--nav-line-height));
+  --nav-height: calc(2em + var(--normal-font-size) * var(--large-line-height));
 }
 
 /* General */
@@ -135,7 +136,7 @@ nav {
   width: 100%;
   height: var(--nav-height);
   font-weight: var(--normal-font-weight);
-  line-height: var(--nav-line-height);
+  line-height: var(--large-line-height);
   overflow: hidden;
   cursor: default;
 }
@@ -307,6 +308,7 @@ main.previews {
   display: grid;
   grid-template-columns: min-content auto;
   margin-bottom: 1em;
+  line-height: var(--large-line-height);
 }
 
 .requisites .key {
