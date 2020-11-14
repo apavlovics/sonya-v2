@@ -1,35 +1,33 @@
 import {useState, useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
-import {useWindowWidth} from '@react-hook/window-size'
 import {useTranslation} from 'react-i18next'
+import useScrollPosition from '@react-hook/window-scroll'
+import {useWindowWidth} from '@react-hook/window-size'
 import MenuOpen from './icons/menu-open.svg'
 import MenuClose from './icons/menu-close.svg'
 
 function Menu(props) {
   const [t, i18n] = useTranslation()
+  const scrollY = useScrollPosition(5)
   const width = useWindowWidth()
   const [maximized, setMaximized] = useState(false)
 
-  const updateMaximized = (maximized) => {
-    if (maximized) {
+  // Allow scrolling when window width is more than 720px
+  useEffect(() => {
+    if (maximized && width <= 720) {
       document.body.classList.add('no-scroll')
     } else {
       document.body.classList.remove('no-scroll')
     }
-    setMaximized(maximized)
-  }
-
-  // Minimize menu upon increasing window width to more than 720px
-  useEffect(() => {
-    if (width > 720) updateMaximized(false)
-  }, [width])
+  }, [maximized, width])
 
   const currentPath = stripSlashes(props.location.pathname)
   const currentLanguage = i18n.language
   const currentPathNoLanguagePrefix = stripPrefix(currentPath, `${currentLanguage}/`)
-  const className = maximized ? 'maximized' : 'minimized'
+  const stateClassName = maximized ? 'maximized' : 'minimized'
+  const shadowClassName = scrollY > 0 ? ' shadow' : ''
   return (
-    <nav className={className}>
+    <nav className={`${stateClassName}${shadowClassName}`}>
       <div>
         <div className="logo">
           <div>Smart Casual</div>
@@ -37,16 +35,16 @@ function Menu(props) {
               id={maximized ? 'menu-close' : 'menu-open'} 
               src={maximized ? MenuClose : MenuOpen}
               alt={maximized ? 'Close main menu' : 'Open main menu'}
-              onClick={() => updateMaximized(!maximized)} />
+              onClick={() => setMaximized(!maximized)} />
         </div>
-        <ul className={`main-menu ${className}`}>
+        <ul className={`main-menu ${stateClassName}`}>
           {props.sections.map(section => (
             <MainMenuItem
                 key={section.path}
                 currentPath={currentPath}
                 path={`${currentLanguage}/${section.path}`}
                 title={t(section.title)}
-                onClick={() => updateMaximized(false)} />
+                onClick={() => setMaximized(false)} />
           ))}
           {/* TODO Allow filtering previews 
             <ul className="submenu">
@@ -56,7 +54,7 @@ function Menu(props) {
             </ul>
           */}
         </ul>
-        <ul className={`language-menu ${className}`}>
+        <ul className={`language-menu ${stateClassName}`}>
           {i18n.options.fallbackLng.map(language => (
             <LanguageMenuItem
                 key={language}

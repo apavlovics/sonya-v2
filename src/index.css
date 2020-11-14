@@ -121,6 +121,10 @@ footer {
   white-space: nowrap;
 }
 
+.shadow {
+  box-shadow: 0 0 var(--radius) 0 rgb(var(--gray));
+}
+
 /* Navigation */
 
 nav {
@@ -145,6 +149,10 @@ nav a {
 nav a div span {
   border-bottom: var(--border);
   border-color: rgba(var(--link-color), var(--min-opacity));
+}
+
+nav, .main-menu, .language-menu {
+  transition: var(--mid-transition-duration);
 }
 
 nav > div, .logo, .main-menu, .language-menu {
@@ -319,10 +327,6 @@ main.previews {
 }
 
 @media only screen and (max-width: 720px) {
-
-  nav, .main-menu, .language-menu {
-    transition: var(--mid-transition-duration);
-  }
 
   nav.maximized {
     height: 100%;
