@@ -327,6 +327,7 @@ main.previews {
   nav.maximized {
     height: 100%;
     overflow: auto;
+    background-color: rgb(var(--white));
   }
 
   nav > div {

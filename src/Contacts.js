@@ -27,7 +27,7 @@ export default function Contacts() {
         <div className="key">{t('SWIFT Code')}</div>
         <div className="value">HABALV22</div>
         <div className="key">IBAN</div>
-        <div className="value">LV03 HABA 0551 0366 <span className="no-wrap">7944 6</span></div>
+        <div className="value">LV03HABA0551036679446</div>
       </div>
     </main>
   )
