@@ -6,8 +6,8 @@ export default function Contacts() {
   const [t] = useTranslation()
   return (
     <main>
-      <h1>{t('Contacts')}</h1>
-      <p>{t('Contacts Text')}</p>
+      <h1>{t('Contact Us')}</h1>
+      <p>{t('Contact Us Text')}</p>
       <div className="contacts">
         <a href="tel:+37122380067">
           <img src={Phone} alt="Phone" /> +371 2238 0067

@@ -286,7 +286,6 @@ main.previews {
   flex-flow: column nowrap;
   align-items: center;
   margin-top: 1em;
-  margin-bottom: 1em;
   font-size: var(--larger-font-size);
   text-align: center;
 }
@@ -296,10 +295,6 @@ main.previews {
   display: block;
   margin-bottom: .5em;
   padding: .2em .4em;
-}
-
-.contacts a:last-child {
-  margin-bottom: 0;
 }
 
 .contacts a img {
