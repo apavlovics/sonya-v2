@@ -24,7 +24,7 @@ i18n
           'Registration Number': 'Registration Number',
           'VAT Number': 'VAT Number',
           'Legal Address': 'Legal Address',
-          'Legal Address Value': 'Talivalza iela 21A-20, Riga, <1>LV-1006, Latvia</1>',
+          'Legal Address Value': '<0>Talivalza iela 21A-20</0>, Riga, <2>LV-1006, Latvia</2>',
           'Bank': 'Bank',
           'SWIFT Code': 'SWIFT Code',
         }
@@ -40,7 +40,7 @@ i18n
           'Registration Number': 'Reģistrācijas numurs',
           'VAT Number': 'PVN numurs',
           'Legal Address': 'Juridiskā adrese',
-          'Legal Address Value': 'Tālivalža iela 21A-20, Rīga, <1>LV-1006, Latvija</1>',
+          'Legal Address Value': '<0>Tālivalža iela 21A-20</0>, Rīga, <2>LV-1006, Latvija</2>',
           'Bank': 'Banka',
           'SWIFT Code': 'SWIFT kods',
         }

@@ -108,12 +108,6 @@ main {
   justify-content: space-between;
 }
 
-footer {
-  color: rgb(var(--gray));
-  padding-top: 1em;
-  padding-bottom: 3em;
-}
-
 .no-scroll {
   overflow: hidden;
 }
@@ -204,6 +198,37 @@ nav > div, .logo, .main-menu, .language-menu {
 
 .selected {
   color: rgb(var(--green));
+}
+
+/* Footer */
+
+footer, .social {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+footer {
+  --margin: .5em;
+
+  justify-content: space-between;
+  color: rgb(var(--gray));
+  padding-top: var(--margin);
+  padding-bottom: 3em;
+}
+
+.social {
+  position: relative;
+  top: calc(0em - var(--margin));
+  right: calc(0em - var(--margin));
+}
+
+.social a {
+  border: none;
+}
+
+.social img {
+  margin: var(--margin);
 }
 
 /* Previews */
