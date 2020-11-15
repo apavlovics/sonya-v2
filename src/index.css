@@ -190,10 +190,14 @@ nav > div, .logo, .main-menu, .language-menu {
 }
 
 .language-menu li div {
+  --padding-right-left: .5em;
+  --position-right-left: calc(0em - var(--padding-right-left));
   --padding-top: calc(2 * var(--normal-font-size) - var(--smaller-font-size));
 
+  position: relative;
+  right: var(--position-right-left);
   margin: auto 0;
-  padding: var(--padding-top) 0 var(--normal-font-size) .5em;
+  padding: var(--padding-top) var(--padding-right-left) var(--normal-font-size);
 }
 
 .selected {
@@ -410,7 +414,8 @@ main.previews {
   }
 
   .language-menu li div {
-    padding: .5em .5em .5em 0;
+    left: var(--position-right-left);
+    padding: var(--padding-right-left);
   }
 
   .requisites {
