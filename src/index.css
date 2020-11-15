@@ -214,18 +214,19 @@ footer, .social {
 }
 
 footer {
-  --margin: .5em;
+  --padding: .5em;
+  --position: calc(0em - var(--padding));
 
   justify-content: space-between;
   color: rgb(var(--gray));
-  padding-top: var(--margin);
+  padding-top: var(--padding);
   padding-bottom: 3em;
 }
 
 .social {
   position: relative;
-  top: calc(0em - var(--margin));
-  right: calc(0em - var(--margin));
+  top: var(--position);
+  right: var(--position);
 }
 
 .social a {
@@ -239,7 +240,7 @@ footer {
 }
 
 .social svg {
-  padding: var(--margin);
+  padding: var(--padding);
 }
 
 /* Previews */
