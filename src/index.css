@@ -37,8 +37,8 @@
 
   --nav-height: calc(2em + var(--normal-font-size) * var(--large-line-height));
 
-  --button-padding: .5em;
-  --button-position: calc(0em - var(--button-padding));
+  --item-padding: .5em;
+  --item-position: calc(0em - var(--item-padding));
 }
 
 /* General */
@@ -173,9 +173,9 @@ nav > div, .logo, .main-menu, .language-menu {
 
 .logo img {
   display: none;
-  padding: 0 var(--button-padding);
+  padding: 0 var(--item-padding);
   position: relative;
-  right: var(--button-position);
+  right: var(--item-position);
   cursor: pointer;
 }
 
@@ -199,9 +199,9 @@ nav > div, .logo, .main-menu, .language-menu {
   --padding-top: calc(2 * var(--normal-font-size) - var(--smaller-font-size));
 
   position: relative;
-  right: var(--button-position);
+  right: var(--item-position);
   margin: auto 0;
-  padding: var(--padding-top) var(--button-padding) var(--normal-font-size);
+  padding: var(--padding-top) var(--item-padding) var(--normal-font-size);
 }
 
 .selected {
@@ -218,16 +218,16 @@ footer, .social {
 footer {
   flex-flow: column nowrap;
   color: rgb(var(--gray));
-  padding-top: var(--button-padding);
+  padding-top: var(--item-padding);
   padding-bottom: 3em;
   line-height: var(--large-line-height);
 }
 
 .social {
   flex-flow: row nowrap;
-  padding-top: var(--button-padding);
+  padding-top: var(--item-padding);
   position: relative;
-  left: var(--button-position);
+  left: var(--item-position);
 }
 
 .social a {
@@ -241,7 +241,7 @@ footer {
 }
 
 .social svg {
-  padding: var(--button-padding);
+  padding: var(--item-padding);
 }
 
 /* Previews */
@@ -423,8 +423,8 @@ main.previews {
   }
 
   .language-menu li div {
-    left: var(--button-position);
-    padding: var(--button-padding);
+    left: var(--item-position);
+    padding: var(--item-padding);
   }
 
   .requisites {
