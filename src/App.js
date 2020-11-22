@@ -1,4 +1,5 @@
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Route, Switch, withRouter} from 'react-router-dom'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
 import ArchitecturalPhoto from './ArchitecturalPhoto'
@@ -32,22 +33,35 @@ export default function App() {
         {formatTitle('')}
         <Menu sections={sections} />
 
-        <Switch>
+        <AnimatedSwitch>
           {sections.map(section => (
             <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
               {formatTitle(t(section.title))}
-              {section.body}
+              {/* There must be one root element for AnimatedSwitch to work correctly */}
+              <div>
+                {section.body}
+                <Footer />
+              </div>
             </Route>
           ))}
           <Route path="/">
             <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
           </Route>
-        </Switch>
-        <Footer />
+        </AnimatedSwitch>
       </Router>
     </HelmetProvider>
   )
 }
+
+const AnimatedSwitch = withRouter(props => (
+  <TransitionGroup>
+    <CSSTransition key={props.location.key} classNames="route" timeout={200}>
+      <Switch location={props.location}>
+        {props.children}
+      </Switch>
+    </CSSTransition>
+  </TransitionGroup>
+))
 
 const formatTitle = title => {
   const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`

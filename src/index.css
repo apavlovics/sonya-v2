@@ -20,7 +20,9 @@
 
   --default-width: 960px;
   --default-spacing: 18px;
-  --default-animation-height: calc(0px - var(--default-spacing));
+
+  --positive-animation-height: var(--default-spacing);
+  --negative-animation-height: calc(0px - var(--default-spacing));
 
   --min-opacity: .15;
   --max-opacity: .7;
@@ -122,6 +124,27 @@ main {
 
 .shadow {
   box-shadow: 0 0 var(--radius) 0 rgb(var(--gray));
+}
+
+/* AnimatedSwitch transitions */
+
+.route-enter-active, .route-exit-active {
+  transition: all var(--mid-transition-duration) ease;
+}
+
+.route-enter {
+  opacity: 0;
+  transform: translateY(var(--negative-animation-height));
+}
+
+.route-enter-active, .route-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.route-exit-active {
+  opacity: 0;
+  transform: translateY(var(--positive-animation-height));
 }
 
 /* Navigation */
@@ -290,7 +313,7 @@ main.previews {
   justify-content: space-between;
   position: absolute;
   opacity: 0;
-  bottom: var(--default-animation-height);
+  bottom: var(--negative-animation-height);
   padding: var(--default-spacing);
   padding-top: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
