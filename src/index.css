@@ -129,7 +129,7 @@ main {
 /* AnimatedSwitch transitions */
 
 .route-appear-active, .route-enter-active, .route-exit-active {
-  transition: all var(--mid-transition-duration) ease;
+  transition-duration: var(--mid-transition-duration);
 }
 
 .route-appear, .route-enter {
@@ -174,7 +174,7 @@ nav a div span {
 }
 
 nav, .main-menu, .language-menu {
-  transition: var(--mid-transition-duration);
+  transition-duration: var(--mid-transition-duration);
 }
 
 nav > div, .logo, .main-menu, .language-menu {
