@@ -1,10 +1,10 @@
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
+import ArchitecturalPhoto from './ArchitecturalPhoto'
 import Contacts from './Contacts'
 import Footer from './Footer'
 import Menu from './Menu'
-import Photo from './Photo'
 import Previews from './Previews'
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
   }, {
     path: 'arhitectural-photo',
     title: 'Architectural Photo',
-    body: <Photo />,
+    body: <ArchitecturalPhoto />,
   }, {
     path: 'contacts',
     title: 'Contacts',
