@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import {LazyLoadImage} from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/opacity.css'
 
 export default function Previews() {
   const [previews, setPreviews] = useState(
@@ -68,10 +70,13 @@ function Preview(props) {
   return (
     <div
         className={`preview ${props.size}${extraClassName}`}
-        style={{backgroundImage: `url(/projects/${props.url}/cover.jpg)`}}
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}>
       <a href={`/design/${props.url}/`}>
+        <LazyLoadImage
+            src={`/projects/${props.url}/cover.jpg`}
+            alt={props.title}
+            effect="opacity" />
         <div className={`details${props.focused ? ' visible' : ''}`}>
           <h2>{props.title}</h2>
           <span>{props.year}</span>
