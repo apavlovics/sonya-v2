@@ -1,8 +1,8 @@
 import {useState} from 'react'
-import {LazyLoadImage} from 'react-lazy-load-image-component'
+import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 
-export default function Previews() {
+function Previews() {
   const [previews, setPreviews] = useState(
     [{
       size: 'large',
@@ -73,10 +73,12 @@ function Preview(props) {
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}>
       <a href={`/design/${props.url}/`}>
+        {/* Note that scroll position is passed explicitly to optimize performance */}
         <LazyLoadImage
             src={`/projects/${props.url}/cover.jpg`}
             alt={props.title}
-            effect="opacity" />
+            effect="opacity"
+            scrollPosition={props.scrollPosition} />
         <div className={`details${props.focused ? ' visible' : ''}`}>
           <h2>{props.title}</h2>
           <span>{props.year}</span>
@@ -85,3 +87,7 @@ function Preview(props) {
     </div>
   )
 }
+
+// Track window scroll in the parent component and pass to lazy loaded images to optimize performance
+// https://www.npmjs.com/package/react-lazy-load-image-component
+export default trackWindowScroll(Previews)
