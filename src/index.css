@@ -303,11 +303,22 @@ main.previews {
   background-color: initial;
 }
 
-.preview a:focus {
-  box-shadow: inset 0 0 var(--default-spacing) rgba(var(--black), var(--max-opacity));
+.preview a::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  transition-duration: var(--max-transition-duration);
 }
 
-.preview img {
+.preview a:focus::after {
+  box-shadow: inset 0 0 var(--default-spacing) rgba(var(--black), var(--max-opacity));
+  transition-duration: var(--min-transition-duration);
+}
+
+.preview a img {
   width: 100%;
 }
 
