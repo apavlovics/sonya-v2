@@ -23,13 +23,6 @@ export default function Previews() {
       year: '2015',
       focused: false,
       desaturated: false,
-    }, {
-      size: 'large',
-      url: 'round-house',
-      title: 'Round House Apartment',
-      year: '2012',
-      focused: false,
-      desaturated: false,
     }]
   )
 
