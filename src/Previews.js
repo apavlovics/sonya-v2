@@ -79,7 +79,7 @@ function Preview(props) {
             alt={props.title}
             effect="opacity"
             scrollPosition={props.scrollPosition} />
-        <div className={`details${props.focused ? ' visible' : ''}`}>
+        <div className="details">
           <h2>{props.title}</h2>
           <span>{props.year}</span>
         </div>

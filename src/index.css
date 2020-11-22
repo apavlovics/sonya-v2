@@ -322,7 +322,7 @@ main.previews {
   width: 100%;
 }
 
-.preview .details {
+.preview a .details {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -337,14 +337,14 @@ main.previews {
   transition-duration: var(--max-transition-duration);
 }
 
-.preview .details h2 {
-  margin-right: var(--default-spacing);
-}
-
-.preview .details.visible {
+.preview a:hover .details {
   opacity: 1;
   bottom: 0;
   transition-duration: var(--min-transition-duration);
+}
+
+.preview .details h2 {
+  margin-right: var(--default-spacing);
 }
 
 .preview.desaturated {
