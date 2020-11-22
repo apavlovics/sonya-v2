@@ -352,7 +352,6 @@ main.previews {
 }
 
 .preview.focused {
-  transition-duration: var(--min-transition-duration);
   filter: none;
 }
 
