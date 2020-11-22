@@ -34,7 +34,7 @@ export default function Previews() {
           preview.desaturated = false
         } else {
           preview.focused = false
-          preview.desaturated = true
+          preview.desaturated = false // Set true to desaturate other previews (can affect performance)
         }
       } else {
           preview.focused = false

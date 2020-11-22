@@ -128,16 +128,16 @@ main {
 
 /* AnimatedSwitch transitions */
 
-.route-enter-active, .route-exit-active {
+.route-appear-active, .route-enter-active, .route-exit-active {
   transition: all var(--mid-transition-duration) ease;
 }
 
-.route-enter {
+.route-appear, .route-enter {
   opacity: 0;
   transform: translateY(var(--negative-animation-height));
 }
 
-.route-enter-active, .route-exit {
+.route-appear-active, .route-enter-active, .route-exit {
   opacity: 1;
   transform: translateY(0);
 }

@@ -55,7 +55,7 @@ export default function App() {
 
 const AnimatedSwitch = withRouter(props => (
   <TransitionGroup>
-    <CSSTransition key={props.location.key} classNames="route" timeout={200}>
+    <CSSTransition key={props.location.key} classNames="route" timeout={200} appear>
       <Switch location={props.location}>
         {props.children}
       </Switch>
