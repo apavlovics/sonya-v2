@@ -320,6 +320,7 @@ main.previews {
 
 .preview a img {
   width: 100%;
+  transition-duration: var(--max-transition-duration);
 }
 
 .preview a .details {
@@ -351,8 +352,8 @@ main.previews {
   filter: grayscale(100%);
 }
 
-.preview.focused {
-  filter: none;
+.preview.focused a img {
+  transform: scale(1.02);
 }
 
 /* Contacts */
