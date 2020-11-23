@@ -184,6 +184,7 @@ nav > div, .logo, .main-menu, .language-menu {
 
 .logo {
   justify-content: space-between;
+  align-items: center;
   font-weight: var(--bold-font-weight);
   white-space: nowrap;
   cursor: auto;
@@ -194,11 +195,12 @@ nav > div, .logo, .main-menu, .language-menu {
   padding: 1em 1em 1em 0;
 }
 
-.logo img {
+.logo svg {
   display: none;
-  padding: 0 var(--item-padding);
+  padding: var(--item-padding);
   position: relative;
   right: var(--item-position);
+  fill: rgb(var(--black));
   cursor: pointer;
 }
 
@@ -353,7 +355,7 @@ main.previews {
 }
 
 .preview.focused a img {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 /* Contacts */
@@ -436,7 +438,7 @@ main.previews {
     width: 100%;
   }
 
-  .logo img {
+  .logo svg {
     display: initial;
   }
 
