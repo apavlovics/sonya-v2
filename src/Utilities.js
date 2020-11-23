@@ -1,4 +1,4 @@
-// Strips one "/" slash from the beginning and the end of the path, if it is present.
+/** Strips one "/" slash from the beginning and the end of the path, if it is present. */
 export const stripSlashes = (path) => {
   if (path.charAt(0) === '/') {
     path = path.substr(1)
@@ -9,7 +9,7 @@ export const stripSlashes = (path) => {
   return path
 }
 
-// Strips the prefix string from the path, if it is present.
+/** Strips the prefix string from the path, if it is present. */
 export const stripPrefix = (path, prefix) => {
   return path.startsWith(prefix) ? path.substr(prefix.length) : path
 }
