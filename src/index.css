@@ -374,10 +374,11 @@ main.previews {
   padding: .2em .4em;
 }
 
-.contacts a img {
+.contacts a svg {
   position: relative;
   top: .1em;
   left: -.1em;
+  fill: rgb(var(--green));
 }
 
 .requisites {
