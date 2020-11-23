@@ -1,8 +1,12 @@
 import {useState} from 'react'
+import {Link, useRouteMatch} from 'react-router-dom'
 import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
+import {stripSlashes} from './Utilities'
 
 function Previews() {
+  const {path, url} = useRouteMatch()
+
   const [previews, setPreviews] = useState(
     [{
       size: 'large',
@@ -53,7 +57,8 @@ function Previews() {
         <Preview
             key={preview.url}
             size={preview.size}
-            url={preview.url}
+            url={`/${stripSlashes(url)}/${preview.url}/`}
+            imageSrc={`/projects/${preview.url}/cover.jpg`}
             title={preview.title}
             year={preview.year}
             focused={preview.focused}
@@ -72,10 +77,10 @@ function Preview(props) {
         className={`preview ${props.size}${extraClassName}`}
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}>
-      <a href={`/design/${props.url}/`}>
+      <Link to={props.url}>
         {/* Note that scroll position is passed explicitly to optimize performance */}
         <LazyLoadImage
-            src={`/projects/${props.url}/cover.jpg`}
+            src={props.imageSrc}
             alt={props.title}
             effect="opacity"
             scrollPosition={props.scrollPosition} />
@@ -83,7 +88,7 @@ function Preview(props) {
           <h2>{props.title}</h2>
           <span>{props.year}</span>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }

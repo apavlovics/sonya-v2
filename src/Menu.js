@@ -3,6 +3,7 @@ import {Link, withRouter} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 import useScrollPosition from '@react-hook/window-scroll'
 import {useWindowWidth} from '@react-hook/window-size'
+import {stripSlashes, stripPrefix} from './Utilities'
 
 function Menu(props) {
   const [t, i18n] = useTranslation()
@@ -61,20 +62,6 @@ function Menu(props) {
       </div>
     </nav>
   )
-}
-
-const stripSlashes = (path) => {
-  if (path.charAt(0) === '/') {
-    path = path.substr(1)
-  }
-  if (path.charAt(path.length - 1) === '/') {
-    path = path.substr(0, path.length - 1)
-  }
-  return path
-}
-
-const stripPrefix = (path, prefix) => {
-  return path.startsWith(prefix) ? path.substr(prefix.length) : path
 }
 
 function MenuIcon(props) {
