@@ -10,16 +10,16 @@ function Previews() {
   const [previews, setPreviews] = useState(
     [{
       size: 'large',
-      url: 'jauna-teika',
-      title: 'Jauna Teika Apartment',
+      url: 'fjordi',
+      title: 'Fjordi Apartment',
       year: '2020',
       focused: false,
       desaturated: false,
     }, {
       size: 'medium',
-      url: 'andrey-silchenko',
-      title: 'Andrey Silchenko Hair Salon',
-      year: '2016',
+      url: 'jauna-teika',
+      title: 'Jauna Teika Apartment',
+      year: '2020',
       focused: false,
       desaturated: false,
     }, {

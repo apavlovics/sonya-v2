@@ -143,8 +143,7 @@ main {
 }
 
 .route-exit-active {
-  opacity: 0;
-  transform: translateY(var(--positive-animation-height));
+  display: none;
 }
 
 /* Navigation */
@@ -285,7 +284,6 @@ main.previews {
 
 .preview.large, .preview.medium {
   position: relative;
-  border-radius: var(--radius);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -316,7 +314,7 @@ main.previews {
 }
 
 .preview a:focus::after {
-  box-shadow: inset 0 0 var(--default-spacing) rgba(var(--black), var(--max-opacity));
+  box-shadow: inset 0 0 var(--default-spacing) rgba(var(--black), var(--min-opacity));
   transition-duration: var(--min-transition-duration);
 }
 
@@ -411,10 +409,6 @@ main.previews {
   nav > div, main > h1, main > p, .contacts, .requisites, footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
-  }
-
-  .preview.large, .preview.medium {
-    border-radius: 0;
   }
 
   .preview.medium {
