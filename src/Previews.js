@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {Link, Route, Switch, useRouteMatch} from 'react-router-dom'
 import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
+import Footer from './Footer'
 import Gallery from './Gallery'
 import {stripSlashes} from './Utilities'
 
@@ -70,6 +71,7 @@ function Previews() {
                 onMouseLeave={() => updatePreviews(preview, false)} />
           ))}
         </main>
+        <Footer />
       </Route>
       <Route path={`${path}/:previewUrl`}>
         <Gallery />
