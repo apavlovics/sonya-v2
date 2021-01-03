@@ -353,7 +353,7 @@ main.previews {
 }
 
 .preview.focused a img {
-  transform: scale(1.01);
+  transform: scale(1.05);
 }
 
 /* Contacts */

@@ -1,7 +1,8 @@
 import {useState} from 'react'
-import {Link, useRouteMatch} from 'react-router-dom'
+import {Link, Route, Switch, useRouteMatch} from 'react-router-dom'
 import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
+import Gallery from './Gallery'
 import {stripSlashes} from './Utilities'
 
 function Previews() {
@@ -52,21 +53,28 @@ function Previews() {
   }
 
   return (
-    <main className="previews">
-      {previews.map(preview => (
-        <Preview
-            key={preview.url}
-            size={preview.size}
-            url={`/${stripSlashes(url)}/${preview.url}/`}
-            imageSrc={`/projects/${preview.url}/cover.jpg`}
-            title={preview.title}
-            year={preview.year}
-            focused={preview.focused}
-            desaturated={preview.desaturated}
-            onMouseEnter={() => updatePreviews(preview, true)}
-            onMouseLeave={() => updatePreviews(preview, false)} />
-      ))}
-    </main>
+    <Switch>
+      <Route exact path={path}>
+        <main className="previews">
+          {previews.map(preview => (
+            <Preview
+                key={preview.url}
+                size={preview.size}
+                url={`/${stripSlashes(url)}/${preview.url}/`}
+                imageSrc={`/projects/${preview.url}/cover.jpg`}
+                title={preview.title}
+                year={preview.year}
+                focused={preview.focused}
+                desaturated={preview.desaturated}
+                onMouseEnter={() => updatePreviews(preview, true)}
+                onMouseLeave={() => updatePreviews(preview, false)} />
+          ))}
+        </main>
+      </Route>
+      <Route path={`${path}/:previewUrl`}>
+        <Gallery />
+      </Route>
+    </Switch>
   )
 }
 
