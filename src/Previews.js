@@ -86,12 +86,14 @@ function Preview(props) {
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}>
       <Link to={props.url}>
-        {/* Note that scroll position is passed explicitly to optimize performance */}
+        {/* Scroll position is passed explicitly to optimize performance */}
+        {/* Threshold increased to 500, otherwise images are not sometimes loaded, while visible */}
         <LazyLoadImage
             src={props.imageSrc}
             alt={props.title}
             effect="opacity"
-            scrollPosition={props.scrollPosition} />
+            scrollPosition={props.scrollPosition}
+            threshold="500" />
         <div className="details">
           <h2>{props.title}</h2>
           <span>{props.year}</span>

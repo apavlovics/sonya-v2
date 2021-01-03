@@ -78,6 +78,11 @@ a:hover, a:focus {
   outline: none;
 }
 
+button {
+  font-size: var(--normal-font-size);
+  transition-duration: var(--max-transition-duration);
+}
+
 p {
   padding-bottom: .5em;
 }
@@ -151,7 +156,7 @@ main {
 nav {
   position: fixed;
   top: 0;
-  z-index: 20;
+  z-index: 10;
   background-color: rgba(var(--white), 0.95);
   width: 100%;
   height: var(--nav-height);
@@ -394,6 +399,69 @@ main.previews {
   padding-right: 2em;
 }
 
+/* Gallery */
+
+.gallery-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(var(--black));
+}
+
+.gallery-wrapper a, .gallery-wrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: var(--item-padding);
+  margin: var(--item-padding);
+  border-radius: var(--item-padding);
+}
+
+.gallery-wrapper a {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.gallery-wrapper button {
+  background: none;
+}
+
+.gallery-wrapper a:hover,
+.gallery-wrapper a:focus,
+.gallery-wrapper button:hover,
+.gallery-wrapper button:focus {
+  background-color: rgba(var(--white), var(--min-opacity));
+  transition-duration: var(--min-transition-duration);
+  outline: none;
+}
+
+.gallery-wrapper svg {
+  fill: rgb(var(--white));
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw; 
+  height: 60vw; /* = 3/4 * 0.8 * 100 */
+  max-height: 80vh;
+  max-width: 106.66vh; /* = 4/3 * 0.8 * 100 */
+}
+
+.carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Adaptive styles for touch devices */
 
 @media (hover: none) {}
@@ -450,7 +518,7 @@ main.previews {
   }
 
   .main-menu li div {
-    padding: .5em 0;
+    padding: var(--item-padding) 0;
   }
 
   .language-menu {
@@ -467,6 +535,6 @@ main.previews {
   }
 
   .requisites .value {
-    padding-bottom: .5em;
+    padding-bottom: var(--item-padding);
   }
 }
