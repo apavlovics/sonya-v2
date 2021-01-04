@@ -1,7 +1,8 @@
 import {useState} from 'react'
-import {Link, Route, Switch, useRouteMatch} from 'react-router-dom'
+import {Link, Route, useRouteMatch} from 'react-router-dom'
 import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
+import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
 import Gallery from './Gallery'
 import {stripSlashes} from './Utilities'
@@ -54,7 +55,7 @@ function Previews() {
   }
 
   return (
-    <Switch>
+    <AnimatedSwitch>
       <Route exact path={path}>
         <main className="previews">
           {previews.map(preview => (
@@ -76,7 +77,7 @@ function Previews() {
       <Route path={`${path}/:previewUrl`}>
         <Gallery />
       </Route>
-    </Switch>
+    </AnimatedSwitch>
   )
 }
 

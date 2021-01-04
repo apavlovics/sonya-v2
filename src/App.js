@@ -1,7 +1,7 @@
-import {BrowserRouter as Router, Redirect, Route, Switch, withRouter} from 'react-router-dom'
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
+import AnimatedSwitch from './AnimatedSwitch'
 import ArchitecturalPhoto from './ArchitecturalPhoto'
 import Contacts from './Contacts'
 import Menu from './Menu'
@@ -50,17 +50,6 @@ export default function App() {
     </HelmetProvider>
   )
 }
-
-const AnimatedSwitch = withRouter(props => (
-  <TransitionGroup>
-    {/* Timeout must be the same as in CSS (see AnimatedSwitch transitions section) */}
-    <CSSTransition key={props.location.key} classNames="route" timeout={200} appear>
-      <Switch location={props.location}>
-        {props.children}
-      </Switch>
-    </CSSTransition>
-  </TransitionGroup>
-))
 
 const formatTitle = title => {
   const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
