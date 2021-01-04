@@ -453,13 +453,16 @@ main.previews {
 }
 
 .gallery {
+  --max-width: 90vw;
+  --max-height: 90vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80vw; 
-  height: 60vw; /* = 3/4 * 0.8 * 100 */
-  max-height: 80vh;
-  max-width: 106.66vh; /* = 4/3 * 0.8 * 100 */
+  width: var(--max-width); 
+  height: calc(3 / 4 * var(--max-width));
+  max-height: var(--max-height);
+  max-width: calc(4 / 3 * var(--max-height));
 }
 
 .carousel {
