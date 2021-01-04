@@ -419,7 +419,7 @@ main.previews {
   background-color: rgb(var(--black));
 }
 
-.gallery-wrapper a, .gallery-wrapper button {
+.gallery-wrapper button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,18 +429,17 @@ main.previews {
   border-radius: var(--item-padding);
 }
 
-.gallery-wrapper a {
+.gallery-wrapper #close-button {
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 
 .gallery-wrapper button {
   background: none;
 }
 
-.gallery-wrapper a:hover,
-.gallery-wrapper a:focus,
 .gallery-wrapper button:hover,
 .gallery-wrapper button:focus {
   background-color: rgba(var(--white), var(--min-opacity));
