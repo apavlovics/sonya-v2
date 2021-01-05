@@ -16,16 +16,22 @@ export default function App() {
   const sections = [{
     path: 'interior-design',
     title: 'Interior Design',
-    body: <Previews setMenuHidden={setMenuHidden} />,
   }, {
     path: 'arhitectural-photo',
     title: 'Architectural Photo',
-    body: <ArchitecturalPhoto />,
   }, {
     path: 'contacts',
     title: 'Contacts',
-    body: <Contacts />,
   }]
+
+  const renderSection = sectionPath => {
+    switch(sectionPath) {
+      case 'interior-design':    return <Previews setMenuHidden={setMenuHidden} />
+      case 'arhitectural-photo': return <ArchitecturalPhoto />
+      case 'contacts':           return <Contacts />
+      default:                   throw new Error(`Unexpected section path: ${sectionPath}`)
+    }
+  }
 
   const currentLanguage = i18n.language
   return (
@@ -38,7 +44,7 @@ export default function App() {
           {sections.map(section => (
             <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
               {formatTitle(t(section.title))}
-              {section.body}
+              {renderSection(section.path)}
             </Route>
           ))}
           <Route path="/">

@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {Link, Route, useRouteMatch} from 'react-router-dom'
+import {useTranslation} from 'react-i18next'
 import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 import AnimatedSwitch from './AnimatedSwitch'
@@ -8,28 +9,30 @@ import Gallery from './Gallery'
 import {stripSlashes} from './Utilities'
 
 function Previews(props) {
+  const currentLanguage = useTranslation()[1].language
   const {path, url} = useRouteMatch()
 
   const [previews, setPreviews] = useState(
     [{
       size: 'large',
       url: 'fjordi',
-      title: 'Fjordi Apartment',
-      year: '2020',
+      title: {
+        en: 'Fjordi Apartment',
+        lv: 'Fjordi Apartamenti',
+      },
+      year: '2021',
+      galleryLength: 3,
       focused: false,
       desaturated: false,
     }, {
-      size: 'medium',
+      size: 'large',
       url: 'jauna-teika',
-      title: 'Jauna Teika Apartment',
+      title: {
+        en: 'Jauna Teika Apartment',
+        lv: 'Jaunā Teika Apartamenti',
+      },
       year: '2020',
-      focused: false,
-      desaturated: false,
-    }, {
-      size: 'medium',
-      url: 'open-space',
-      title: 'Open Space in Central Riga',
-      year: '2015',
+      galleryLength: 5,
       focused: false,
       desaturated: false,
     }]
@@ -66,7 +69,7 @@ function Previews(props) {
                   size={preview.size}
                   url={`/${stripSlashes(url)}/${preview.url}/`}
                   imageSrc={`/projects/${preview.url}/cover.jpg`}
-                  title={preview.title}
+                  title={preview.title[currentLanguage]}
                   year={preview.year}
                   focused={preview.focused}
                   desaturated={preview.desaturated}
@@ -78,7 +81,7 @@ function Previews(props) {
         </div>
       </Route>
       <Route path={`${path}/:previewUrl`}>
-        <Gallery setMenuHidden={props.setMenuHidden} />
+        <Gallery previews={previews} setMenuHidden={props.setMenuHidden} />
       </Route>
     </AnimatedSwitch>
   )
