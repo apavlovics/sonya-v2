@@ -7,7 +7,7 @@ import Footer from './Footer'
 import Gallery from './Gallery'
 import {stripSlashes} from './Utilities'
 
-function Previews() {
+function Previews(props) {
   const {path, url} = useRouteMatch()
 
   const [previews, setPreviews] = useState(
@@ -57,25 +57,28 @@ function Previews() {
   return (
     <AnimatedSwitch>
       <Route exact path={path}>
-        <main className="previews">
-          {previews.map(preview => (
-            <Preview
-                key={preview.url}
-                size={preview.size}
-                url={`/${stripSlashes(url)}/${preview.url}/`}
-                imageSrc={`/projects/${preview.url}/cover.jpg`}
-                title={preview.title}
-                year={preview.year}
-                focused={preview.focused}
-                desaturated={preview.desaturated}
-                onMouseEnter={() => updatePreviews(preview, true)}
-                onMouseLeave={() => updatePreviews(preview, false)} />
-          ))}
-        </main>
-        <Footer />
+        {/* There must be one root element for AnimatedSwitch to work correctly */}
+        <div>
+          <main className="previews">
+            {previews.map(preview => (
+              <Preview
+                  key={preview.url}
+                  size={preview.size}
+                  url={`/${stripSlashes(url)}/${preview.url}/`}
+                  imageSrc={`/projects/${preview.url}/cover.jpg`}
+                  title={preview.title}
+                  year={preview.year}
+                  focused={preview.focused}
+                  desaturated={preview.desaturated}
+                  onMouseEnter={() => updatePreviews(preview, true)}
+                  onMouseLeave={() => updatePreviews(preview, false)} />
+            ))}
+          </main>
+          <Footer />
+        </div>
       </Route>
       <Route path={`${path}/:previewUrl`}>
-        <Gallery />
+        <Gallery setMenuHidden={props.setMenuHidden} />
       </Route>
     </AnimatedSwitch>
   )

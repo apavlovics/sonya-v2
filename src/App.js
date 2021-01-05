@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
@@ -9,12 +10,13 @@ import Previews from './Previews'
 
 export default function App() {
   const [t, i18n] = useTranslation()
+  const [menuHidden, setMenuHidden] = useState(false)
 
   // All website sections are defined below
   const sections = [{
     path: 'interior-design',
     title: 'Interior Design',
-    body: <Previews />,
+    body: <Previews setMenuHidden={setMenuHidden} />,
   }, {
     path: 'arhitectural-photo',
     title: 'Architectural Photo',
@@ -30,16 +32,13 @@ export default function App() {
     <HelmetProvider>
       <Router>
         {formatTitle('')}
-        <Menu sections={sections} />
+        <Menu sections={sections} hidden={menuHidden} />
 
         <AnimatedSwitch>
           {sections.map(section => (
             <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
               {formatTitle(t(section.title))}
-              {/* There must be one root element for AnimatedSwitch to work correctly */}
-              <div>
-                {section.body}
-              </div>
+              {section.body}
             </Route>
           ))}
           <Route path="/">

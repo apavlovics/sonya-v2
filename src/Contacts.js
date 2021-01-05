@@ -4,7 +4,7 @@ import Footer from './Footer'
 export default function Contacts() {
   const [t] = useTranslation()
   return (
-    <>
+    <div>
       <main>
         <h1>{t('Contact Us')}</h1>
         <p>{t('Contact Us Text')}</p>
@@ -41,6 +41,6 @@ export default function Contacts() {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

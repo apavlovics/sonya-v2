@@ -25,8 +25,9 @@ function Menu(props) {
   const currentPathNoLanguagePrefix = stripPrefix(currentPath, `${currentLanguage}/`)
   const stateClassName = maximized ? 'maximized' : 'minimized'
   const shadowClassName = scrollY > 0 ? ' shadow' : ''
+  const hiddenClassName = props.hidden ? ' hidden' : ''
   return (
-    <nav className={`${stateClassName}${shadowClassName}`}>
+    <nav className={`${stateClassName}${shadowClassName}${hiddenClassName}`}>
       <div>
         <div className="logo">
           <div>Smart Casual</div>

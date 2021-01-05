@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import {useRouteMatch, withRouter} from 'react-router-dom'
 import {CarouselProvider, Image, Slider, Slide, ButtonBack, ButtonNext} from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
@@ -5,6 +6,12 @@ import {resolveParentPath} from './Utilities'
 
 function Gallery(props) {
   const {path} = useRouteMatch()
+
+  // Hide the main menu on mount and show on unmount
+  useEffect(() => {
+    props.setMenuHidden(true)
+    return () => props.setMenuHidden(false)
+  })
 
   return (
     <div className="gallery-wrapper">
