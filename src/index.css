@@ -6,6 +6,7 @@
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --gray: 90, 90, 90;
+  --light-gray: 180, 180, 180;
   --green: 137, 151, 75;
   --light-green: 196, 203, 165;
 
@@ -76,11 +77,6 @@ a:hover, a:focus {
   background-color: rgba(var(--link-color), var(--min-opacity));
   transition-duration: var(--min-transition-duration);
   outline: none;
-}
-
-button {
-  font-size: var(--normal-font-size);
-  transition-duration: var(--max-transition-duration);
 }
 
 p {
@@ -195,6 +191,7 @@ nav.hidden {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
+  transition-duration: 0s;
 }
 
 .logo {
@@ -419,39 +416,49 @@ main.previews {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(var(--black));
+  background-color: rgb(var(--white));
 }
 
 .gallery-wrapper button {
+  font-size: var(--normal-font-size);
+  transition-duration: var(--max-transition-duration);
   display: flex;
   justify-content: center;
   align-items: center;
+  background: none;
   border: none;
   padding: var(--item-padding);
   margin: var(--item-padding);
   border-radius: var(--item-padding);
+  cursor: pointer;
 }
 
 .gallery-wrapper #close-button {
   position: absolute;
   top: 0;
   right: 0;
-  cursor: pointer;
-}
-
-.gallery-wrapper button {
-  background: none;
 }
 
 .gallery-wrapper button:hover,
 .gallery-wrapper button:focus {
-  background-color: rgba(var(--white), var(--min-opacity));
+  background-color: rgba(var(--gray), var(--min-opacity));
   transition-duration: var(--min-transition-duration);
   outline: none;
 }
 
-.gallery-wrapper svg {
-  fill: rgb(var(--white));
+.gallery-wrapper button:disabled {
+  background: none; 
+  cursor: default;
+}
+
+.gallery-wrapper button svg {
+  width: 2em;
+  height: 2em;
+  fill: rgb(var(--black));
+}
+
+.gallery-wrapper button:disabled svg {
+  fill: rgb(var(--light-gray));
 }
 
 .gallery {
