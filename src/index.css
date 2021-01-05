@@ -415,9 +415,6 @@ main.previews {
   align-items: center;
   width: 100vw;
   height: 100vh;
-
-  /* Fix iOS viewport bug */
-  height: -webkit-fill-available;
   background-color: rgb(var(--white));
 }
 
@@ -470,7 +467,7 @@ main.previews {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: var(--max-width); 
+  width: var(--max-width);
   height: calc(3 / 4 * var(--max-width));
   max-height: var(--max-height);
   max-width: calc(4 / 3 * var(--max-height));
@@ -485,7 +482,13 @@ main.previews {
 
 /* Adaptive styles for touch devices */
 
-@media (hover: none) {}
+@media (hover: none) {
+
+  .gallery-wrapper {
+    /* Fix iOS viewport bug */
+    height: -webkit-fill-available;
+  }
+}
 
 /* Adaptive styles for smaller screens and windows */
 
