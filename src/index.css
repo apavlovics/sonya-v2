@@ -413,9 +413,11 @@ main.previews {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   width: 100vw;
   height: 100vh;
+
+  /* Fix iOS viewport bug */
+  height: -webkit-fill-available;
   background-color: rgb(var(--white));
 }
 
@@ -500,6 +502,15 @@ main.previews {
 
   .preview.medium {
     --max-width: var(--default-width);
+  }
+
+  .gallery-wrapper .back-button,
+  .gallery-wrapper .next-button {
+    display: none;
+  }
+
+  .gallery {
+    --max-width: 100%;
   }
 }
 
