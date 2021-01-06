@@ -6,7 +6,8 @@
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --gray: 90, 90, 90;
-  --light-gray: 180, 180, 180;
+  --lighter-gray: 180, 180, 180;
+  --light-gray: 244, 244, 244; /* Same as spinner background color of pure-react-carousel */
   --green: 137, 151, 75;
   --light-green: 196, 203, 165;
 
@@ -313,7 +314,7 @@ main.previews {
   display: block;
   height: 100%;
   width: 100%;
-  background-color: initial;
+  background-color: rgb(var(--light-gray));
 }
 
 .preview a::after {
@@ -457,7 +458,14 @@ main.previews {
 }
 
 .gallery-wrapper button:disabled svg {
-  fill: rgb(var(--light-gray));
+  fill: rgb(var(--lighter-gray));
+}
+
+.carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .gallery {
@@ -471,13 +479,6 @@ main.previews {
   height: calc(3 / 4 * var(--max-width));
   max-height: var(--max-height);
   max-width: calc(4 / 3 * var(--max-height));
-}
-
-.carousel {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Adaptive styles for touch devices */
