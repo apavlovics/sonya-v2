@@ -1,12 +1,13 @@
 import {useState} from 'react'
 import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
-import {Helmet, HelmetProvider} from 'react-helmet-async'
+import {HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
 import AnimatedSwitch from './AnimatedSwitch'
 import ArchitecturalPhoto from './ArchitecturalPhoto'
 import Contacts from './Contacts'
 import Menu from './Menu'
 import Previews from './Previews'
+import {formatTitle} from './Utilities'
 
 export default function App() {
   const [t, i18n] = useTranslation()
@@ -54,9 +55,4 @@ export default function App() {
       </Router>
     </HelmetProvider>
   )
-}
-
-const formatTitle = title => {
-  const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
-  return <Helmet><title>{fullTitle}</title></Helmet>
 }

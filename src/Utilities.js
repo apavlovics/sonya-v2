@@ -1,3 +1,5 @@
+import {Helmet} from 'react-helmet-async'
+
 /** Strips one "/" slash from the beginning and the end of the path, if it is present. */
 export const stripSlashes = path => {
   if (path.charAt(0) === '/') {
@@ -14,8 +16,8 @@ export const stripPrefix = (path, prefix) => {
   return path.startsWith(prefix) ? path.substr(prefix.length) : path
 }
 
-/** Resolves the parent path by trimming the path to its last slash, if it is present. */
-export const resolveParentPath = path => {
-  const lastSlashIndex = path.lastIndexOf('/')
-  return lastSlashIndex === -1 ? path : path.substr(0, lastSlashIndex + 1)
+/** Formats the page title. */
+export const formatTitle = title => {
+  const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
+  return <Helmet><title>{fullTitle}</title></Helmet>
 }

@@ -6,7 +6,7 @@ import 'react-lazy-load-image-component/src/effects/opacity.css'
 import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
 import Gallery from './Gallery'
-import {stripSlashes} from './Utilities'
+import {formatTitle, stripSlashes} from './Utilities'
 
 function Previews(props) {
   const currentLanguage = useTranslation()[1].language
@@ -80,9 +80,12 @@ function Previews(props) {
           <Footer />
         </div>
       </Route>
-      <Route path={`${path}/:previewUrl`}>
-        <Gallery previews={previews} setMenuHidden={props.setMenuHidden} />
-      </Route>
+      {previews.map(preview => (
+        <Route key={preview.url} path={`${path}/${preview.url}`}>
+          {formatTitle(preview.title[currentLanguage])}
+          <Gallery parentPath={path} preview={preview} setMenuHidden={props.setMenuHidden} />
+        </Route>
+      ))}
     </AnimatedSwitch>
   )
 }
