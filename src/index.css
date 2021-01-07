@@ -485,10 +485,12 @@ main.previews {
   height: calc(3 / 4 * var(--max-width));
   max-height: var(--max-height);
   max-width: calc(4 / 3 * var(--max-height));
+  outline: none;
 }
 
 .gallery .slide {
   padding: 0 var(--item-padding);
+  cursor: grab;
 }
 
 /* Adaptive styles for touch devices */
