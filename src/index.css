@@ -421,7 +421,6 @@ main.previews {
 
 .gallery-wrapper button {
   font-size: var(--normal-font-size);
-  transition-duration: var(--max-transition-duration);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,7 +428,6 @@ main.previews {
   border: none;
   padding: var(--item-padding);
   margin: var(--item-padding);
-  border-radius: var(--item-padding);
   cursor: pointer;
 }
 
@@ -441,9 +439,17 @@ main.previews {
 
 .gallery-wrapper button:hover,
 .gallery-wrapper button:focus {
-  background-color: rgba(var(--gray), var(--min-opacity));
-  transition-duration: var(--min-transition-duration);
   outline: none;
+}
+
+.gallery-wrapper button svg {
+  transition-duration: var(--max-transition-duration);
+}
+
+.gallery-wrapper button:hover svg,
+.gallery-wrapper button:focus svg {
+  transition-duration: var(--min-transition-duration);
+  fill: rgb(var(--green));
 }
 
 .gallery-wrapper button:disabled {
@@ -479,6 +485,10 @@ main.previews {
   height: calc(3 / 4 * var(--max-width));
   max-height: var(--max-height);
   max-width: calc(4 / 3 * var(--max-height));
+}
+
+.gallery .slide {
+  padding: 0 var(--item-padding);
 }
 
 /* Adaptive styles for touch devices */

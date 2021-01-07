@@ -2,13 +2,18 @@ import {useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import {CarouselProvider, Image, Slider, Slide, ButtonBack, ButtonNext} from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
+import {setScrollingEnabled} from './Utilities'
 
 function Gallery(props) {
 
   // Hide the main menu on mount and show on unmount
   useEffect(() => {
     props.setMenuHidden(true)
-    return () => props.setMenuHidden(false)
+    setScrollingEnabled(false)
+    return () => {
+      props.setMenuHidden(false)
+      setScrollingEnabled(true)
+    }
   })
 
   return (
@@ -36,7 +41,7 @@ function Gallery(props) {
         </ButtonBack>
         <Slider className="gallery">
           {[...Array(props.preview.galleryLength).keys()].map(key => (
-            <Slide key={key} index={key}>
+            <Slide key={key} index={key} className="slide">
               <Image src={`/projects/${props.preview.url}/gallery/00${key + 1}.jpg`} />
             </Slide>
           ))}

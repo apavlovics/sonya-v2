@@ -21,3 +21,9 @@ export const formatTitle = title => {
   const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
   return <Helmet><title>{fullTitle}</title></Helmet>
 }
+
+/** Enables or disables scrolling. */
+export const setScrollingEnabled = enabled => {
+  if (enabled) document.body.classList.remove('no-scroll')
+  else document.body.classList.add('no-scroll')
+}

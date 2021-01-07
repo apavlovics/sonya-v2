@@ -3,7 +3,7 @@ import {Link, withRouter} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 import useScrollPosition from '@react-hook/window-scroll'
 import {useWindowWidth} from '@react-hook/window-size'
-import {stripSlashes, stripPrefix} from './Utilities'
+import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
 
 function Menu(props) {
   const [t, i18n] = useTranslation()
@@ -14,9 +14,9 @@ function Menu(props) {
   // Allow scrolling when window width is more than 720px
   useEffect(() => {
     if (maximized && width <= 720) {
-      document.body.classList.add('no-scroll')
+      setScrollingEnabled(false)
     } else {
-      document.body.classList.remove('no-scroll')
+      setScrollingEnabled(true)
     }
   }, [maximized, width])
 
