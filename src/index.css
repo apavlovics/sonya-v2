@@ -410,8 +410,9 @@ main.previews {
 
 /* Gallery */
 
-.gallery-wrapper {
+.carousel {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -419,7 +420,7 @@ main.previews {
   background-color: rgb(var(--white));
 }
 
-.gallery-wrapper button {
+.carousel button {
   font-size: var(--normal-font-size);
   display: flex;
   justify-content: center;
@@ -431,50 +432,49 @@ main.previews {
   cursor: pointer;
 }
 
-.gallery-wrapper #close-button {
+.carousel #close-button {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.gallery-wrapper button:hover,
-.gallery-wrapper button:focus {
+.carousel button:hover,
+.carousel button:focus {
   outline: none;
 }
 
-.gallery-wrapper button svg {
+.carousel button svg {
   transition-duration: var(--max-transition-duration);
 }
 
-.gallery-wrapper button:hover svg,
-.gallery-wrapper button:focus svg {
+.carousel button:hover svg,
+.carousel button:focus svg {
   transition-duration: var(--min-transition-duration);
   fill: rgb(var(--green));
 }
 
-.gallery-wrapper button:disabled {
+.carousel button:disabled {
   background: none; 
   cursor: default;
 }
 
-.gallery-wrapper button svg {
+.carousel button svg {
   width: 2em;
   height: 2em;
   fill: rgb(var(--black));
 }
 
-.gallery-wrapper button:disabled svg {
+.carousel button:disabled svg {
   fill: rgb(var(--lighter-gray));
 }
 
-.carousel {
+.gallery {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
 }
 
-.gallery {
+.slider {
   --max-width: 80vw;
   --max-height: 80vh;
 
@@ -488,16 +488,22 @@ main.previews {
   outline: none;
 }
 
-.gallery .slide {
+.slide {
   padding: 0 var(--item-padding);
   cursor: grab;
+}
+
+.dots {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 /* Adaptive styles for touch devices */
 
 @media (hover: none) {
 
-  .gallery-wrapper {
+  .carousel {
     /* Fix iOS viewport bug */
     height: -webkit-fill-available;
   }
@@ -520,12 +526,17 @@ main.previews {
     --max-width: var(--default-width);
   }
 
-  .gallery-wrapper .back-button,
-  .gallery-wrapper .next-button {
+  .carousel #close-button {
+    position: initial;
+    margin: 0;
+  }
+
+  .carousel .back-button,
+  .carousel .next-button {
     display: none;
   }
 
-  .gallery {
+  .slider {
     --max-width: 100%;
   }
 }
