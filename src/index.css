@@ -537,10 +537,6 @@ main.previews {
     display: none;
   }
 
-  .carousel.horizontal .gallery {
-    flex-direction: row;
-  }
-
   .slider {
     --max-width: 100vw;
     --max-height: 90vh;
