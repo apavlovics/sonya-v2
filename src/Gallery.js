@@ -8,7 +8,7 @@ import {setScrollingEnabled} from './Utilities'
 function Gallery(props) {
   const [width, height] = useWindowSize()
 
-  // Hide the main menu on mount and show on unmount
+  // Hide the main menu and disable scrolling on mount, do the opposite on unmount
   useEffect(() => {
     props.setMenuHidden(true)
     setScrollingEnabled(false)
