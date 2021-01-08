@@ -106,7 +106,7 @@ function Preview(props) {
               alt={props.title}
               effect="opacity"
               scrollPosition={props.scrollPosition}
-              threshold="0"
+              threshold="500"
               wrapperClassName="placeholder" />
         </div>
         <div className="details">
