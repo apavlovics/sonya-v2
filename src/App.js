@@ -6,6 +6,7 @@ import AnimatedSwitch from './AnimatedSwitch'
 import ArchitecturalPhoto from './ArchitecturalPhoto'
 import Contacts from './Contacts'
 import Menu from './Menu'
+import PageNotFound from './PageNotFound'
 import Previews from './Previews'
 import {formatTitle} from './Utilities'
 
@@ -43,13 +44,19 @@ export default function App() {
 
         <AnimatedSwitch>
           {sections.map(section => (
-            <Route key={section.path} path={`/${currentLanguage}/${section.path}`}>
+            <Route key={section.path} exact path={`/${currentLanguage}/${section.path}`}>
               {formatTitle(t(section.title))}
               {renderSection(section.path)}
             </Route>
           ))}
-          <Route path="/">
+          <Route exact path={`/${currentLanguage}`}>
             <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
+          </Route>
+          <Route exact path="/">
+            <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
+          </Route>
+          <Route path="*">
+            <PageNotFound />
           </Route>
         </AnimatedSwitch>
       </Router>

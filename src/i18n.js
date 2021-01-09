@@ -13,6 +13,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
+      // Note: translations may contain non-breaking spaces
       en: {
         translation: {
           'Interior Design': 'Interior Design',
@@ -27,6 +28,8 @@ i18n
           'Legal Address Value': '<0>Talivalza iela 21A-20</0>, Riga, <2>LV-1006, Latvia</2>',
           'Bank': 'Bank',
           'SWIFT Code': 'SWIFT Code',
+          'Page Not Found': 'Page Not Found',
+          'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
         }
       },
       lv: {
@@ -43,6 +46,8 @@ i18n
           'Legal Address Value': '<0>Tālivalža iela 21A-20</0>, Rīga, <2>LV-1006, Latvija</2>',
           'Bank': 'Banka',
           'SWIFT Code': 'SWIFT kods',
+          'Page Not Found': 'Lapa nav atrasta',
+          'Page Not Found Text': 'Šī lapa nav atrasta. Pārejiet <1>uz sākumlapu</1>.',
         }
       },
     },

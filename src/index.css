@@ -256,7 +256,7 @@ footer, .social {
 footer {
   flex-flow: column nowrap;
   color: rgb(var(--gray));
-  padding-top: var(--item-padding);
+  padding-top: 1em;
   padding-bottom: 3em;
   line-height: var(--large-line-height);
 }
