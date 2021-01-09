@@ -1,10 +1,12 @@
 import {useTranslation, Trans} from 'react-i18next'
 import Footer from './Footer'
+import {formatTitle} from './Utilities'
 
 export default function Contacts() {
   const [t] = useTranslation()
   return (
     <div>
+      {formatTitle(t('Contact Us'))}
       <main>
         <h1>{t('Contact Us')}</h1>
         <p>{t('Contact Us Text')}</p>

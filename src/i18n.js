@@ -47,7 +47,7 @@ i18n
           'Bank': 'Banka',
           'SWIFT Code': 'SWIFT kods',
           'Page Not Found': 'Lapa nav atrasta',
-          'Page Not Found Text': 'Šī lapa nav atrasta. Pārejiet <1>uz sākumlapu</1>.',
+          'Page Not Found Text': 'Šī lapa nav atrasta. Pāriet <1>uz sākumlapu</1>.',
         }
       },
     },

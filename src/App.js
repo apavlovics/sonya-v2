@@ -11,19 +11,22 @@ import Previews from './Previews'
 import {formatTitle} from './Utilities'
 
 export default function App() {
-  const [t, i18n] = useTranslation()
+  const i18n = useTranslation()[1]
   const [menuHidden, setMenuHidden] = useState(false)
 
   // All website sections are defined below
   const sections = [{
     path: 'interior-design',
     title: 'Interior Design',
+    exact: false,
   }, {
     path: 'arhitectural-photo',
     title: 'Architectural Photo',
+    exact: true,
   }, {
     path: 'contacts',
     title: 'Contacts',
+    exact: true,
   }]
 
   const renderSection = sectionPath => {
@@ -43,18 +46,17 @@ export default function App() {
         <Menu sections={sections} hidden={menuHidden} />
 
         <AnimatedSwitch>
-          {sections.map(section => (
-            <Route key={section.path} exact path={`/${currentLanguage}/${section.path}`}>
-              {formatTitle(t(section.title))}
-              {renderSection(section.path)}
-            </Route>
-          ))}
-          <Route exact path={`/${currentLanguage}`}>
-            <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
-          </Route>
           <Route exact path="/">
             <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
           </Route>
+          <Route exact path={`/${currentLanguage}`}>
+            <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
+          </Route>
+          {sections.map(section => (
+            <Route key={section.path} exact={section.exact} path={`/${currentLanguage}/${section.path}`}>
+              {renderSection(section.path)}
+            </Route>
+          ))}
           <Route path="*">
             <PageNotFound />
           </Route>

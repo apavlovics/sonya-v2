@@ -6,10 +6,11 @@ import 'react-lazy-load-image-component/src/effects/opacity.css'
 import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
 import Gallery from './Gallery'
+import PageNotFound from './PageNotFound'
 import {formatTitle, stripSlashes} from './Utilities'
 
 function Previews(props) {
-  const currentLanguage = useTranslation()[1].language
+  const [t, i18n] = useTranslation()
   const {path, url} = useRouteMatch()
 
   const [previews, setPreviews] = useState(
@@ -57,11 +58,13 @@ function Previews(props) {
     setPreviews(updatedPreviews)
   }
 
+  const currentLanguage = i18n.language
   return (
     <AnimatedSwitch>
       <Route exact path={path}>
         {/* There must be one root element for AnimatedSwitch to work correctly */}
         <div>
+          {formatTitle(t('Interior Design'))}
           <main className="previews">
             {previews.map(preview => (
               <Preview
@@ -81,11 +84,14 @@ function Previews(props) {
         </div>
       </Route>
       {previews.map(preview => (
-        <Route key={preview.url} path={`${path}/${preview.url}`}>
+        <Route key={preview.url} exact path={`${path}/${preview.url}`}>
           {formatTitle(preview.title[currentLanguage])}
           <Gallery parentPath={path} preview={preview} setMenuHidden={props.setMenuHidden} />
         </Route>
       ))}
+      <Route path="*">
+        <PageNotFound />
+      </Route>
     </AnimatedSwitch>
   )
 }
