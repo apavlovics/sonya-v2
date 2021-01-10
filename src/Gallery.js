@@ -18,7 +18,8 @@ function Gallery(props) {
     }
   })
 
-  const carouselClassName = width / height > 1.5 ? 'horizontal' : 'vertical'
+  // Should be somewhat greater than the --aspect-ratio CSS variable
+  const carouselClassName = width / height > 1.7 ? 'horizontal' : 'vertical'
   return (
     <CarouselProvider
         className={carouselClassName}

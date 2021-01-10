@@ -35,7 +35,9 @@
 
   --large-line-height: 1.7;
 
+  /* 3:2 is the standard aspect ratio for Canon EOS series */
   --aspect-ratio: 1.5;
+
   --border: 1px solid;
   --radius: 5px;
 
