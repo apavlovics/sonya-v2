@@ -40,7 +40,8 @@ function Menu(props) {
                 currentPath={currentPath}
                 path={`${currentLanguage}/${section.path}`}
                 title={t(section.title)}
-                onClick={() => setMaximized(false)} />
+                onClick={() => setMaximized(false)}
+                hidden={props.hidden} />
           ))}
           {/* TODO Allow filtering previews 
             <ul className="submenu">
@@ -57,7 +58,8 @@ function Menu(props) {
                 currentLanguage={currentLanguage}
                 language={language}
                 currentPath={currentPathNoLanguagePrefix}
-                onClick={() => i18n.changeLanguage(language)} />
+                onClick={() => i18n.changeLanguage(language)}
+                hidden={props.hidden} />
           ))}
         </ul>
       </div>
@@ -86,7 +88,10 @@ function MainMenuItem(props) {
   } else {
     return (
       <li>
-        <Link to={`/${props.path}/`} onClick={props.onClick}>
+        <Link
+            to={`/${props.path}/`}
+            onClick={props.onClick}
+            {...(props.hidden ? {tabindex: '-1'} : {})}>
           <div>
             <span>{props.title}</span>
           </div>
@@ -107,7 +112,10 @@ function LanguageMenuItem(props) {
   } else {
     return (
       <li>
-        <Link to={`/${props.language}/${props.currentPath}/`} onClick={props.onClick}>
+        <Link
+            to={`/${props.language}/${props.currentPath}/`}
+            onClick={props.onClick}
+            {...(props.hidden ? {tabindex: '-1'} : {})}>
           <div>
             <span>{title}</span>
           </div>

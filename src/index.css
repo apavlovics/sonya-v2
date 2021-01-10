@@ -278,7 +278,7 @@ footer {
   fill: rgb(var(--light-green));
 }
 
-.social a:hover {
+.social a:hover, .social a:focus {
   fill: rgb(var(--green));
 }
 
@@ -499,6 +499,15 @@ main.previews {
   height: calc(var(--max-width) / var(--aspect-ratio));
   max-height: var(--max-height);
   max-width: calc(var(--max-height) * var(--aspect-ratio));
+  outline: none;
+}
+
+.slider:focus img {
+  box-shadow: 0 0 calc(var(--item-padding) / 1.5) rgb(var(--green));
+  outline: none;
+}
+
+.slider div {
   outline: none;
 }
 
