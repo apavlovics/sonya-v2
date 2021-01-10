@@ -124,6 +124,10 @@ main {
   white-space: nowrap;
 }
 
+.error-mode {
+  background-color: rgb(var(--light-gray));
+}
+
 .shadow {
   box-shadow: 0 0 var(--radius) 0 rgb(var(--gray));
 }

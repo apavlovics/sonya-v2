@@ -22,8 +22,17 @@ export const formatTitle = title => {
   return <Helmet><title>{fullTitle}</title></Helmet>
 }
 
+const updateBodyClassList = (add, className) => {
+  if (add) document.body.classList.add(className)
+  else document.body.classList.remove(className)
+}
+
 /** Enables or disables scrolling. */
 export const setScrollingEnabled = enabled => {
-  if (enabled) document.body.classList.remove('no-scroll')
-  else document.body.classList.add('no-scroll')
+  updateBodyClassList(!enabled, 'no-scroll')
+}
+
+/** Enables or disables error mode. */
+export const setErrorModeEnabled = enabled => {
+  updateBodyClassList(enabled, 'error-mode')
 }
