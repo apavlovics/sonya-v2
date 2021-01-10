@@ -1,7 +1,7 @@
 export default function Footer() {
 
   // TODO Switch to server time
-  const currentYear = new Date().getFullYear()
+  const currentYear = "2021"
   return (
     <footer>
       <div className="copyright">

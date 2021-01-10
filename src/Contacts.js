@@ -6,7 +6,7 @@ export default function Contacts() {
   const [t] = useTranslation()
   return (
     <div>
-      {formatTitle(t('Contact Us'))}
+      {formatTitle(t('Contacts'))}
       <main>
         <h1>{t('Contact Us')}</h1>
         <p>{t('Contact Us Text')}</p>
