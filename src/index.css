@@ -43,6 +43,8 @@
 
   --item-padding: .5em;
   --item-position: calc(0em - var(--item-padding));
+
+  --focus-box-shadow: 0 0 0 2px rgba(var(--green), var(--max-opacity));
 }
 
 /* General */
@@ -129,7 +131,7 @@ main {
 }
 
 .shadow {
-  box-shadow: 0 0 var(--radius) 0 rgb(var(--gray));
+  box-shadow: 0 0 var(--radius) rgb(var(--gray));
 }
 
 /* AnimatedSwitch transitions */
@@ -329,7 +331,7 @@ main.previews {
 }
 
 .preview a:focus::after {
-  box-shadow: inset 0 0 var(--default-spacing) rgba(var(--black), var(--min-opacity));
+  box-shadow: inset var(--focus-box-shadow);
   transition-duration: var(--min-transition-duration);
 }
 
@@ -503,7 +505,7 @@ main.previews {
 }
 
 .slider:focus img {
-  box-shadow: 0 0 calc(var(--item-padding) / 1.5) rgb(var(--green));
+  box-shadow: var(--focus-box-shadow);
   outline: none;
 }
 
