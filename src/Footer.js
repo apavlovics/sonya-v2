@@ -1,5 +1,5 @@
 export default function Footer() {
-  const copyrightYear = Math.max(new Date().getFullYear(), 2020)
+  const copyrightYear = Math.max(new Date().getFullYear(), 2021)
   return (
     <footer>
       <div className="copyright">
