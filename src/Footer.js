@@ -1,11 +1,9 @@
 export default function Footer() {
-
-  // TODO Switch to server time
-  const currentYear = "2021"
+  const copyrightYear = Math.max(new Date().getFullYear(), 2020)
   return (
     <footer>
       <div className="copyright">
-        <span className="no-wrap">© {currentYear}</span> <span className="no-wrap">Smart Casual SIA</span><br />
+        <span className="no-wrap">© {copyrightYear}</span> <span className="no-wrap">Smart Casual SIA</span><br />
         <a href="tel:+37122380067"><span className="no-wrap">+371 2238 0067</span></a><br />
         <a href="mailto:info@smartcasual.lv">info@smartcasual.lv</a>
       </div>
