@@ -31,6 +31,7 @@ i18n
           'Page Not Found': 'Page Not Found',
           'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
           'Email': 'sonya@sonya.lv',
+          'Phone': '+371 2238 0067',
         }
       },
       lv: {
@@ -50,6 +51,7 @@ i18n
           'Page Not Found': 'Lapa nav atrasta',
           'Page Not Found Text': 'Šī lapa nav atrasta. Pāriet <1>uz sākumlapu</1>.',
           'Email': 'sonya@sonya.lv',
+          'Phone': '+371 2238 0067',
         }
       },
     },

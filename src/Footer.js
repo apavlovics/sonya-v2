@@ -1,4 +1,5 @@
 import {useTranslation} from 'react-i18next'
+import {stripWhitespace} from './Utilities'
 
 export default function Footer() {
   const [t] = useTranslation()
@@ -7,7 +8,7 @@ export default function Footer() {
     <footer>
       <div className="copyright">
         <span className="no-wrap">© {copyrightYear}</span> <span className="no-wrap">{t('Main Title')}</span><br />
-        <a href="tel:+37122380067"><span className="no-wrap">+371 2238 0067</span></a><br />
+        <a href={`tel:${stripWhitespace(t('Phone'))}`}><span className="no-wrap">{t('Phone')}}</span></a><br />
         <a href={`mailto:${t('Email')}`}>{t('Email')}</a>
       </div>
       <div className="social">
