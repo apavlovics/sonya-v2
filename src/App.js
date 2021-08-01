@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 import {HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
 import AnimatedSwitch from './AnimatedSwitch'
-import ArchitecturalPhoto from './ArchitecturalPhoto'
 import Contacts from './Contacts'
 import Menu from './Menu'
 import PageNotFound from './PageNotFound'
@@ -20,10 +19,6 @@ export default function App() {
     title: 'Interior Design',
     exact: false,
   }, {
-    path: 'arhitectural-photo',
-    title: 'Architectural Photo',
-    exact: true,
-  }, {
     path: 'contacts',
     title: 'Contacts',
     exact: true,
@@ -32,7 +27,6 @@ export default function App() {
   const renderSection = sectionPath => {
     switch(sectionPath) {
       case 'interior-design':    return <Previews setMenuHidden={setMenuHidden} />
-      case 'arhitectural-photo': return <ArchitecturalPhoto />
       case 'contacts':           return <Contacts />
       default:                   throw new Error(`Unexpected section path: ${sectionPath}`)
     }
