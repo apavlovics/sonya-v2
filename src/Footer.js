@@ -3,11 +3,11 @@ import {stripWhitespace} from './Utilities'
 
 export default function Footer() {
   const [t] = useTranslation()
-  const copyrightYear = Math.max(new Date().getFullYear(), 2021)
+  const currentYear = Math.max(new Date().getFullYear(), 2021)
   return (
     <footer>
       <div className="copyright">
-        <span className="no-wrap">© {copyrightYear}</span> <span className="no-wrap">{t('Main Title')}</span><br />
+        <span className="no-wrap">© 2014–{currentYear}</span> <span className="no-wrap">{t('Main Title')}</span><br />
         <a href={`tel:${stripWhitespace(t('Phone'))}`}><span className="no-wrap">{t('Phone')}</span></a><br />
         <a href={`mailto:${t('Email')}`}>{t('Email')}</a>
       </div>
