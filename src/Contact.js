@@ -1,6 +1,6 @@
 import {useTranslation} from 'react-i18next'
 import Footer from './Footer'
-import {stripWhitespace, formatTitle} from './Utilities'
+import {formatTitle} from './Utilities'
 
 export default function Contact() {
   const [t] = useTranslation()

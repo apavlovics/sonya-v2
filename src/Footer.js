@@ -1,5 +1,4 @@
 import {useTranslation} from 'react-i18next'
-import {stripWhitespace} from './Utilities'
 
 export default function Footer() {
   const [t] = useTranslation()
