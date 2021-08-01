@@ -17,7 +17,7 @@ export const stripPrefix = (path, prefix) => {
 }
 
 /** Strips all whitespace characters from the string. */
-export const stripWhitespace = string => string.replace(/\s/g, "")
+export const stripWhitespace = string => string.replace(/\s/g, '')
 
 /** Formats the page title. */
 export const formatTitle = (sectionTitle, mainTitle) => {

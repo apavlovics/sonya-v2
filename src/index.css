@@ -387,9 +387,9 @@ main.previews {
   transform: scale(1.05);
 }
 
-/* Contacts */
+/* Contact */
 
-.contacts {
+.contact {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -398,14 +398,14 @@ main.previews {
   text-align: center;
 }
 
-.contacts a {
+.contact a {
   position: relative;
   display: block;
   margin-bottom: .5em;
   padding: .2em .4em;
 }
 
-.contacts a svg {
+.contact a svg {
   position: relative;
   top: .1em;
   left: -.1em;
@@ -559,7 +559,7 @@ main.previews {
     --default-width: 996px;
   }
 
-  nav > div, main > h1, main > p, .contacts, .requisites, footer {
+  nav > div, main > h1, main > p, .contact, .requisites, footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
   }
