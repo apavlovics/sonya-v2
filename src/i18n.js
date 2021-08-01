@@ -2,6 +2,10 @@ import i18n from 'i18next'
 import {initReactI18next} from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
+// Contact details to use across the site
+const email = 'sonya@sonya.lv'
+const phone = '+371 2238 0067'
+
 // All i18next configuration options:
 // https://www.i18next.com/overview/configuration-options
 
@@ -30,8 +34,8 @@ i18n
           'SWIFT Code': 'SWIFT Code',
           'Page Not Found': 'Page Not Found',
           'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
-          'Email': 'sonya@sonya.lv',
-          'Phone': '+371 2238 0067',
+          'Email': email,
+          'Phone': phone,
         }
       },
       lv: {
@@ -50,8 +54,8 @@ i18n
           'SWIFT Code': 'SWIFT kods',
           'Page Not Found': 'Lapa nav atrasta',
           'Page Not Found Text': 'Šī lapa nav atrasta. Pāriet <1>uz sākumlapu</1>.',
-          'Email': 'sonya@sonya.lv',
-          'Phone': '+371 2238 0067',
+          'Email': email,
+          'Phone': phone,
         }
       },
     },
