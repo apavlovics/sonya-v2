@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="copyright">
         <span className="no-wrap">© {copyrightYear}</span> <span className="no-wrap">{t('Main Title')}</span><br />
         <a href="tel:+37122380067"><span className="no-wrap">+371 2238 0067</span></a><br />
-        <a href="mailto:info@smartcasual.lv">info@smartcasual.lv</a>
+        <a href={`mailto:${t('Email')}`}>{t('Email')}</a>
       </div>
       <div className="social">
         <a href="https://www.instagram.com/smartcasualdesign/" target="_blank" rel="noreferrer">

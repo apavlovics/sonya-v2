@@ -30,6 +30,7 @@ i18n
           'SWIFT Code': 'SWIFT Code',
           'Page Not Found': 'Page Not Found',
           'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
+          'Email': 'sonya@sonya.lv',
         }
       },
       lv: {
@@ -48,6 +49,7 @@ i18n
           'SWIFT Code': 'SWIFT kods',
           'Page Not Found': 'Lapa nav atrasta',
           'Page Not Found Text': 'Šī lapa nav atrasta. Pāriet <1>uz sākumlapu</1>.',
+          'Email': 'sonya@sonya.lv',
         }
       },
     },
