@@ -8,7 +8,6 @@ export default function Footer() {
     <footer>
       <div className="copyright">
         <span className="no-wrap">© 2014–{currentYear}</span> <span className="no-wrap">{t('Main Title')}</span><br />
-        <a href={`tel:${stripWhitespace(t('Phone'))}`}><span className="no-wrap">{t('Phone')}</span></a><br />
         <a href={`mailto:${t('Email')}`}>{t('Email')}</a>
       </div>
       <div className="social">

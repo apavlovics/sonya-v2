@@ -4,7 +4,6 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 
 // Contact details to use across the site
 const email = 'sonya@sonya.lv'
-const phone = '+371 2238 0067'
 
 // All i18next configuration options:
 // https://www.i18next.com/overview/configuration-options
@@ -28,7 +27,6 @@ i18n
           'Page Not Found': 'Page Not Found',
           'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
           'Email': email,
-          'Phone': phone,
         }
       },
       lv: {
@@ -41,7 +39,6 @@ i18n
           'Page Not Found': 'Lapa nav atrasta',
           'Page Not Found Text': 'Šī lapa nav atrasta. Pāriet <1>uz sākumlapu</1>.',
           'Email': email,
-          'Phone': phone,
         }
       },
     },
