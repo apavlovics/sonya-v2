@@ -16,6 +16,7 @@ i18n
       // Note: translations may contain non-breaking spaces
       en: {
         translation: {
+          'Main Title': 'Sonya Pavlovich',
           'Interior Design': 'Interior Design',
           'Architectural Photo': 'Architectural Photo',
           'Contacts': 'Contacts',
@@ -34,6 +35,7 @@ i18n
       },
       lv: {
         translation: {
+          'Main Title': 'Sofija Pavloviča',
           'Interior Design': 'Interjera dizains',
           'Architectural Photo': 'Arhitektūras foto',
           'Contacts': 'Kontakti',

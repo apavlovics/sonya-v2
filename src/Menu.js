@@ -30,7 +30,7 @@ function Menu(props) {
     <nav className={`${stateClassName}${shadowClassName}${hiddenClassName}`}>
       <div>
         <div className="logo">
-          <div>Smart Casual</div>
+          <div>{t('Main Title')}</div>
           <MenuIcon maximized={maximized} onClick={() => setMaximized(!maximized)} />
         </div>
         <ul className={`main-menu ${stateClassName}`}>
@@ -43,13 +43,6 @@ function Menu(props) {
                 onClick={() => setMaximized(false)}
                 hidden={props.hidden} />
           ))}
-          {/* TODO Allow filtering previews 
-            <ul className="submenu">
-              <li className="selected">All</li>
-              <li><Link to="/residential/">Residential</Link></li>
-              <li><Link to="/retail/">Retail</Link></li>
-            </ul>
-          */}
         </ul>
         <ul className={`language-menu ${stateClassName}`}>
           {i18n.options.fallbackLng.map(language => (

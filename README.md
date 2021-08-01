@@ -1,4 +1,4 @@
-# Smart Casual V2
+# Sonya V2
 
 ## React
 

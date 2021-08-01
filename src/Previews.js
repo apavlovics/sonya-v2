@@ -19,7 +19,7 @@ function Previews(props) {
       url: 'fjordi',
       title: {
         en: 'Fjordi Apartment',
-        lv: 'Fjordi Apartamenti',
+        lv: 'Fjordi apartamenti',
       },
       year: '2021',
       galleryLength: 3,
@@ -30,7 +30,7 @@ function Previews(props) {
       url: 'jauna-teika',
       title: {
         en: 'Jauna Teika Apartment',
-        lv: 'Jaunā Teika Apartamenti',
+        lv: 'Jaunā Teika apartamenti',
       },
       year: '2020',
       galleryLength: 5,
@@ -64,7 +64,7 @@ function Previews(props) {
       <Route exact path={path}>
         {/* There must be one root element for AnimatedSwitch to work correctly */}
         <div>
-          {formatTitle(t('Interior Design'))}
+          {formatTitle(t('Interior Design'), t('Main Title'))}
           <main className="previews">
             {previews.map(preview => (
               <Preview
@@ -85,7 +85,7 @@ function Previews(props) {
       </Route>
       {previews.map(preview => (
         <Route key={preview.url} exact path={`${path}/${preview.url}`}>
-          {formatTitle(preview.title[currentLanguage])}
+          {formatTitle(preview.title[currentLanguage], t('Main Title'))}
           <Gallery parentPath={path} preview={preview} setMenuHidden={props.setMenuHidden} />
         </Route>
       ))}

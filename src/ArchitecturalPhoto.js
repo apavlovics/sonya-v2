@@ -6,7 +6,7 @@ export default function ArchitecturalPhoto() {
   const [t] = useTranslation()
   return (
     <div>
-      {formatTitle(t('Architectural Photo'))}
+      {formatTitle(t('Architectural Photo'), t('Main Title'))}
       <main>
         <h1>{t('Architectural Photo')}</h1>
       </main>

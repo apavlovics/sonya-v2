@@ -16,7 +16,7 @@ export default function PageNotFound() {
 
   return (
     <div>
-      {formatTitle(t('Page Not Found'))}
+      {formatTitle(t('Page Not Found'), t('Main Title'))}
       <main>
         <h1>{t('Page Not Found')}</h1>
         <p>

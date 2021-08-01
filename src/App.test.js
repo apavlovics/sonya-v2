@@ -1,8 +1,8 @@
 import {render, screen} from '@testing-library/react'
 import App from './App'
 
-test('renders Smart Casual name', () => {
+test('renders the main title', () => {
   render(<App />)
-  const elements = screen.getAllByText(/smart casual/i)
+  const elements = screen.getAllByText(/sonya pavlovich/i)
   elements.forEach(element => expect(element).toBeInTheDocument())
 })

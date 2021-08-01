@@ -17,8 +17,8 @@ export const stripPrefix = (path, prefix) => {
 }
 
 /** Formats the page title. */
-export const formatTitle = title => {
-  const fullTitle = title === '' ? 'Smart Casual' : `${title} | Smart Casual`
+export const formatTitle = (sectionTitle, mainTitle) => {
+  const fullTitle = sectionTitle === '' ? mainTitle : `${mainTitle}: ${sectionTitle}`
   return <Helmet><title>{fullTitle}</title></Helmet>
 }
 
