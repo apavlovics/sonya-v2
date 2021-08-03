@@ -8,8 +8,9 @@ export default function Contact() {
     <div>
       {formatTitle(t('Contact'), t('Main Title'))}
       <main>
-        <h1>{t('Contact Me')}</h1>
-        <p>{t('Contact Me Text')}</p>
+        <img className="portrait" src={`/portrait.png`} alt="Portrait" />
+        <p>{t('About Text')}</p>
+        <p>{t('Contact Text')}</p>
         <div className="contact no-wrap">
           <a href={`mailto:${t('Email')}`}>
             <svg width="1em" height="1em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

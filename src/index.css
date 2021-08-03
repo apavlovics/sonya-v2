@@ -389,6 +389,11 @@ main.previews {
 
 /* Contact */
 
+.portrait {
+  width: 40%;
+  margin: 0 auto 1em;
+}
+
 .contact {
   display: flex;
   flex-flow: column nowrap;
