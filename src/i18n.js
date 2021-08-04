@@ -2,7 +2,7 @@ import i18n from 'i18next'
 import {initReactI18next} from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
-// Contact details to use across the site
+// Contact details to use across the website
 const email = 'sonya@sonya.lv'
 
 // All i18next configuration options:
@@ -22,7 +22,7 @@ i18n
           'Main Title': 'Sonya Pavlovich',
           'Interior Design': 'Interior Design',
           'Contact': 'Contact',
-          'About Text': 'I am a furniture and interior designer. My completed projects include various furniture items, private and commercial interiors, even quite unusual things, such as travel wardrobes and live casino studios. In my designs I always try to achieve modern yet memorable look, all while using natural and sustainable materials.',
+          'About Text': 'I am a furniture and interior designer. My projects include various furniture items, private and commercial interiors, even quite unusual things like portable wardrobes and live casino studios. In my designs I try to achieve modern yet memorable look. All while using natural and sustainable materials.',
           'Contact Text': 'Contact me via email:',
           'Page Not Found': 'Page Not Found',
           'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
@@ -34,8 +34,8 @@ i18n
           'Main Title': 'Sofija Pavloviča',
           'Interior Design': 'Interjera dizains',
           'Contact': 'Kontakti',
-          'About Text': 'I am a furniture and interior designer. My completed projects include various furniture items, private and commercial interiors, even quite unusual things, such as travel wardrobes and live casino studios. In my designs I always try to achieve modern yet memorable look, all while using natural and sustainable materials.',
-          'Contact Text': 'Sazinies ar mani pa e-pastu:',
+          'About Text': 'Esmu mēbeļu un interjera dizainere. Mani projekti ietver dažādus mēbeļu priekšmetus, privātus un komerctelpu interjerus, pat tādas neparastas lietas kā pārnēsājamie skapji un interneta kazino studijas. Savos dizainos es cenšos panākt mūsdienīgu un neaizmirstamu izskatu, izmantojot dabiskus un ilgtspējīgus materiālus.',
+          'Contact Text': 'Sazinieties ar mani pa e-pastu:',
           'Page Not Found': 'Lapa nav atrasta',
           'Page Not Found Text': 'Šī lapa nav atrasta. Pāriet <1>uz sākumlapu</1>.',
           'Email': email,
