@@ -398,7 +398,6 @@ main.previews {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin-top: 1em;
   font-size: var(--larger-font-size);
   text-align: center;
 }
