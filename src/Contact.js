@@ -1,4 +1,5 @@
 import {useTranslation} from 'react-i18next'
+import {LazyLoadImage} from 'react-lazy-load-image-component'
 import Footer from './Footer'
 import {formatTitle} from './Utilities'
 
@@ -8,7 +9,12 @@ export default function Contact() {
     <div>
       {formatTitle(t('Contact'), t('Main Title'))}
       <main>
-        <img className="portrait" src={`/portrait.jpg`} alt="Portrait" />
+        <div className="portrait">
+          <LazyLoadImage
+              src="/portrait.jpg"
+              alt="Portrait"
+              effect="opacity" />
+        </div>
         <p>{t('About Text')}</p>
         <p>{t('Contact Text')}</p>
         <div className="contact no-wrap">
