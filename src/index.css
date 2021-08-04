@@ -397,6 +397,7 @@ main.previews {
   margin: 0 auto 1em;
 }
 
+/* Ensure portrait placeholder height is the same as width */
 .portrait:before {
   content: "";
   display: block;
