@@ -8,7 +8,7 @@ export default function Contact() {
     <div>
       {formatTitle(t('Contact'), t('Main Title'))}
       <main>
-        <img className="portrait" src={`/portrait.png`} alt="Portrait" />
+        <img className="portrait" src={`/portrait.jpg`} alt="Portrait" />
         <p>{t('About Text')}</p>
         <p>{t('Contact Text')}</p>
         <div className="contact no-wrap">
