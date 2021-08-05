@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
+import ReactGA from 'react-ga'
 import {HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
 import AnimatedSwitch from './AnimatedSwitch'
@@ -7,11 +8,14 @@ import Contact from './Contact'
 import Menu from './Menu'
 import PageNotFound from './PageNotFound'
 import Previews from './Previews'
-import {formatTitle} from './Utilities'
+import {formatTitle, withTracker} from './Utilities'
 
 export default function App() {
   const i18n = useTranslation()[1]
   const [menuHidden, setMenuHidden] = useState(false)
+
+  // Initialize Google Analytics
+  ReactGA.initialize('UA-28040249-3')
 
   // All website sections are defined below
   const sections = [{
@@ -26,9 +30,14 @@ export default function App() {
 
   const renderSection = sectionPath => {
     switch(sectionPath) {
-      case 'interior-design': return <Previews setMenuHidden={setMenuHidden} />
-      case 'contact':         return <Contact />
-      default:                throw new Error(`Unexpected section path: ${sectionPath}`)
+      case 'interior-design':
+        const PreviewsWithTracker = withTracker(Previews)
+        return <PreviewsWithTracker setMenuHidden={setMenuHidden} />
+      case 'contact':
+        const ContactWithTracker = withTracker(Contact)
+        return <ContactWithTracker />
+      default:
+        throw new Error(`Unexpected section path: ${sectionPath}`)
     }
   }
 

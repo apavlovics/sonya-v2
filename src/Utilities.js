@@ -1,3 +1,5 @@
+import {useEffect} from 'react'
+import ReactGA from 'react-ga'
 import {Helmet} from 'react-helmet-async'
 
 /** Strips one "/" slash from the beginning and the end of the path, if it is present. */
@@ -38,4 +40,12 @@ export const setScrollingEnabled = enabled => {
 /** Enables or disables error mode. */
 export const setErrorModeEnabled = enabled => {
   updateBodyClassList(enabled, 'error-mode')
+}
+
+/** Higher-order component (HOC) that adds Google Analytics tracking to the provided component. */
+export const withTracker = Component => ({ ...props }) => {
+  useEffect(() => ReactGA.pageview(window.location.pathname))
+  return (
+    <Component {...props} />
+  )
 }
