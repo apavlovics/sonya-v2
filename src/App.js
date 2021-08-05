@@ -10,12 +10,15 @@ import PageNotFound from './PageNotFound'
 import Previews from './Previews'
 import {formatTitle, withTracker} from './Utilities'
 
-export default function App() {
+// Load i18next instance for translations to work
+import './i18n'
+
+export default function App(props) {
   const i18n = useTranslation()[1]
   const [menuHidden, setMenuHidden] = useState(false)
 
   // Initialize Google Analytics
-  ReactGA.initialize('UA-28040249-3')
+  ReactGA.initialize('UA-28040249-3', {testMode: props.testMode})
 
   // All website sections are defined below
   const sections = [{

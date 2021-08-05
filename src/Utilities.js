@@ -43,7 +43,7 @@ export const setErrorModeEnabled = enabled => {
 }
 
 /** Higher-order component (HOC) that adds Google Analytics tracking to the provided component. */
-export const withTracker = Component => ({ ...props }) => {
+export const withTracker = Component => ({...props}) => {
   useEffect(() => ReactGA.pageview(window.location.pathname))
   return (
     <Component {...props} />
