@@ -12,6 +12,6 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^sonya\.continuum\.lv(.*)$ [NC]
 RewriteRule ^(.*)$ https://sonya.lv/$1 [R=301,L]
 
-# Address all requests for nonexistent files to index.html
+# Send all requests for nonexistent files to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . index.html [L]
