@@ -84,7 +84,7 @@ function MainMenuItem(props) {
         <Link
             to={`/${props.path}/`}
             onClick={props.onClick}
-            {...(props.hidden ? {tabindex: '-1'} : {})}>
+            {...(props.hidden ? {tabIndex: '-1'} : {})}>
           <div>
             <span>{props.title}</span>
           </div>
@@ -108,7 +108,7 @@ function LanguageMenuItem(props) {
         <Link
             to={`/${props.language}/${props.currentPath}/`}
             onClick={props.onClick}
-            {...(props.hidden ? {tabindex: '-1'} : {})}>
+            {...(props.hidden ? {tabIndex: '-1'} : {})}>
           <div>
             <span>{title}</span>
           </div>
