@@ -22,7 +22,7 @@ i18n
           'Main Title': 'Sonya Pavlovich',
           'Interior Design': 'Interior Design',
           'Contact': 'Contact',
-          'About Text': 'I am a furniture and interior designer. My projects include various furniture items, private and commercial interiors, even quite unusual things like portable wardrobes and live casino studios. In my designs I try to achieve modern yet memorable look. All while using natural and sustainable materials.',
+          'About Text': 'I am a furniture and interior designer. My projects include various furniture items, private and commercial interiors, even quite unusual things like portable wardrobes and live casino studios. In my designs I try to achieve modern yet memorable look, all while using natural and sustainable materials.',
           'Contact Text': 'Contact me via email:',
           'Page Not Found': 'Page Not Found',
           'Page Not Found Text': 'This page is not found. Visit <1>the main page</1> instead.',
