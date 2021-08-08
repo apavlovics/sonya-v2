@@ -27,6 +27,7 @@
   --negative-animation-height: calc(0px - var(--default-spacing));
 
   --min-opacity: .15;
+  --mid-opacity: .5;
   --max-opacity: .7;
 
   --min-transition-duration: .1s;
@@ -133,7 +134,7 @@ main {
 }
 
 .shadow {
-  box-shadow: 0 0 var(--radius) rgb(var(--gray));
+  box-shadow: 0 0 20px rgba(var(--gray), var(--mid-opacity));
 }
 
 /* AnimatedSwitch transitions */
