@@ -1,5 +1,6 @@
 import {useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
+import {useHotkey} from '@react-hook/hotkey'
 import {useWindowSize} from '@react-hook/window-size'
 import {CarouselProvider, Dot, DotGroup, Image, Slider, Slide, ButtonBack, ButtonNext} from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
@@ -18,6 +19,19 @@ function Gallery(props) {
     }
   })
 
+  // Operate the gallery via keyboard shortcuts
+  const close = () => {
+    if (props.history.length > 1) props.history.goBack()
+    else props.history.push(props.parentPath)
+  }
+  useHotkey(document, 'esc', close)
+  useHotkey(document, 'arrowleft', () => {
+    document.getElementById('back-button').click()
+  })
+  useHotkey(document, 'arrowright', () => {
+    document.getElementById('next-button').click()
+  })
+
   // Should be somewhat greater than the --aspect-ratio CSS variable
   const carouselClassName = width / height > 1.7 ? 'horizontal' : 'vertical'
   return (
@@ -27,7 +41,7 @@ function Gallery(props) {
         isIntrinsicHeight
         hasMasterSpinner
         totalSlides={props.preview.galleryLength}>
-      <ButtonBack className="back-button">
+      <ButtonBack id="back-button" className="back-button">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
         </svg>
@@ -71,17 +85,12 @@ function Gallery(props) {
               return dots
             }} />
       </div>
-      <ButtonNext className="next-button">
+      <ButtonNext id="next-button" className="next-button">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
         </svg>
       </ButtonNext>
-      <button
-          id="close-button"
-          onClick={() => {
-            if (props.history.length > 1) props.history.goBack()
-            else props.history.push(props.parentPath)
-          }}>
+      <button id="close-button" onClick={close}>
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg>
