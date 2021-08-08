@@ -8,6 +8,7 @@ import Contact from './Contact'
 import Menu from './Menu'
 import PageNotFound from './PageNotFound'
 import Previews from './Previews'
+import ScrollToTop from './ScrollToTop'
 import {formatTitle, withTracker} from './Utilities'
 
 // Load i18next instance for translations to work
@@ -51,6 +52,7 @@ export default function App(props) {
         {formatTitle('')}
         <Menu sections={sections} hidden={menuHidden} />
 
+        <ScrollToTop />
         <AnimatedSwitch>
           <Route exact path="/">
             <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
