@@ -62,26 +62,23 @@ function Previews(props) {
   return (
     <AnimatedSwitch>
       <Route exact path={path}>
-        {/* There must be one root element for AnimatedSwitch to work correctly */}
-        <div>
-          {formatTitle(t('Interior Design'), t('Main Title'))}
-          <main className="previews">
-            {previews.map(preview => (
-              <Preview
-                  key={preview.url}
-                  size={preview.size}
-                  url={`/${stripSlashes(url)}/${preview.url}/`}
-                  imageSrc={`/projects/${preview.url}/cover.jpg`}
-                  title={preview.title[currentLanguage]}
-                  year={preview.year}
-                  focused={preview.focused}
-                  desaturated={preview.desaturated}
-                  onMouseEnter={() => updatePreviews(preview, true)}
-                  onMouseLeave={() => updatePreviews(preview, false)} />
-            ))}
-          </main>
-          <Footer />
-        </div>
+        {formatTitle(t('Interior Design'), t('Main Title'))}
+        <main className="previews">
+          {previews.map(preview => (
+            <Preview
+                key={preview.url}
+                size={preview.size}
+                url={`/${stripSlashes(url)}/${preview.url}/`}
+                imageSrc={`/projects/${preview.url}/cover.jpg`}
+                title={preview.title[currentLanguage]}
+                year={preview.year}
+                focused={preview.focused}
+                desaturated={preview.desaturated}
+                onMouseEnter={() => updatePreviews(preview, true)}
+                onMouseLeave={() => updatePreviews(preview, false)} />
+          ))}
+        </main>
+        <Footer />
       </Route>
       {previews.map(preview => (
         <Route key={preview.url} exact path={`${path}/${preview.url}`}>

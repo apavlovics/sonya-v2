@@ -140,8 +140,7 @@ main {
 /* AnimatedSwitch transitions */
 
 .route-appear-active,
-.route-enter-active,
-.route-exit-active {
+.route-enter-active {
   transition-duration: var(--mid-transition-duration);
 }
 
@@ -152,14 +151,9 @@ main {
 }
 
 .route-appear-active,
-.route-enter-active,
-.route-exit {
+.route-enter-active {
   opacity: 1;
   transform: translateY(0);
-}
-
-.route-exit-active {
-  display: none;
 }
 
 /* Navigation */
