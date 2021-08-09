@@ -25,11 +25,15 @@ function Gallery(props) {
     else props.history.push(props.parentPath)
   }
   useHotkey(document, 'esc', close)
+
+  const backButton = 'back-button'
   useHotkey(document, 'arrowleft', () => {
-    document.getElementById('back-button').click()
+    document.getElementById(backButton).click()
   })
+
+  const nextButton = 'next-button'
   useHotkey(document, 'arrowright', () => {
-    document.getElementById('next-button').click()
+    document.getElementById(nextButton).click()
   })
 
   // Should be somewhat greater than the --aspect-ratio CSS variable
@@ -41,7 +45,7 @@ function Gallery(props) {
         isIntrinsicHeight
         hasMasterSpinner
         totalSlides={props.preview.galleryLength}>
-      <ButtonBack id="back-button" className="back-button">
+      <ButtonBack id={backButton} className={backButton}>
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
         </svg>
@@ -85,7 +89,7 @@ function Gallery(props) {
               return dots
             }} />
       </div>
-      <ButtonNext id="next-button" className="next-button">
+      <ButtonNext id={nextButton} className={nextButton}>
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
         </svg>
