@@ -34,7 +34,7 @@ function Previews(props) {
         lv: 'Jaunā Teika apartamenti',
       },
       year: '2020',
-      cover: '1.jpg',
+      cover: '2.jpg',
       galleryLength: 7,
       focused: false,
       desaturated: false,
