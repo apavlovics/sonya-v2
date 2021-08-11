@@ -27,7 +27,7 @@
   --negative-animation-height: calc(0px - var(--default-spacing));
 
   --min-opacity: .15;
-  --mid-opacity: .5;
+  --mid-opacity: .3;
   --max-opacity: .7;
 
   --min-transition-duration: .1s;
@@ -358,18 +358,18 @@ main.previews {
   justify-content: space-between;
   position: absolute;
   opacity: 0;
-  bottom: var(--negative-animation-height);
+  top: var(--negative-animation-height);
   padding: var(--default-spacing);
-  padding-top: calc(var(--default-spacing) * 7);
+  padding-bottom: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(var(--black));
-  background: linear-gradient(0deg, rgba(var(--white), var(--max-opacity)) 0%, rgba(var(--white), 0) 100%);
+  background: linear-gradient(0deg, rgba(var(--white), 0) 0%, rgba(var(--white), var(--mid-opacity)) 100%);
   transition-duration: var(--max-transition-duration);
 }
 
 .preview a:hover .details {
   opacity: 1;
-  bottom: 0;
+  top: 0;
   transition-duration: var(--min-transition-duration);
 }
 
@@ -560,6 +560,7 @@ main.previews {
     position: static;
     opacity: 1;
     padding-top: var(--item-padding);
+    padding-bottom: var(--item-padding);
   }
 
   .preview.focused a img {
