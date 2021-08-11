@@ -22,6 +22,7 @@ function Previews(props) {
         lv: 'Fjordi apartamenti',
       },
       year: '2021',
+      cover: '2.jpg',
       galleryLength: 3,
       focused: false,
       desaturated: false,
@@ -33,6 +34,7 @@ function Previews(props) {
         lv: 'Jaunā Teika apartamenti',
       },
       year: '2020',
+      cover: '3.jpg',
       galleryLength: 7,
       focused: false,
       desaturated: false,
@@ -69,7 +71,7 @@ function Previews(props) {
                 key={preview.url}
                 size={preview.size}
                 url={`/${stripSlashes(url)}/${preview.url}/`}
-                imageSrc={`/projects/${preview.url}/cover.jpg`}
+                imageSrc={`/projects/${preview.url}/${preview.cover}`}
                 title={preview.title[currentLanguage]}
                 year={preview.year}
                 focused={preview.focused}

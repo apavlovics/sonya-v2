@@ -54,7 +54,7 @@ function Gallery(props) {
         <Slider className="slider">
           {[...Array(props.preview.galleryLength).keys()].map(key => (
             <Slide key={key} index={key} className="slide">
-              <Image src={`/projects/${props.preview.url}/gallery/00${key + 1}.jpg`} />
+              <Image src={`/projects/${props.preview.url}/${key + 1}.jpg`} />
             </Slide>
           ))}
         </Slider>
