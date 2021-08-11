@@ -545,6 +545,10 @@ main.previews {
   margin: 0;
 }
 
+.dot-group button:disabled svg {
+  fill: rgb(var(--green));
+}
+
 /* Adaptive styles for touch devices */
 
 @media (hover: none) {
