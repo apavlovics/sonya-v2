@@ -288,6 +288,9 @@ footer {
 /* Previews */
 
 main.previews {
+  /* Determines the maximum width of previews, set 100vw for the full viewport width */
+  --default-width: 150vh;
+
   flex-flow: row wrap;
 }
 
