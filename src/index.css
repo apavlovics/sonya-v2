@@ -136,6 +136,11 @@ main {
   box-shadow: 0 0 20px rgba(var(--gray), var(--mid-opacity));
 }
 
+.lazy-load-image-background {
+  /* Force override inline-block to inline-flex, this fixes UI glitches */
+  display: inline-flex !important;
+}
+
 /* AnimatedSwitch transitions */
 
 .route-appear-active,
@@ -287,7 +292,7 @@ footer {
 /* Previews */
 
 main.previews {
-  /* Determines the maximum width of previews, set 100vw for the full viewport width */
+  /* Determines the maximum width of previews, set to 100vw for the full viewport width */
   --default-width: 150vh;
 
   flex-flow: row wrap;
