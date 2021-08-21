@@ -132,10 +132,6 @@ main {
   background-color: rgb(var(--light-gray));
 }
 
-.shadow {
-  box-shadow: 0 0 20px rgba(var(--gray), var(--mid-opacity));
-}
-
 .lazy-load-image-background {
   /* Force override inline-block to inline-flex, this fixes UI glitches */
   display: inline-flex !important;
@@ -173,6 +169,7 @@ nav {
   line-height: var(--large-line-height);
   overflow: hidden;
   cursor: default;
+  box-shadow: 0 0 2px rgba(var(--black), var(--mid-opacity));
 }
 
 nav a {
@@ -396,7 +393,7 @@ main.previews {
   background-color: rgb(var(--light-gray));
   border-radius: 50%;
   width: 40%;
-  margin: 0 auto 1em;
+  margin: 1.5em auto 1em;
 }
 
 /* Ensure portrait placeholder height is the same as width */

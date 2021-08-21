@@ -1,13 +1,11 @@
 import {useState, useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
-import useScrollPosition from '@react-hook/window-scroll'
 import {useWindowWidth} from '@react-hook/window-size'
 import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
 
 function Menu(props) {
   const [t, i18n] = useTranslation()
-  const scrollY = useScrollPosition(5)
   const width = useWindowWidth()
   const [maximized, setMaximized] = useState(false)
 
@@ -24,10 +22,9 @@ function Menu(props) {
   const currentLanguage = i18n.language
   const currentPathNoLanguagePrefix = stripPrefix(currentPath, `${currentLanguage}/`)
   const stateClassName = maximized ? 'maximized' : 'minimized'
-  const shadowClassName = scrollY > 0 ? ' shadow' : ''
   const hiddenClassName = props.hidden ? ' hidden' : ''
   return (
-    <nav className={`${stateClassName}${shadowClassName}${hiddenClassName}`}>
+    <nav className={`${stateClassName}${hiddenClassName}`}>
       <div>
         <div className="logo">
           <div>{t('Main Title')}</div>
