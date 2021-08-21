@@ -169,7 +169,7 @@ nav {
   line-height: var(--large-line-height);
   overflow: hidden;
   cursor: default;
-  box-shadow: 0 0 2px rgba(var(--black), var(--mid-opacity));
+  box-shadow: 0 0 20px rgba(var(--gray), var(--min-opacity));
 }
 
 nav a {
