@@ -27,7 +27,10 @@ function Menu(props) {
     <nav className={`${stateClassName}${hiddenClassName}`}>
       <div>
         <div className="logo">
-          <div>{t('Main Title')}</div>
+          <Title
+              title={t('Main Title')}
+              currentPath={currentPathNoLanguagePrefix} 
+              onClick={() => setMaximized(false)} />
           <MenuIcon maximized={maximized} onClick={() => setMaximized(!maximized)} />
         </div>
         <ul className={`main-menu ${stateClassName}`}>
@@ -55,6 +58,18 @@ function Menu(props) {
       </div>
     </nav>
   )
+}
+
+function Title(props) {
+  if (props.currentPath === 'interior-design') {
+    return (<div>{props.title}</div>)
+  } else {
+    return (
+      <Link to="/" onClick={props.onClick}>
+        <div>{props.title}</div>
+      </Link>
+    )
+  }
 }
 
 function MenuIcon(props) {

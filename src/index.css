@@ -182,6 +182,10 @@ nav a {
   border: none;
 }
 
+nav a:hover, nav a:focus {
+  background: none;
+}
+
 nav a div span {
   border-bottom: var(--border);
   border-color: rgba(var(--link-color), var(--min-opacity));
@@ -213,7 +217,7 @@ nav.hidden {
 
 .logo div {
   margin: auto 0;
-  padding: 1em 1em 1em 0;
+  padding: var(--menu-padding) var(--menu-padding) var(--menu-padding) 0;
 }
 
 .logo svg {
@@ -608,8 +612,6 @@ main.previews {
   :root {
     --smaller-font-size: 16px;
     --large-font-size: var(--larger-font-size);
-
-    --nav-height-multiplier: 4;
   }
 
   nav.maximized {
