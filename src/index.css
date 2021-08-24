@@ -26,6 +26,7 @@
 
   --default-width: 960px;
   --default-spacing: 18px;
+  --default-icon-size: 32px;
 
   --positive-animation-height: var(--default-spacing);
   --negative-animation-height: calc(0px - var(--default-spacing));
@@ -51,8 +52,6 @@
   --item-position: calc(0em - var(--item-padding));
 
   --focus-box-shadow: 0 0 0 2px rgba(var(--green), var(--max-opacity));
-
-  --menu-icon-size: 32px;
 }
 
 /* General */
@@ -220,8 +219,8 @@ nav.hidden {
 
 .logo svg {
   display: none;
-  width: var(--menu-icon-size);
-  height: var(--menu-icon-size);
+  width: var(--default-icon-size);
+  height: var(--default-icon-size);
   padding: var(--item-padding);
   position: relative;
   right: var(--item-position);
@@ -287,8 +286,8 @@ footer {
 }
 
 .social svg {
-  width: var(--menu-icon-size);
-  height: var(--menu-icon-size);
+  width: var(--default-icon-size);
+  height: var(--default-icon-size);
   padding: var(--item-padding);
 }
 
@@ -506,8 +505,8 @@ main.previews {
 }
 
 .carousel button svg {
-  width: var(--menu-icon-size);
-  height: var(--menu-icon-size);
+  width: var(--default-icon-size);
+  height: var(--default-icon-size);
   fill: rgb(var(--black));
 }
 
