@@ -39,8 +39,6 @@
   --mid-transition-duration: .2s;
   --max-transition-duration: .5s;
 
-  --large-line-height: 2;
-
   /* 3:2 is the standard aspect ratio for Canon EOS series */
   --aspect-ratio: 1.5;
 
@@ -170,7 +168,7 @@ nav {
   height: var(--nav-height);
   font-family: var(--sans-serif-font-family);
   font-size: var(--smaller-font-size);
-  line-height: var(--large-line-height);
+  line-height: 2;
   letter-spacing: var(--uppercase-letter-spacing);
   text-transform: uppercase;
   overflow: hidden;
