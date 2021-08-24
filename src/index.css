@@ -16,7 +16,7 @@
   --smaller-font-size: 14px;
   --normal-font-size: 22px;
   --larger-font-size: 32px;
-  --large-font-size: 36px;
+  --large-font-size: 44px;
 
   --normal-font-weight: 400;
   --bold-font-weight: 700;
@@ -92,8 +92,9 @@ p {
 }
 
 h1 {
-  padding-top: 1em;
+  padding-top: 2em;
   padding-bottom: .3em;
+  font-family: var(--sans-serif-font-family);
   font-size: var(--large-font-size);
   font-weight: var(--bold-font-weight);
 }
@@ -606,6 +607,8 @@ main.previews {
 
   :root {
     --smaller-font-size: 16px;
+    --large-font-size: 32px;
+
     --nav-height-multiplier: 4;
   }
 
