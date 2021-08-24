@@ -18,8 +18,8 @@ function Previews(props) {
       size: 'large',
       url: 'fjordi',
       title: {
-        en: 'Fjordi Apartment',
-        lv: 'Fjordi apartamenti',
+        en: 'Fjordi',
+        lv: 'Fjordi',
       },
       year: '2021',
       cover: '4.jpg',
@@ -30,8 +30,8 @@ function Previews(props) {
       size: 'large',
       url: 'jauna-teika',
       title: {
-        en: 'Jauna Teika Apartment',
-        lv: 'Jaunā Teika apartamenti',
+        en: 'Jauna Teika',
+        lv: 'Jaunā Teika',
       },
       year: '2020',
       cover: '2.jpg',
@@ -115,8 +115,8 @@ function Preview(props) {
               wrapperClassName="placeholder" />
         </div>
         <div className="details">
-          <h2>{props.title}</h2>
-          <span>{props.year}</span>
+          <div>{props.title}</div>
+          <div className="year">{props.year}</div>
         </div>
       </Link>
     </div>

@@ -10,14 +10,19 @@
   --green: 137, 151, 75;
   --light-green: 196, 203, 165;
 
-  --smaller-font-size: 16px;
-  --normal-font-size: 18px;
-  --larger-font-size: 26px;
+  --sans-serif-font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+  --serif-font-family: 'EB Garamond', Times, 'Times New Roman', serif;
+
+  --smaller-font-size: 14px;
+  --normal-font-size: 22px;
+  --larger-font-size: 32px;
   --large-font-size: 36px;
 
   --light-font-weight: 300;
   --normal-font-weight: 400;
   --bold-font-weight: 700;
+
+  --uppercase-letter-spacing: 1px;
 
   --default-width: 960px;
   --default-spacing: 18px;
@@ -26,7 +31,7 @@
   --negative-animation-height: calc(0px - var(--default-spacing));
 
   --min-opacity: .15;
-  --mid-opacity: .3;
+  --mid-opacity: .35;
   --max-opacity: .7;
 
   --min-transition-duration: .1s;
@@ -41,12 +46,14 @@
   --border: 1px solid;
   --radius: 5px;
 
-  --nav-height: calc(2em + var(--normal-font-size) * var(--large-line-height));
+  --nav-height: calc(4.5 * var(--smaller-font-size));
 
   --item-padding: .5em;
   --item-position: calc(0em - var(--item-padding));
 
   --focus-box-shadow: 0 0 0 2px rgba(var(--green), var(--max-opacity));
+
+  --menu-icon-size: 32px;
 }
 
 /* General */
@@ -58,9 +65,9 @@
 }
 
 body {
-  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-family: var(--serif-font-family);
   font-size: var(--normal-font-size);
-  font-weight: var(--light-font-weight);
+  font-weight: var(--normal-font-weight);
 
   /* Disable automatic text scaling on iOS */
   -webkit-text-size-adjust: 100%;
@@ -92,11 +99,6 @@ h1 {
   padding-top: 1em;
   padding-bottom: .3em;
   font-size: var(--large-font-size);
-  font-weight: var(--bold-font-weight);
-}
-
-h2 {
-  font-size: var(--normal-font-size);
   font-weight: var(--bold-font-weight);
 }
 
@@ -159,14 +161,19 @@ main {
 /* Navigation */
 
 nav {
+  --menu-padding: 1.5em;
+
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: rgba(var(--white), 0.95);
+  background-color: rgba(var(--white), .95);
   width: 100%;
   height: var(--nav-height);
-  font-weight: var(--normal-font-weight);
+  font-family: var(--sans-serif-font-family);
+  font-size: var(--smaller-font-size);
   line-height: var(--large-line-height);
+  letter-spacing: var(--uppercase-letter-spacing);
+  text-transform: uppercase;
   overflow: hidden;
   cursor: default;
   box-shadow: 0 0 20px rgba(var(--gray), var(--min-opacity));
@@ -214,6 +221,8 @@ nav.hidden {
 
 .logo svg {
   display: none;
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
   padding: var(--item-padding);
   position: relative;
   right: var(--item-position);
@@ -228,22 +237,18 @@ nav.hidden {
 
 .main-menu li div {
   margin: auto 0;
-  padding: 1em;
+  padding: var(--menu-padding);
 }
 
 .language-menu {
-  font-size: var(--smaller-font-size);
   list-style: none;
-  letter-spacing: 1px;
 }
 
 .language-menu li div {
-  --padding-top: calc(2 * var(--normal-font-size) - var(--smaller-font-size));
-
   position: relative;
   right: var(--item-position);
   margin: auto 0;
-  padding: var(--padding-top) var(--item-padding) var(--normal-font-size);
+  padding: var(--menu-padding) var(--item-padding) var(--smaller-font-size);
 }
 
 .selected {
@@ -283,6 +288,8 @@ footer {
 }
 
 .social svg {
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
   padding: var(--item-padding);
 }
 
@@ -293,6 +300,13 @@ main.previews {
   --default-width: 150vh;
 
   flex-flow: row wrap;
+  font-family: var(--sans-serif-font-family);
+  letter-spacing: var(--uppercase-letter-spacing);
+  text-transform: uppercase;
+}
+
+.year {
+  font-weight: var(--light-font-weight);
 }
 
 .preview.large {
@@ -375,10 +389,6 @@ main.previews {
   transition-duration: var(--min-transition-duration);
 }
 
-.preview .details h2 {
-  margin-right: var(--default-spacing);
-}
-
 .preview.desaturated {
   filter: grayscale(100%);
 }
@@ -426,6 +436,8 @@ main.previews {
 
 .contact a svg {
   position: relative;
+  width: 1em;
+  height: 1em;
   top: .1em;
   left: -.1em;
   fill: rgb(var(--green));
@@ -457,7 +469,6 @@ main.previews {
 }
 
 .carousel button {
-  font-size: var(--normal-font-size);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -497,8 +508,8 @@ main.previews {
 }
 
 .carousel button svg {
-  width: 2em;
-  height: 2em;
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
   fill: rgb(var(--black));
 }
 
@@ -562,8 +573,8 @@ main.previews {
     position: static;
     opacity: 1;
     transform: none;
-    padding-top: var(--item-padding);
-    padding-bottom: var(--item-padding);
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 
   .preview.focused a img {
@@ -610,6 +621,10 @@ main.previews {
 
 @media only screen and (max-width: 720px) {
 
+  :root {
+    --smaller-font-size: 16px;
+  }
+
   nav.maximized {
     height: 100%;
     overflow: auto;
@@ -618,6 +633,7 @@ main.previews {
 
   nav > div {
     flex-wrap: wrap;
+    padding-top: var(--item-padding);
   }
 
   .logo, .language-menu {
