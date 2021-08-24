@@ -39,14 +39,15 @@
   --mid-transition-duration: .2s;
   --max-transition-duration: .5s;
 
-  --large-line-height: 1.7;
+  --large-line-height: 2;
 
   /* 3:2 is the standard aspect ratio for Canon EOS series */
   --aspect-ratio: 1.5;
 
   --border: 1px solid;
 
-  --nav-height: calc(4.5 * var(--smaller-font-size));
+  --nav-height-multiplier: 4.5;
+  --nav-height: calc(var(--nav-height-multiplier) * var(--smaller-font-size));
 
   --item-padding: .5em;
   --item-position: calc(0em - var(--item-padding));
@@ -606,6 +607,7 @@ main.previews {
 
   :root {
     --smaller-font-size: 16px;
+    --nav-height-multiplier: 4;
   }
 
   nav.maximized {
@@ -616,7 +618,6 @@ main.previews {
 
   nav > div {
     flex-wrap: wrap;
-    padding-top: var(--item-padding);
   }
 
   .logo, .language-menu {
@@ -629,7 +630,6 @@ main.previews {
 
   .main-menu {
     flex-direction: column;
-    padding-top: var(--item-padding);
   }
 
   .main-menu.maximized, .language-menu.maximized {
