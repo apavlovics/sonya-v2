@@ -44,7 +44,6 @@
   --aspect-ratio: 1.5;
 
   --border: 1px solid;
-  --radius: 5px;
 
   --nav-height: calc(4.5 * var(--smaller-font-size));
 
@@ -483,7 +482,6 @@ main.previews {
   position: absolute;
   top: 0;
   right: 0;
-  border-radius: var(--item-padding);
   background-color: rgba(var(--white), var(--max-opacity));
 }
 
