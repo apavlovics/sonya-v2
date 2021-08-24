@@ -358,8 +358,9 @@ main.previews {
   flex-flow: row wrap;
   justify-content: space-between;
   position: absolute;
+  top: 0;
   opacity: 0;
-  top: var(--negative-animation-height);
+  transform: translateY(var(--negative-animation-height));
   padding: var(--default-spacing);
   padding-bottom: calc(var(--default-spacing) * 7);
   width: calc(100% - var(--default-spacing) * 2);
@@ -370,7 +371,7 @@ main.previews {
 
 .preview a:hover .details {
   opacity: 1;
-  top: 0;
+  transform: translateY(0);
   transition-duration: var(--min-transition-duration);
 }
 
