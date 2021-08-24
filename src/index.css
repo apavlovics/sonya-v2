@@ -561,6 +561,7 @@ main.previews {
   .preview .details {
     position: static;
     opacity: 1;
+    transform: none;
     padding-top: var(--item-padding);
     padding-bottom: var(--item-padding);
   }
