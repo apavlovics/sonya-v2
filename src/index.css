@@ -18,7 +18,6 @@
   --larger-font-size: 32px;
   --large-font-size: 36px;
 
-  --light-font-weight: 300;
   --normal-font-weight: 400;
   --bold-font-weight: 700;
 
@@ -32,7 +31,7 @@
   --negative-animation-height: calc(0px - var(--default-spacing));
 
   --min-opacity: .15;
-  --mid-opacity: .35;
+  --mid-opacity: .5;
   --max-opacity: .7;
 
   --min-transition-duration: .1s;
@@ -301,10 +300,6 @@ main.previews {
   text-transform: uppercase;
 }
 
-.year {
-  font-weight: var(--light-font-weight);
-}
-
 .preview.large {
   --max-width: var(--default-width);
 }
@@ -372,7 +367,7 @@ main.previews {
   opacity: 0;
   transform: translateY(var(--negative-animation-height));
   padding: var(--default-spacing);
-  padding-bottom: calc(var(--default-spacing) * 7);
+  padding-bottom: calc(var(--default-spacing) * 10);
   width: calc(100% - var(--default-spacing) * 2);
   color: rgb(var(--black));
   background: linear-gradient(0deg, rgba(var(--white), 0) 0%, rgba(var(--white), var(--mid-opacity)) 100%);
@@ -383,6 +378,12 @@ main.previews {
   opacity: 1;
   transform: translateY(0);
   transition-duration: var(--min-transition-duration);
+}
+
+.preview .details .title {
+  font-weight: var(--bold-font-weight);
+  border-bottom: var(--border);
+  border-color: rgba(var(--black), var(--min-opacity));
 }
 
 .preview.desaturated {
@@ -624,6 +625,10 @@ main.previews {
 
   .logo svg {
     display: initial;
+  }
+
+  main.previews {
+    font-size: var(--smaller-font-size);
   }
 
   .main-menu {

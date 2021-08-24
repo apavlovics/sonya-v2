@@ -115,7 +115,7 @@ function Preview(props) {
               wrapperClassName="placeholder" />
         </div>
         <div className="details">
-          <div>{props.title}</div>
+          <div className="title">{props.title}</div>
           <div className="year">{props.year}</div>
         </div>
       </Link>
