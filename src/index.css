@@ -440,19 +440,6 @@ main.previews {
   fill: rgb(var(--green));
 }
 
-.requisites {
-  display: grid;
-  grid-template-columns: min-content auto;
-  margin-bottom: 1em;
-  line-height: var(--large-line-height);
-}
-
-.requisites .key {
-  color: rgb(var(--gray));
-  white-space: nowrap;
-  padding-right: 2em;
-}
-
 /* Gallery */
 
 .carousel {
@@ -591,7 +578,7 @@ main.previews {
     --default-width: 996px;
   }
 
-  nav > div, main > h1, main > p, .contact, .requisites, footer {
+  nav > div, main > h1, main > p, .contact, footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
   }
@@ -665,13 +652,5 @@ main.previews {
   .language-menu li div {
     left: var(--item-position);
     padding: var(--item-padding);
-  }
-
-  .requisites {
-    grid-template-columns: auto;
-  }
-
-  .requisites .value {
-    padding-bottom: var(--item-padding);
   }
 }
