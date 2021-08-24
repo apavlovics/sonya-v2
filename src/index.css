@@ -607,7 +607,7 @@ main.previews {
 
   :root {
     --smaller-font-size: 16px;
-    --large-font-size: 32px;
+    --large-font-size: var(--larger-font-size);
 
     --nav-height-multiplier: 4;
   }
