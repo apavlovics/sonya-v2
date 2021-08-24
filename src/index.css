@@ -265,7 +265,6 @@ footer {
   color: rgb(var(--gray));
   padding-top: 1em;
   padding-bottom: 3em;
-  line-height: var(--large-line-height);
 }
 
 .social {
