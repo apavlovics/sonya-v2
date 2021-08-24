@@ -643,6 +643,7 @@ main.previews {
 
   .main-menu {
     flex-direction: column;
+    padding-top: var(--item-padding);
   }
 
   .main-menu.maximized, .language-menu.maximized {
