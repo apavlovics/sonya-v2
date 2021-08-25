@@ -62,7 +62,7 @@ function Menu(props) {
 
 function Title(props) {
   if (props.currentPath === 'interior-design') {
-    return (<div>{props.title}</div>)
+    return (<div onClick={props.onClick}>{props.title}</div>)
   } else {
     return (
       <Link to="/" onClick={props.onClick}>
