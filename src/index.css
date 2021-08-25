@@ -538,6 +538,7 @@ main.previews {
 }
 
 .slide {
+  /* TODO Consider migrating to gallery that supports offscreen whitespace between slides, e.g. Flickity */
   padding: 0 2px;
   cursor: grab;
 }
