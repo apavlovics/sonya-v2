@@ -29,7 +29,8 @@ function Menu(props) {
         <div className="logo">
           <Title
               title={t('Main Title')}
-              currentPath={currentPathNoLanguagePrefix} 
+              currentLanguage={currentLanguage}
+              currentPathNoLanguagePrefix={currentPathNoLanguagePrefix} 
               onClick={() => setMaximized(false)} />
           <MenuIcon maximized={maximized} onClick={() => setMaximized(!maximized)} />
         </div>
@@ -50,7 +51,7 @@ function Menu(props) {
                 key={language}
                 currentLanguage={currentLanguage}
                 language={language}
-                currentPath={currentPathNoLanguagePrefix}
+                currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
                 onClick={() => i18n.changeLanguage(language)}
                 hidden={props.hidden} />
           ))}
@@ -61,11 +62,14 @@ function Menu(props) {
 }
 
 function Title(props) {
-  if (props.currentPath === 'interior-design') {
+  const titlePath = 'interior-design'
+  if (props.currentPathNoLanguagePrefix === titlePath) {
     return (<div onClick={props.onClick}>{props.title}</div>)
   } else {
     return (
-      <Link to="/" onClick={props.onClick}>
+      <Link
+          to={`/${props.currentLanguage}/${titlePath}/`}
+          onClick={props.onClick}>
         <div>{props.title}</div>
       </Link>
     )
@@ -118,7 +122,7 @@ function LanguageMenuItem(props) {
     return (
       <li>
         <Link
-            to={`/${props.language}/${props.currentPath}/`}
+            to={`/${props.language}/${props.currentPathNoLanguagePrefix}/`}
             onClick={props.onClick}
             {...(props.hidden ? {tabIndex: '-1'} : {})}>
           <div>
