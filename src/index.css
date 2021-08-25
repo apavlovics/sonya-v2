@@ -214,6 +214,11 @@ nav.hidden {
   white-space: nowrap;
 }
 
+/* Do not highlight logo on hover, but still highlight on focus */
+.logo a:hover {
+  --link-color: var(--black);
+}
+
 .logo div {
   margin: auto 0;
   padding: var(--menu-padding) var(--menu-padding) var(--menu-padding) 0;
