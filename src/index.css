@@ -538,7 +538,7 @@ main.previews {
 }
 
 .slide {
-  padding: 0 var(--item-padding);
+  padding: 0 2px;
   cursor: grab;
 }
 
