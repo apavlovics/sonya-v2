@@ -43,8 +43,7 @@
 
   --border: 1px solid;
 
-  --nav-height-multiplier: 4.5;
-  --nav-height: calc(var(--nav-height-multiplier) * var(--smaller-font-size));
+  --nav-height: calc(4.7 * var(--smaller-font-size));
 
   --item-padding: .5em;
   --item-position: calc(0em - var(--item-padding));
