@@ -8,7 +8,7 @@ After the initial checkout of the project, execute:
 
     npm install
 
-This installs all the required dependencies in the local *node_modules* folder.
+This downloads and installs all the required dependencies in the local *node_modules* folder.
 
 ## Converting Images
 
