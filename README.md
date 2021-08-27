@@ -34,4 +34,4 @@ To build and package the application for production use, execute:
 
     npm run build
 
-Once packaged, the application is ready to be deployed as a static website. It supports [Apache HTTP Server](https://httpd.apache.org/) out of the box. Refer to the *public/.htaccess* file for configuration details.
+Once packaged, the application is ready to be deployed as a static website from the *build* folder. It supports [Apache HTTP Server](https://httpd.apache.org/) out of the box. Refer to the *public/.htaccess* file for configuration details.
