@@ -33,3 +33,5 @@ The application starts at http://localhost:3000 by default.
 To build and package the application for production use, execute:
 
     npm run build
+
+Once packaged, the application is ready to be deployed as a static website. It supports Apache HTTP Server out of the box. Refer to *public/.htaccess* file for configuration details.
