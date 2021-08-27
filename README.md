@@ -10,6 +10,10 @@ After the initial checkout of the project, execute:
 
 This installs all the required dependencies in the local *node_modules* folder.
 
+## Converting Images
+
+To convert JPEG images for use on the web, refer to the *scripts/convert-images.sh* script.
+
 ## Testing
 
 To test the application, execute:
