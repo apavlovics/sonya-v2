@@ -1,6 +1,6 @@
 # Sonya V2
 
-All the following commands should be executed from the project main folder.
+All the following commands should be executed from the project’s root folder.
 
 ## Preparing Workspace
 
@@ -36,4 +36,4 @@ To build and package the application for production use, execute:
 
 ## Deploying
 
-Once packaged, the application is ready to be deployed as a static website from the *build* folder. It supports [Apache HTTP Server](https://httpd.apache.org/) out of the box. Refer to the *public/.htaccess* file for configuration details.
+Once packaged, the application can be deployed as a static website from the *build* folder. It supports [Apache HTTP Server](https://httpd.apache.org) out of the box. Refer to the *public/.htaccess* file for configuration details.
