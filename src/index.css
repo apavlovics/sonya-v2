@@ -582,7 +582,7 @@ main.previews {
 
 /* Adaptive styles for smaller screens and windows */
 
-@media only screen and (max-width: 150vh) { /* Must be the same as --previews-max-width */
+@media only screen and (max-width: 150vh) { /* Must be the same as the default --previews-max-width */
 
   .preview.medium {
     --previews-max-width: 100vw;
