@@ -310,11 +310,11 @@ main.previews {
 }
 
 .preview.large {
-  --max-width: var(--previews-max-width);
+  --preview-max-width: var(--previews-max-width);
 }
 
 .preview.medium {
-  --max-width: calc((var(--previews-max-width) - var(--default-spacing)) / 2);
+  --preview-max-width: calc((var(--previews-max-width) - var(--default-spacing)) / 2);
 }
 
 .preview.large, .preview.medium {
@@ -358,8 +358,8 @@ main.previews {
 .preview .placeholder {
   width: 100vw;
   height: calc(100vw / var(--aspect-ratio));
-  max-width: var(--max-width);
-  max-height: calc(var(--max-width) / var(--aspect-ratio));
+  max-width: var(--preview-max-width);
+  max-height: calc(var(--preview-max-width) / var(--aspect-ratio));
 }
 
 .preview a img {
@@ -515,16 +515,16 @@ main.previews {
 }
 
 .slider {
-  --max-width: 80vw;
-  --max-height: 80vh;
+  --slider-max-width: 80vw;
+  --slider-max-height: 80vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  width: var(--max-width);
-  height: calc(var(--max-width) / var(--aspect-ratio));
-  max-height: var(--max-height);
-  max-width: calc(var(--max-height) * var(--aspect-ratio));
+  width: var(--slider-max-width);
+  height: calc(var(--slider-max-width) / var(--aspect-ratio));
+  max-height: var(--slider-max-height);
+  max-width: calc(var(--slider-max-height) * var(--aspect-ratio));
   outline: none;
 }
 
@@ -601,7 +601,7 @@ main.previews {
   }
 
   .preview.medium {
-    --max-width: var(--previews-max-width);
+    --preview-max-width: var(--previews-max-width);
   }
 
   .carousel.vertical .back-button,
@@ -610,8 +610,8 @@ main.previews {
   }
 
   .slider {
-    --max-width: 100vw;
-    --max-height: 85vh;
+    --slider-max-width: 100vw;
+    --slider-max-height: 85vh;
   }
 
   .carousel.horizontal .dot-group {
