@@ -300,20 +300,21 @@ footer {
 
 main.previews {
   /* Determines the maximum width of previews, set to 100vw for the full viewport width */
-  --default-max-width: 150vh;
+  --previews-max-width: 150vh;
 
   flex-flow: row wrap;
+  max-width: var(--previews-max-width);
   font-family: var(--sans-serif-font-family);
   letter-spacing: var(--uppercase-letter-spacing);
   text-transform: uppercase;
 }
 
 .preview.large {
-  --max-width: var(--default-max-width);
+  --max-width: var(--previews-max-width);
 }
 
 .preview.medium {
-  --max-width: calc((var(--default-max-width) - var(--default-spacing)) / 2);
+  --max-width: calc((var(--previews-max-width) - var(--default-spacing)) / 2);
 }
 
 .preview.large, .preview.medium {
@@ -581,10 +582,10 @@ main.previews {
 
 /* Adaptive styles for smaller screens and windows */
 
-@media only screen and (max-width: 150vh) { /* Must be the same as the maximum width of previews */
+@media only screen and (max-width: 150vh) { /* Must be the same as --previews-max-width */
 
   .preview.medium {
-    --default-max-width: 100vw;
+    --previews-max-width: 100vw;
   }
 }
 
@@ -600,7 +601,7 @@ main.previews {
   }
 
   .preview.medium {
-    --max-width: var(--default-max-width);
+    --max-width: var(--previews-max-width);
   }
 
   .carousel.vertical .back-button,
