@@ -44,7 +44,7 @@ function Gallery(props) {
         naturalSlideWidth={1}
         isIntrinsicHeight
         hasMasterSpinner
-        totalSlides={props.preview.galleryLength}>
+        totalSlides={props.preview.gallery.length}>
       <ButtonBack id={backButton} className={backButton}>
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -52,9 +52,9 @@ function Gallery(props) {
       </ButtonBack>
       <div className="gallery">
         <Slider className="slider">
-          {[...Array(props.preview.galleryLength).keys()].map(key => (
-            <Slide key={key} index={key} className="slide">
-              <Image src={`/projects/${props.preview.url}/${key + 1}.jpg`} />
+          {props.preview.gallery.map((slide, i) => (
+            <Slide key={i} index={i} className="slide">
+              <Image src={`/projects/${props.preview.url}/${slide}`} />
             </Slide>
           ))}
         </Slider>
