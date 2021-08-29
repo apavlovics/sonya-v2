@@ -26,10 +26,9 @@ function Previews(props) {
       slides: [
         '9799-v1.jpg',
         '9801-v1.jpg',
-        '9807-v1.jpg',
         '9815-v1.jpg',
         '9818-v1.jpg',
-        '9860-v1.jpg',
+        '9860-v2.jpg',
         '9861-v1.jpg',
       ],
       focused: false,
