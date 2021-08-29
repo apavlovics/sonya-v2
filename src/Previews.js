@@ -16,6 +16,18 @@ function Previews(props) {
   const [previews, setPreviews] = useState(
     [{
       size: 'large',
+      url: 'jurmala',
+      title: {
+        en: 'Jurmala',
+        lv: 'Jūrmala',
+      },
+      year: '2021',
+      cover: '2.jpg',
+      galleryLength: 7,
+      focused: false,
+      desaturated: false,
+    }, {
+      size: 'medium',
       url: 'fjordi',
       title: {
         en: 'Fjordi',
@@ -27,7 +39,7 @@ function Previews(props) {
       focused: false,
       desaturated: false,
     }, {
-      size: 'large',
+      size: 'medium',
       url: 'jauna-teika',
       title: {
         en: 'Jauna Teika',
