@@ -476,6 +476,9 @@ main.previews {
   position: absolute;
   top: 0;
   right: 0;
+
+  /* For squarish windows, where close button can partially overlay slides */
+  border-radius: var(--item-padding);
   background-color: rgba(var(--white), var(--max-opacity));
 }
 
