@@ -23,7 +23,7 @@ function Previews(props) {
       },
       year: '2021',
       cover: '9801-v1.jpg',
-      gallery: [
+      slides: [
         '9799-v1.jpg',
         '9801-v1.jpg',
         '9807-v1.jpg',
@@ -43,7 +43,7 @@ function Previews(props) {
       },
       year: '2021',
       cover: '4-v1.jpg',
-      gallery: [
+      slides: [
         '1-v1.jpg',
         '2-v1.jpg',
         '3-v1.jpg',
@@ -61,7 +61,7 @@ function Previews(props) {
       },
       year: '2020',
       cover: '001-v1.jpg',
-      gallery: [
+      slides: [
         '003-v1.jpg',
         '001-v1.jpg',
         '005-v1.jpg',
