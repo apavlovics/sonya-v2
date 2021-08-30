@@ -252,7 +252,7 @@ nav.hidden {
   position: relative;
   right: var(--item-position);
   margin: auto 0;
-  padding: var(--menu-padding) var(--item-padding) var(--smaller-font-size);
+  padding: var(--menu-padding) var(--item-padding);
 }
 
 .selected {
