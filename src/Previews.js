@@ -7,7 +7,7 @@ import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
 import Gallery from './Gallery'
 import PageNotFound from './PageNotFound'
-import {formatTitle, stripSlashes} from './Utilities'
+import {updateTitle, stripSlashes} from './Utilities'
 
 function Previews(props) {
   const [t, i18n] = useTranslation()
@@ -97,7 +97,7 @@ function Previews(props) {
   return (
     <AnimatedSwitch>
       <Route exact path={path}>
-        {formatTitle(t('Interior Design'), t('Main Title'))}
+        {updateTitle(t('Interior Design Title'))}
         <main className="previews">
           {previews.map(preview => (
             <Preview
@@ -117,7 +117,7 @@ function Previews(props) {
       </Route>
       {previews.map(preview => (
         <Route key={preview.url} exact path={`${path}/${preview.url}`}>
-          {formatTitle(preview.title[currentLanguage], t('Main Title'))}
+          {updateTitle(preview.title[currentLanguage])}
           <Gallery parentPath={path} preview={preview} setMenuHidden={props.setMenuHidden} />
         </Route>
       ))}

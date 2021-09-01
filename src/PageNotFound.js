@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {Trans, useTranslation} from 'react-i18next'
 import Footer from './Footer'
-import {formatTitle, setErrorModeEnabled} from './Utilities'
+import {updateTitle, setErrorModeEnabled} from './Utilities'
 
 export default function PageNotFound() {
   const [t] = useTranslation()
@@ -16,7 +16,7 @@ export default function PageNotFound() {
 
   return (
     <div>
-      {formatTitle(t('Page Not Found'), t('Main Title'))}
+      {updateTitle(t('Page Not Found'))}
       <main>
         <h1>{t('Page Not Found')}</h1>
         <p>

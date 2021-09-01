@@ -1,13 +1,13 @@
 import {useTranslation} from 'react-i18next'
 import {LazyLoadImage} from 'react-lazy-load-image-component'
 import Footer from './Footer'
-import {formatTitle} from './Utilities'
+import {updateTitle} from './Utilities'
 
 export default function Contact() {
   const [t] = useTranslation()
   return (
     <div>
-      {formatTitle(t('Contact'), t('Main Title'))}
+      {updateTitle(t('Contact Title'))}
       <main>
         <div className="portrait">
           <LazyLoadImage

@@ -21,10 +21,9 @@ export const stripPrefix = (path, prefix) => {
 /** Strips all whitespace characters from the string. */
 export const stripWhitespace = string => string.replace(/\s/g, '')
 
-/** Formats the page title. */
-export const formatTitle = (sectionTitle, mainTitle) => {
-  const fullTitle = sectionTitle === '' ? mainTitle : `${mainTitle}: ${sectionTitle}`
-  return <Helmet><title>{fullTitle}</title></Helmet>
+/** Updates the page title. */
+export const updateTitle = title => {
+  return <Helmet><title>{title}</title></Helmet>
 }
 
 const updateBodyClassList = (add, className) => {

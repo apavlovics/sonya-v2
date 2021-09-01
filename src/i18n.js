@@ -21,7 +21,9 @@ i18n
         translation: {
           'Main Title': 'Sonya Pavlovich',
           'Interior Design': 'Interior Design',
+          'Interior Design Title': 'Sonya Pavlovich Interior Design',
           'Contact': 'Contact',
+          'Contact Title': 'Contact Sonya Pavlovich',
           'About Text': 'I am a furniture and interior designer. My projects include various furniture items, private and commercial interiors, even quite unusual things like portable wardrobes and live casino studios. In my designs I try to achieve modern yet memorable look, all while using natural and sustainable materials.',
           'Contact Text': 'Contact me via email:',
           'Page Not Found': 'Page Not Found',
@@ -33,7 +35,9 @@ i18n
         translation: {
           'Main Title': 'Sofija Pavloviča',
           'Interior Design': 'Interjera dizains',
+          'Interior Design Title': 'Sofijas Pavlovičas interjera dizains',
           'Contact': 'Kontakti',
+          'Contact Title': 'Sofijas Pavlovičas kontakti',
           'About Text': 'Esmu mēbeļu un interjera dizainere. Mani projekti ietver dažādus mēbeļu priekšmetus, privātus un komerctelpu interjerus, pat tādas neparastas lietas kā pārnēsājamie skapji un interneta kazino studijas. Savos dizainos es cenšos panākt mūsdienīgu un neaizmirstamu izskatu, izmantojot dabiskus un ilgtspējīgus materiālus.',
           'Contact Text': 'Sazinieties ar mani pa e-pastu:',
           'Page Not Found': 'Lapa nav atrasta',

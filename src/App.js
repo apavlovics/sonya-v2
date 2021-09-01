@@ -9,7 +9,7 @@ import Menu from './Menu'
 import PageNotFound from './PageNotFound'
 import Previews from './Previews'
 import ScrollToTop from './ScrollToTop'
-import {formatTitle, withTracker} from './Utilities'
+import {updateTitle, withTracker} from './Utilities'
 
 // Load i18next instance for translations to work
 import './i18n'
@@ -49,7 +49,7 @@ export default function App(props) {
   return (
     <HelmetProvider>
       <Router>
-        {formatTitle('')}
+        {updateTitle('')}
         <Menu sections={sections} hidden={menuHidden} />
 
         <ScrollToTop />
