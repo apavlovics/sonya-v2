@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import ReactGA from 'react-ga'
 import {Helmet} from 'react-helmet-async'
+import {disablePageScroll, enablePageScroll} from 'scroll-lock'
 
 /** Strips one "/" slash from the beginning and the end of the path, if it is present. */
 export const stripSlashes = path => {
@@ -33,7 +34,8 @@ const updateBodyClassList = (add, className) => {
 
 /** Enables or disables scrolling. */
 export const setScrollingEnabled = enabled => {
-  updateBodyClassList(!enabled, 'no-scroll')
+  if (enabled) enablePageScroll()
+  else disablePageScroll()
 }
 
 /** Enables or disables error mode. */
