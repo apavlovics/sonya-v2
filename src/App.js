@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import {HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
 import AnimatedSwitch from './AnimatedSwitch'
@@ -19,7 +19,7 @@ export default function App(props) {
   const [menuHidden, setMenuHidden] = useState(false)
 
   // Initialize Google Analytics
-  ReactGA.initialize('UA-28040249-3', {testMode: props.testMode})
+  ReactGA.initialize('G-WCJ8J8DSM1', {testMode: props.testMode})
 
   // All website sections are defined below
   const sections = [{

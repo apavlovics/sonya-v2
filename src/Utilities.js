@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import {Helmet} from 'react-helmet-async'
 import {disablePageScroll, enablePageScroll} from 'scroll-lock'
 
@@ -45,7 +45,7 @@ export const setErrorModeEnabled = enabled => {
 
 /** Higher-order component (HOC) that adds Google Analytics tracking to the provided component. */
 export const withTracker = Component => ({...props}) => {
-  useEffect(() => ReactGA.pageview(window.location.pathname))
+  useEffect(() => ReactGA.send({hitType: "pageview", page: window.location.pathname}))
   return (
     <Component {...props} />
   )
