@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Link, Route, useRouteMatch} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
@@ -11,7 +11,6 @@ import {updateTitle, stripSlashes} from './Utilities'
 
 function Previews(props) {
   const [t, i18n] = useTranslation()
-  const {path, url} = useRouteMatch()
 
   const [previews, setPreviews] = useState(
     [{
@@ -96,34 +95,41 @@ function Previews(props) {
   const currentLanguage = i18n.language
   return (
     <AnimatedSwitch>
-      <Route exact path={path}>
-        {updateTitle(t('Interior Design Title'))}
-        <main className="previews">
-          {previews.map(preview => (
-            <Preview
-                key={preview.url}
-                size={preview.size}
-                url={`/${stripSlashes(url)}/${preview.url}/`}
-                imageSrc={`/projects/${preview.url}/${preview.cover}`}
-                title={preview.title[currentLanguage]}
-                year={preview.year}
-                focused={preview.focused}
-                desaturated={preview.desaturated}
-                onMouseEnter={() => updatePreviews(preview, true)}
-                onMouseLeave={() => updatePreviews(preview, false)} />
-          ))}
-        </main>
-        <Footer />
-      </Route>
+      <Route
+        path="/"
+        element={
+          <>
+            {updateTitle(t('Interior Design Title'))}
+            <main className="previews">
+              {previews.map(preview => (
+                <Preview
+                    key={preview.url}
+                    size={preview.size}
+                    url={`${preview.url}/`}
+                    imageSrc={`/projects/${preview.url}/${preview.cover}`}
+                    title={preview.title[currentLanguage]}
+                    year={preview.year}
+                    focused={preview.focused}
+                    desaturated={preview.desaturated}
+                    onMouseEnter={() => updatePreviews(preview, true)}
+                    onMouseLeave={() => updatePreviews(preview, false)} />
+              ))}
+            </main>
+            <Footer />
+          </>
+      } />
       {previews.map(preview => (
-        <Route key={preview.url} exact path={`${path}/${preview.url}`}>
-          {updateTitle(preview.title[currentLanguage])}
-          <Gallery parentPath={path} preview={preview} setMenuHidden={props.setMenuHidden} />
-        </Route>
+        <Route
+          key={preview.url}
+          path={preview.url}
+          element={
+            <>
+              {updateTitle(preview.title[currentLanguage])}
+              <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
+            </>
+          } />
       ))}
-      <Route path="*">
-        <PageNotFound />
-      </Route>
+      <Route path="*" element={<PageNotFound />} />
     </AnimatedSwitch>
   )
 }

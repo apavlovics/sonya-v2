@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {Link, withRouter} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 import {useWindowWidth} from '@react-hook/window-size'
 import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
@@ -18,7 +18,8 @@ function Menu(props) {
     }
   }, [maximized, width])
 
-  const currentPath = stripSlashes(props.location.pathname)
+  const location = useLocation()
+  const currentPath = stripSlashes(location.pathname)
   const currentLanguage = i18n.language
   const currentPathNoLanguagePrefix = stripPrefix(currentPath, `${currentLanguage}/`)
   const stateClassName = maximized ? 'maximized' : 'minimized'
@@ -134,4 +135,4 @@ function LanguageMenuItem(props) {
   }
 }
 
-export default withRouter(Menu)
+export default Menu

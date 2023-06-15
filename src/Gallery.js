@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import {withRouter} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {useHotkey} from '@react-hook/hotkey'
 import {useWindowSize} from '@react-hook/window-size'
 import {CarouselProvider, Dot, DotGroup, Image, Slider, Slide, ButtonBack, ButtonNext} from 'pure-react-carousel'
@@ -8,6 +8,7 @@ import {setScrollingEnabled} from './Utilities'
 
 function Gallery(props) {
   const [width, height] = useWindowSize()
+  const navigate = useNavigate()
 
   // Hide the main menu and disable scrolling on mount, do the opposite on unmount
   useEffect(() => {
@@ -21,8 +22,7 @@ function Gallery(props) {
 
   // Operate the gallery via keyboard shortcuts
   const close = () => {
-    if (props.history.length > 1) props.history.goBack()
-    else props.history.push(props.parentPath)
+    navigate('/')
   }
   useHotkey(document, 'esc', close)
 
@@ -103,4 +103,4 @@ function Gallery(props) {
   )
 }
 
-export default withRouter(Gallery)
+export default Gallery

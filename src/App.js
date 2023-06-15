@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Navigate, Route} from 'react-router-dom'
 import ReactGA from 'react-ga4'
 import {HelmetProvider} from 'react-helmet-async'
 import {useTranslation} from 'react-i18next'
@@ -54,20 +54,19 @@ export default function App(props) {
 
         <ScrollToTop />
         <AnimatedSwitch>
-          <Route exact path="/">
-            <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
-          </Route>
-          <Route exact path={`/${currentLanguage}`}>
-            <Redirect to={`/${currentLanguage}/${sections[0].path}/`} />
-          </Route>
+          <Route path="/" element={
+            <Navigate replace to={`${currentLanguage}/${sections[0].path}/`} />
+          } />
+          <Route path={`${currentLanguage}`} element={
+            <Navigate replace to={`${sections[0].path}/`} />
+          } />
           {sections.map(section => (
-            <Route key={section.path} exact={section.exact} path={`/${currentLanguage}/${section.path}`}>
-              {renderSection(section.path)}
-            </Route>
+            <Route
+                key={section.path}
+                path={`${currentLanguage}/${section.path}/${section.exact ? '' : '*'}`}
+                element={renderSection(section.path)} />
           ))}
-          <Route path="*">
-            <PageNotFound />
-          </Route>
+          <Route path="*" element={<PageNotFound />} />
         </AnimatedSwitch>
       </Router>
     </HelmetProvider>

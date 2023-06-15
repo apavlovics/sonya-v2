@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import {useHistory} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 
 /**
  * Scrolls to the top of the page on every transition.
@@ -8,13 +8,10 @@ import {useHistory} from 'react-router-dom'
  * https://stackoverflow.com/a/54343182
  */
 function ScrollToTop() {
-  const history = useHistory()
+  const location = useLocation()
   useEffect(() => {
-    const unlisten = history.listen(() => {
-      window.scrollTo(0, 0)
-    })
-    return () => unlisten()
-  }, [history])
+    window.scrollTo(0, 0)
+  }, [location])
   return (null)
 }
 
