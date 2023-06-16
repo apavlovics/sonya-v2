@@ -23,6 +23,7 @@ export default function Gallery(props) {
 
   // Operate the gallery via keyboard shortcuts
   const close = () => {
+    // Location key is set to default on the initial load only
     if (location.key !== 'default') navigate(-1)
     else navigate('/')
   }
