@@ -57,7 +57,7 @@ export default function App(props) {
           <Route path="/" element={
             <Navigate replace to={`${currentLanguage}/${sections[0].path}/`} />
           } />
-          <Route path={`${currentLanguage}`} element={
+          <Route path={currentLanguage} element={
             <Navigate replace to={`${sections[0].path}/`} />
           } />
           {sections.map(section => (

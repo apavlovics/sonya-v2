@@ -6,7 +6,7 @@ import {CarouselProvider, Dot, DotGroup, Image, Slider, Slide, ButtonBack, Butto
 import 'pure-react-carousel/dist/react-carousel.es.css'
 import {setScrollingEnabled} from './Utilities'
 
-function Gallery(props) {
+export default function Gallery(props) {
   const [width, height] = useWindowSize()
   const navigate = useNavigate()
 
@@ -22,7 +22,7 @@ function Gallery(props) {
 
   // Operate the gallery via keyboard shortcuts
   const close = () => {
-    navigate('/')
+    navigate('/') // TODO Avoid scrolling to top when navigating back
   }
   useHotkey(document, 'esc', close)
 
@@ -102,5 +102,3 @@ function Gallery(props) {
     </CarouselProvider>
   )
 }
-
-export default Gallery

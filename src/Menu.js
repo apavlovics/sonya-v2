@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next'
 import {useWindowWidth} from '@react-hook/window-size'
 import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
 
-function Menu(props) {
+export default function Menu(props) {
   const [t, i18n] = useTranslation()
   const width = useWindowWidth()
   const [maximized, setMaximized] = useState(false)
@@ -134,5 +134,3 @@ function LanguageMenuItem(props) {
     )
   }
 }
-
-export default Menu

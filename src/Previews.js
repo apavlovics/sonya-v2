@@ -7,7 +7,7 @@ import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
 import Gallery from './Gallery'
 import PageNotFound from './PageNotFound'
-import {updateTitle, stripSlashes} from './Utilities'
+import {updateTitle} from './Utilities'
 
 function Previews(props) {
   const [t, i18n] = useTranslation()
