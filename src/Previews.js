@@ -120,14 +120,14 @@ function Previews(props) {
       } />
       {previews.map(preview => (
         <Route
-          key={preview.url}
-          path={preview.url}
-          element={
-            <>
-              {updateTitle(preview.title[currentLanguage])}
-              <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
-            </>
-          } />
+            key={preview.url}
+            path={preview.url}
+            element={
+              <>
+                {updateTitle(preview.title[currentLanguage])}
+                <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
+              </>
+            } />
       ))}
       <Route path="*" element={<PageNotFound />} />
     </AnimatedSwitch>
