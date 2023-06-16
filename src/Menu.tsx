@@ -27,6 +27,7 @@ export default function Menu(props: MenuProps) {
   const location = useLocation()
   const currentPath = stripSlashes(location.pathname)
   const currentLanguage = i18n.language
+  const fallbackLanguages = i18n.options.fallbackLng instanceof Array ? i18n.options.fallbackLng : []
   const currentPathNoLanguagePrefix = stripPrefix(currentPath, `${currentLanguage}/`)
   const stateClassName = maximized ? 'maximized' : 'minimized'
   const hiddenClassName = props.hidden ? ' hidden' : ''
@@ -53,19 +54,15 @@ export default function Menu(props: MenuProps) {
           ))}
         </ul>
         <ul className={`language-menu ${stateClassName}`}>
-          {
-            i18n.options.fallbackLng instanceof Array ?
-              i18n.options.fallbackLng.map((language: string) => (
-                <LanguageMenuItem
-                    key={language}
-                    currentLanguage={currentLanguage}
-                    language={language}
-                    currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
-                    onClick={() => i18n.changeLanguage(language)}
-                    hidden={props.hidden} />
-              )
-            ) : <></> // TODO Provide another default
-        }
+          {fallbackLanguages.map((language: string) => (
+            <LanguageMenuItem
+                key={language}
+                currentLanguage={currentLanguage}
+                language={language}
+                currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
+                onClick={() => i18n.changeLanguage(language)}
+                hidden={props.hidden} />
+          ))}
         </ul>
       </div>
     </nav>
