@@ -7,12 +7,12 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 import {Preview} from './Previews'
 import {setScrollingEnabled} from './Utilities'
 
-interface GalleryProps {
+interface Props {
   preview: Preview
   setMenuHidden: Dispatch<SetStateAction<boolean>>
 }
 
-export default function Gallery(props: GalleryProps) {
+export default function Gallery(props: Props) {
   const [width, height] = useWindowSize()
   const location = useLocation()
   const navigate = useNavigate()
