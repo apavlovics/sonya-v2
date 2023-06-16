@@ -117,7 +117,7 @@ function Previews(props: PreviewsProps) {
             {updateTitle(t('Interior Design Title'))}
             <main className="previews">
               {previews.map(preview => (
-                <Preview
+                <PreviewComponent
                     key={preview.url}
                     size={preview.size}
                     url={`${preview.url}/`}
@@ -162,7 +162,7 @@ interface PreviewProps {
   onMouseLeave: () => void
 }
 
-function Preview(props: PreviewProps) {
+function PreviewComponent(props: PreviewProps) {
   const extraClassName = props.focused ? ' focused' : props.desaturated ? ' desaturated' : ''
   return (
     <div
