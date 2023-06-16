@@ -1,10 +1,16 @@
-import {useState, useEffect} from 'react'
+import {ReactNode, useState, useEffect} from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 import {useWindowWidth} from '@react-hook/window-size'
+import {Section} from './App'
 import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
 
-export default function Menu(props) {
+interface MenuProps {
+  hidden: boolean
+  sections: Section[]
+}
+
+export default function Menu(props: MenuProps) {
   const [t, i18n] = useTranslation()
   const width = useWindowWidth()
   const [maximized, setMaximized] = useState(false)
@@ -47,22 +53,33 @@ export default function Menu(props) {
           ))}
         </ul>
         <ul className={`language-menu ${stateClassName}`}>
-          {i18n.options.fallbackLng.map(language => (
-            <LanguageMenuItem
-                key={language}
-                currentLanguage={currentLanguage}
-                language={language}
-                currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
-                onClick={() => i18n.changeLanguage(language)}
-                hidden={props.hidden} />
-          ))}
+          {
+            i18n.options.fallbackLng instanceof Array ?
+              i18n.options.fallbackLng.map((language: string) => (
+                <LanguageMenuItem
+                    key={language}
+                    currentLanguage={currentLanguage}
+                    language={language}
+                    currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
+                    onClick={() => i18n.changeLanguage(language)}
+                    hidden={props.hidden} />
+              )
+            ) : <></> // TODO Provide another default
+        }
         </ul>
       </div>
     </nav>
   )
 }
 
-function Title(props) {
+interface TitleProps {
+  title: string
+  currentPathNoLanguagePrefix: string
+  currentLanguage: string
+  onClick: () => void
+}
+
+function Title(props: TitleProps) {
   const titlePath = 'interior-design'
   if (props.currentPathNoLanguagePrefix === titlePath) {
     return (<div onClick={props.onClick}>{props.title}</div>)
@@ -77,7 +94,12 @@ function Title(props) {
   }
 }
 
-function MenuIcon(props) {
+interface MenuIconProps {
+  maximized: boolean
+  onClick: () => void
+}
+
+function MenuIcon(props: MenuIconProps) {
   return (
     <svg onClick={props.onClick} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
       {props.maximized
@@ -88,7 +110,16 @@ function MenuIcon(props) {
   )
 }
 
-function MainMenuItem(props) {
+interface MainMenuItemProps {
+  children?: ReactNode[]
+  currentPath: string
+  path: string
+  title: string
+  hidden: boolean
+  onClick: () => void
+}
+
+function MainMenuItem(props: MainMenuItemProps) {
   if (props.currentPath === props.path) {
     return (
       <li className="selected">
@@ -101,7 +132,7 @@ function MainMenuItem(props) {
         <Link
             to={`/${props.path}/`}
             onClick={props.onClick}
-            {...(props.hidden ? {tabIndex: '-1'} : {})}>
+            {...(props.hidden ? {tabIndex: -1} : {})}>
           <div>
             <span>{props.title}</span>
           </div>
@@ -111,7 +142,15 @@ function MainMenuItem(props) {
   }
 }
 
-function LanguageMenuItem(props) {
+interface LanguageMenuItemProps {
+  language: string
+  currentLanguage: string
+  currentPathNoLanguagePrefix: string
+  hidden: boolean
+  onClick: () => void
+}
+
+function LanguageMenuItem(props: LanguageMenuItemProps) {
   const title = props.language.toUpperCase()
   if (props.currentLanguage === props.language) {
     return (
@@ -125,7 +164,7 @@ function LanguageMenuItem(props) {
         <Link
             to={`/${props.language}/${props.currentPathNoLanguagePrefix}/`}
             onClick={props.onClick}
-            {...(props.hidden ? {tabIndex: '-1'} : {})}>
+            {...(props.hidden ? {tabIndex: -1} : {})}>
           <div>
             <span>{title}</span>
           </div>

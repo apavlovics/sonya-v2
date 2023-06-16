@@ -1,7 +1,7 @@
-import {useState} from 'react'
+import {Dispatch, SetStateAction, useState} from 'react'
 import {Link, Route} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
-import {LazyLoadImage, trackWindowScroll} from 'react-lazy-load-image-component'
+import {LazyComponentProps, LazyLoadImage, ScrollPosition, trackWindowScroll} from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
@@ -9,18 +9,33 @@ import Gallery from './Gallery'
 import PageNotFound from './PageNotFound'
 import {updateTitle} from './Utilities'
 
-function Previews(props) {
+export interface Preview {
+  size: string
+  url: string
+  title: Map<string, string>
+  year: number
+  cover: string
+  slides: Array<string>
+  focused: boolean
+  desaturated: boolean
+}
+
+interface PreviewsProps extends LazyComponentProps {
+  setMenuHidden: Dispatch<SetStateAction<boolean>>
+}
+
+function Previews(props: PreviewsProps) {
   const [t, i18n] = useTranslation()
 
   const [previews, setPreviews] = useState(
-    [{
+    new Array<Preview>({
       size: 'large',
       url: 'jurmala',
-      title: {
-        en: 'Jurmala',
-        lv: 'Jūrmala',
-      },
-      year: '2021',
+      title: new Map([
+        ['en', 'Jurmala'],
+        ['lv', 'Jūrmala'],
+      ]),
+      year: 2021,
       cover: '9801-v1.jpg',
       slides: [
         '9799-v1.jpg',
@@ -35,11 +50,11 @@ function Previews(props) {
     }, {
       size: 'medium',
       url: 'fjordi',
-      title: {
-        en: 'Fjordi',
-        lv: 'Fjordi',
-      },
-      year: '2021',
+      title: new Map([
+        ['en', 'Fjordi'],
+        ['lv', 'Fjordi'],
+      ]),
+      year: 2021,
       cover: '4-v1.jpg',
       slides: [
         '1-v1.jpg',
@@ -53,11 +68,11 @@ function Previews(props) {
     }, {
       size: 'medium',
       url: 'jauna-teika',
-      title: {
-        en: 'Jauna Teika',
-        lv: 'Jaunā Teika',
-      },
-      year: '2020',
+      title: new Map([
+        ['en', 'Jauna Teika'],
+        ['lv', 'Jaunā Teika'],
+      ]),
+      year: 2020,
       cover: '001-v1.jpg',
       slides: [
         '003-v1.jpg',
@@ -70,10 +85,10 @@ function Previews(props) {
       ],
       focused: false,
       desaturated: false,
-    }]
+    })
   )
 
-  const updatePreviews = (currentPreview, onMouseEnter) => {
+  const updatePreviews = (currentPreview: Preview, onMouseEnter: boolean) => {
     const updatedPreviews = previews.map(preview => {
       if (onMouseEnter) {
         if (preview === currentPreview) {
@@ -107,7 +122,7 @@ function Previews(props) {
                     size={preview.size}
                     url={`${preview.url}/`}
                     imageSrc={`/projects/${preview.url}/${preview.cover}`}
-                    title={preview.title[currentLanguage]}
+                    title={preview.title.get(currentLanguage)!}
                     year={preview.year}
                     focused={preview.focused}
                     desaturated={preview.desaturated}
@@ -124,7 +139,7 @@ function Previews(props) {
             path={preview.url}
             element={
               <>
-                {updateTitle(preview.title[currentLanguage])}
+                {updateTitle(preview.title.get(currentLanguage)!)}
                 <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
               </>
             } />
@@ -134,7 +149,20 @@ function Previews(props) {
   )
 }
 
-function Preview(props) {
+interface PreviewProps {
+  size: string
+  url: string
+  imageSrc: string
+  title: string
+  year: number
+  scrollPosition?: ScrollPosition
+  focused: boolean
+  desaturated: boolean
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+}
+
+function Preview(props: PreviewProps) {
   const extraClassName = props.focused ? ' focused' : props.desaturated ? ' desaturated' : ''
   return (
     <div
@@ -150,7 +178,7 @@ function Preview(props) {
               alt={props.title}
               effect="opacity"
               scrollPosition={props.scrollPosition}
-              threshold="500"
+              threshold={500}
               wrapperClassName="placeholder" />
         </div>
         <div className="details">

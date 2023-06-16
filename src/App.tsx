@@ -14,7 +14,17 @@ import {updateTitle, withTracker} from './Utilities'
 // Load i18next instance for translations to work
 import './i18n'
 
-export default function App(props) {
+interface Props {
+  testMode?: boolean
+}
+
+export interface Section {
+  path: string
+  title: string
+  exact: boolean
+}
+
+export default function App(props: Props) {
   const i18n = useTranslation()[1]
   const [menuHidden, setMenuHidden] = useState(false)
 
@@ -22,7 +32,7 @@ export default function App(props) {
   ReactGA.initialize('G-WCJ8J8DSM1', {testMode: props.testMode})
 
   // All website sections are defined below
-  const sections = [{
+  const sections: Section[] = [{
     path: 'interior-design',
     title: 'Interior Design',
     exact: false,
@@ -32,7 +42,7 @@ export default function App(props) {
     exact: true,
   }]
 
-  const renderSection = sectionPath => {
+  const renderSection = (sectionPath: string) => {
     switch(sectionPath) {
       case 'interior-design':
         const PreviewsWithTracker = withTracker(Previews)

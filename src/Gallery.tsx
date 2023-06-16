@@ -1,12 +1,18 @@
-import {useEffect} from 'react'
+import {Dispatch, SetStateAction, useEffect} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 import {useHotkey} from '@react-hook/hotkey'
 import {useWindowSize} from '@react-hook/window-size'
 import {CarouselProvider, Dot, DotGroup, Image, Slider, Slide, ButtonBack, ButtonNext} from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
+import {Preview} from './Previews'
 import {setScrollingEnabled} from './Utilities'
 
-export default function Gallery(props) {
+interface GalleryProps {
+  preview: Preview
+  setMenuHidden: Dispatch<SetStateAction<boolean>>
+}
+
+export default function Gallery(props: GalleryProps) {
   const [width, height] = useWindowSize()
   const location = useLocation()
   const navigate = useNavigate()
@@ -33,12 +39,12 @@ export default function Gallery(props) {
 
   const backButton = 'back-button'
   useHotkey(document, 'arrowleft', () => {
-    document.getElementById(backButton).click()
+    document.getElementById(backButton)?.click()
   })
 
   const nextButton = 'next-button'
   useHotkey(document, 'arrowright', () => {
-    document.getElementById(nextButton).click()
+    document.getElementById(nextButton)?.click()
   })
 
   // Should be somewhat greater than the --aspect-ratio CSS variable
@@ -47,6 +53,7 @@ export default function Gallery(props) {
     <CarouselProvider
         className={carouselClassName}
         naturalSlideWidth={1}
+        naturalSlideHeight={1}
         isIntrinsicHeight
         hasMasterSpinner
         totalSlides={props.preview.slides.length}>
@@ -59,20 +66,18 @@ export default function Gallery(props) {
         <Slider className="slider">
           {props.preview.slides.map((slide, i) => (
             <Slide key={i} index={i} className="slide">
-              <Image src={`/projects/${props.preview.url}/${slide}`} />
+              <Image src={`/projects/${props.preview.url}/${slide}`} hasMasterSpinner />
             </Slide>
           ))}
         </Slider>
         <DotGroup
             className="dot-group"
             renderDots={props => {
-              const {
-                currentSlide,
-                totalSlides,
-                visibleSlides,
-                disableActiveDots,
-                showAsSelectedForCurrentSlideOnly,
-              } = props
+              const currentSlide = props.currentSlide!
+              const totalSlides = props.totalSlides!
+              const visibleSlides = props.visibleSlides!
+              const disableActiveDots = props.disableActiveDots!
+              const showAsSelectedForCurrentSlideOnly = props.showAsSelectedForCurrentSlideOnly!
               const dots = []
               for (let i = 0; i < totalSlides; i += 1) {
                 const multipleSelected = i >= currentSlide && i < (currentSlide + visibleSlides)
@@ -83,7 +88,6 @@ export default function Gallery(props) {
                   <Dot
                     key={i}
                     slide={slide}
-                    selected={selected}
                     disabled={disableActiveDots ? selected : false}>
                     <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
