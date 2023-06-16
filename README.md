@@ -1,5 +1,7 @@
 # Sonya V2
 
+The deployed single-page application is available at https://sonya.lv.
+
 All the following commands should be executed from the project’s root folder.
 
 ## Preparing Workspace
