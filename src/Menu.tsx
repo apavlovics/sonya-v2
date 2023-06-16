@@ -7,7 +7,7 @@ import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
 
 interface MenuProps {
   hidden: boolean
-  sections: Section[]
+  sections: readonly Section[]
 }
 
 export default function Menu(props: MenuProps) {
@@ -108,7 +108,7 @@ function MenuIcon(props: MenuIconProps) {
 }
 
 interface MainMenuItemProps {
-  children?: ReactNode[]
+  children?: readonly ReactNode[]
   currentPath: string
   path: string
   title: string

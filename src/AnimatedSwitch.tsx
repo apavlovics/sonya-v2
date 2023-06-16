@@ -3,7 +3,7 @@ import {Routes, useLocation} from 'react-router-dom'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 
 interface Props {
-  children: ReactNode[]
+  children: readonly ReactNode[]
 }
 
 export default function AnimatedSwitch(props: Props) {

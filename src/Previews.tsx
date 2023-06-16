@@ -15,7 +15,7 @@ export interface Preview {
   title: Map<string, string>
   year: number
   cover: string
-  slides: Array<string>
+  slides: readonly string[]
   focused: boolean
   desaturated: boolean
 }

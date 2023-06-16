@@ -32,7 +32,7 @@ export default function App(props: Props) {
   ReactGA.initialize('G-WCJ8J8DSM1', {testMode: props.testMode})
 
   // All website sections are defined below
-  const sections: Section[] = [{
+  const sections: readonly Section[] = [{
     path: 'interior-design',
     title: 'Interior Design',
     exact: false,
