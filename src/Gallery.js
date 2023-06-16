@@ -23,7 +23,9 @@ export default function Gallery(props) {
 
   // Operate the gallery via keyboard shortcuts
   const close = () => {
-    // Location key is set to default on the initial load only
+    // Location key is "default" on the initial load only, so we can use it to decide whether to go back in
+    // history or explicitly navigate to the parent page. In the first case the scrolling position is kept,
+    // while in the second it is ignored.
     if (location.key !== 'default') navigate(-1)
     else navigate('/')
   }
