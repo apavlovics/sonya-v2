@@ -1,7 +1,7 @@
 import {Routes, useLocation} from 'react-router-dom'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 
-function AnimatedSwitch(props) {
+export default function AnimatedSwitch(props) {
   const location = useLocation()
   return(
     <TransitionGroup exit={false}> {/* Disabling exit animations makes transitions cleaner */}
@@ -14,5 +14,3 @@ function AnimatedSwitch(props) {
     </TransitionGroup>
   )
 }
-
-export default AnimatedSwitch
