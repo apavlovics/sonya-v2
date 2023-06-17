@@ -38,7 +38,7 @@ export default function Menu(props: MenuProps) {
           <Title
               title={t('Main Title')}
               currentLanguage={currentLanguage}
-              currentPathNoLanguagePrefix={currentPathNoLanguagePrefix} 
+              currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
               onClick={() => setMaximized(false)} />
           <MenuIcon maximized={maximized} onClick={() => setMaximized(!maximized)} />
         </div>
