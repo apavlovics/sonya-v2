@@ -8,7 +8,7 @@ describe('Utilities should', () => {
       const paths = ['path', '/path/', '/path', 'path/']
 
       paths.forEach(path => {
-        expect(stripSlashes(path)).toBe("path")
+        expect(stripSlashes(path)).toBe('path')
       })
     })
 
