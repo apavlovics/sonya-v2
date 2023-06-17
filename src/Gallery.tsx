@@ -76,19 +76,17 @@ export default function Gallery(props: Props) {
               const currentSlide = props.currentSlide!
               const totalSlides = props.totalSlides!
               const visibleSlides = props.visibleSlides!
-              const disableActiveDots = props.disableActiveDots!
-              const showAsSelectedForCurrentSlideOnly = props.showAsSelectedForCurrentSlideOnly!
               const dots = []
               for (let i = 0; i < totalSlides; i += 1) {
                 const multipleSelected = i >= currentSlide && i < (currentSlide + visibleSlides)
                 const singleSelected = i === currentSlide
-                const selected = showAsSelectedForCurrentSlideOnly ? singleSelected : multipleSelected
+                const selected = props.showAsSelectedForCurrentSlideOnly ? singleSelected : multipleSelected
                 const slide = i >= totalSlides - visibleSlides ? totalSlides - visibleSlides : i
                 dots.push(
                   <Dot
                     key={i}
                     slide={slide}
-                    disabled={disableActiveDots ? selected : false}>
+                    disabled={props.disableActiveDots ? selected : false}>
                     <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
                     </svg>
