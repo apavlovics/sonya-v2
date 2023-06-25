@@ -152,7 +152,7 @@ function Previews(props: PreviewsProps) {
 }
 
 interface PreviewProps {
-  size: string
+  size: PreviewSize
   url: string
   imageSrc: string
   title: string
