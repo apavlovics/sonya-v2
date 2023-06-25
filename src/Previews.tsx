@@ -9,10 +9,10 @@ import Gallery from './Gallery'
 import PageNotFound from './PageNotFound'
 import {updateTitle} from './Utilities'
 
-type Size = 'large' | 'medium'
+type PreviewSize = 'large' | 'medium'
 
 export interface Preview {
-  size: Size
+  size: PreviewSize
   url: string
   title: Map<string, string>
   year: number
