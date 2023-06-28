@@ -158,7 +158,8 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: rgba(var(--white), .95);
+  background-color: rgba(var(--white), .9);
+  backdrop-filter: blur(10px);
   width: 100%;
   height: var(--nav-height);
   font-family: var(--sans-serif-font-family);
@@ -496,7 +497,7 @@ main.previews {
 }
 
 .carousel button:disabled {
-  background: none; 
+  background: none;
   cursor: default;
 }
 
@@ -631,6 +632,7 @@ main.previews {
     height: 100%;
     overflow: auto;
     background-color: rgb(var(--white));
+    backdrop-filter: none;
   }
 
   nav > div {
