@@ -1,7 +1,7 @@
-import {useTranslation} from 'react-i18next'
-import {LazyLoadImage} from 'react-lazy-load-image-component'
+import { useTranslation } from 'react-i18next'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Footer from './Footer'
-import {updateTitle} from './Utilities'
+import { updateTitle } from './Utilities'
 
 export default function Contact() {
   const [t] = useTranslation()
@@ -11,9 +11,9 @@ export default function Contact() {
       <main>
         <div className="portrait">
           <LazyLoadImage
-              src="/portrait.jpg"
-              alt="Portrait"
-              effect="opacity" />
+            src="/portrait.jpg"
+            alt="Portrait"
+            effect="opacity" />
         </div>
         <p>{t('About Text')}</p>
         <p>{t('Contact Text')}</p>

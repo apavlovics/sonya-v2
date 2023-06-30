@@ -1,9 +1,9 @@
-import {ReactNode, useState, useEffect} from 'react'
-import {Link, useLocation} from 'react-router-dom'
-import {useTranslation} from 'react-i18next'
-import {useWindowWidth} from '@react-hook/window-size'
-import {Section} from './App'
-import {setScrollingEnabled, stripSlashes, stripPrefix} from './Utilities'
+import { ReactNode, useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useWindowWidth } from '@react-hook/window-size'
+import { Section } from './App'
+import { setScrollingEnabled, stripSlashes, stripPrefix } from './Utilities'
 
 interface MenuProps {
   hidden: boolean
@@ -36,32 +36,32 @@ export default function Menu(props: MenuProps) {
       <div>
         <div className="logo">
           <Title
-              title={t('Main Title')}
-              currentLanguage={currentLanguage}
-              currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
-              onClick={() => setMaximized(false)} />
+            title={t('Main Title')}
+            currentLanguage={currentLanguage}
+            currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
+            onClick={() => setMaximized(false)} />
           <MenuIcon maximized={maximized} onClick={() => setMaximized(!maximized)} />
         </div>
         <ul className={`main-menu ${stateClassName}`}>
           {props.sections.map(section => (
             <MainMenuItem
-                key={section.path}
-                currentPath={currentPath}
-                path={`${currentLanguage}/${section.path}`}
-                title={t(section.title)}
-                onClick={() => setMaximized(false)}
-                hidden={props.hidden} />
+              key={section.path}
+              currentPath={currentPath}
+              path={`${currentLanguage}/${section.path}`}
+              title={t(section.title)}
+              onClick={() => setMaximized(false)}
+              hidden={props.hidden} />
           ))}
         </ul>
         <ul className={`language-menu ${stateClassName}`}>
           {fallbackLanguages.map((language: string) => (
             <LanguageMenuItem
-                key={language}
-                currentLanguage={currentLanguage}
-                language={language}
-                currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
-                onClick={() => i18n.changeLanguage(language)}
-                hidden={props.hidden} />
+              key={language}
+              currentLanguage={currentLanguage}
+              language={language}
+              currentPathNoLanguagePrefix={currentPathNoLanguagePrefix}
+              onClick={() => i18n.changeLanguage(language)}
+              hidden={props.hidden} />
           ))}
         </ul>
       </div>
@@ -83,8 +83,8 @@ function Title(props: TitleProps) {
   } else {
     return (
       <Link
-          to={`/${props.currentLanguage}/${titlePath}/`}
-          onClick={props.onClick}>
+        to={`/${props.currentLanguage}/${titlePath}/`}
+        onClick={props.onClick}>
         <div>{props.title}</div>
       </Link>
     )
@@ -127,9 +127,9 @@ function MainMenuItem(props: MainMenuItemProps) {
     return (
       <li>
         <Link
-            to={`/${props.path}/`}
-            onClick={props.onClick}
-            {...(props.hidden ? {tabIndex: -1} : {})}>
+          to={`/${props.path}/`}
+          onClick={props.onClick}
+          {...(props.hidden ? { tabIndex: -1 } : {})}>
           <div>
             <span>{props.title}</span>
           </div>
@@ -159,9 +159,9 @@ function LanguageMenuItem(props: LanguageMenuItemProps) {
     return (
       <li>
         <Link
-            to={`/${props.language}/${props.currentPathNoLanguagePrefix}/`}
-            onClick={props.onClick}
-            {...(props.hidden ? {tabIndex: -1} : {})}>
+          to={`/${props.language}/${props.currentPathNoLanguagePrefix}/`}
+          onClick={props.onClick}
+          {...(props.hidden ? { tabIndex: -1 } : {})}>
           <div>
             <span>{title}</span>
           </div>

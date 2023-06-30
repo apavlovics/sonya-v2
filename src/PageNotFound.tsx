@@ -1,8 +1,8 @@
-import {useEffect} from 'react'
-import {Link} from 'react-router-dom'
-import {Trans, useTranslation} from 'react-i18next'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Trans, useTranslation } from 'react-i18next'
 import Footer from './Footer'
-import {updateTitle, setErrorModeEnabled} from './Utilities'
+import { updateTitle, setErrorModeEnabled } from './Utilities'
 
 export default function PageNotFound() {
   const [t] = useTranslation()

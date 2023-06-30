@@ -1,4 +1,4 @@
-import {stripPrefix, stripSlashes} from './Utilities'
+import { stripPrefix, stripSlashes } from './Utilities'
 
 describe('Utilities should', () => {
 

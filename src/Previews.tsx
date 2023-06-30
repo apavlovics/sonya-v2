@@ -1,13 +1,13 @@
-import {Dispatch, SetStateAction, useState} from 'react'
-import {Link, Route} from 'react-router-dom'
-import {useTranslation} from 'react-i18next'
-import {LazyComponentProps, LazyLoadImage, ScrollPosition, trackWindowScroll} from 'react-lazy-load-image-component'
+import { Dispatch, SetStateAction, useState } from 'react'
+import { Link, Route } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { LazyComponentProps, LazyLoadImage, ScrollPosition, trackWindowScroll } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 import AnimatedSwitch from './AnimatedSwitch'
 import Footer from './Footer'
 import Gallery from './Gallery'
 import PageNotFound from './PageNotFound'
-import {updateTitle} from './Utilities'
+import { updateTitle } from './Utilities'
 
 type PreviewSize = 'large' | 'medium'
 
@@ -101,8 +101,8 @@ function Previews(props: PreviewsProps) {
           preview.desaturated = false // Set true to desaturate other previews (can affect performance)
         }
       } else {
-          preview.focused = false
-          preview.desaturated = false
+        preview.focused = false
+        preview.desaturated = false
       }
       return preview
     })
@@ -120,31 +120,31 @@ function Previews(props: PreviewsProps) {
             <main className="previews">
               {previews.map(preview => (
                 <PreviewComponent
-                    key={preview.url}
-                    size={preview.size}
-                    url={`${preview.url}/`}
-                    imageSrc={`/projects/${preview.url}/${preview.cover}`}
-                    title={preview.title.get(currentLanguage)!}
-                    year={preview.year}
-                    focused={preview.focused}
-                    desaturated={preview.desaturated}
-                    onMouseEnter={() => updatePreviews(preview, true)}
-                    onMouseLeave={() => updatePreviews(preview, false)} />
+                  key={preview.url}
+                  size={preview.size}
+                  url={`${preview.url}/`}
+                  imageSrc={`/projects/${preview.url}/${preview.cover}`}
+                  title={preview.title.get(currentLanguage)!}
+                  year={preview.year}
+                  focused={preview.focused}
+                  desaturated={preview.desaturated}
+                  onMouseEnter={() => updatePreviews(preview, true)}
+                  onMouseLeave={() => updatePreviews(preview, false)} />
               ))}
             </main>
             <Footer />
           </>
-      } />
+        } />
       {previews.map(preview => (
         <Route
-            key={preview.url}
-            path={preview.url}
-            element={
-              <>
-                {updateTitle(preview.title.get(currentLanguage)!)}
-                <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
-              </>
-            } />
+          key={preview.url}
+          path={preview.url}
+          element={
+            <>
+              {updateTitle(preview.title.get(currentLanguage)!)}
+              <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
+            </>
+          } />
       ))}
       <Route path="*" element={<PageNotFound />} />
     </AnimatedSwitch>
@@ -168,20 +168,20 @@ function PreviewComponent(props: PreviewProps) {
   const extraClassName = props.focused ? ' focused' : props.desaturated ? ' desaturated' : ''
   return (
     <div
-        className={`preview ${props.size}${extraClassName}`}
-        onMouseEnter={props.onMouseEnter}
-        onMouseLeave={props.onMouseLeave}>
+      className={`preview ${props.size}${extraClassName}`}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}>
       <Link to={props.url}>
         <div className="placeholder-wrapper">
           {/* Scroll position is passed explicitly to optimize performance */}
           {/* Threshold increased to 500, otherwise images are not sometimes loaded, while visible */}
           <LazyLoadImage
-              src={props.imageSrc}
-              alt={props.title}
-              effect="opacity"
-              scrollPosition={props.scrollPosition}
-              threshold={500}
-              wrapperClassName="placeholder" />
+            src={props.imageSrc}
+            alt={props.title}
+            effect="opacity"
+            scrollPosition={props.scrollPosition}
+            threshold={500}
+            wrapperClassName="placeholder" />
         </div>
         <div className="details">
           <div className="title">{props.title}</div>

@@ -1,15 +1,15 @@
-import {useState} from 'react'
-import {BrowserRouter as Router, Navigate, Route} from 'react-router-dom'
+import { useState } from 'react'
+import { BrowserRouter as Router, Navigate, Route } from 'react-router-dom'
 import ReactGA from 'react-ga4'
-import {HelmetProvider} from 'react-helmet-async'
-import {useTranslation} from 'react-i18next'
+import { HelmetProvider } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import AnimatedSwitch from './AnimatedSwitch'
 import Contact from './Contact'
 import Menu from './Menu'
 import PageNotFound from './PageNotFound'
 import Previews from './Previews'
 import ScrollToTop from './ScrollToTop'
-import {updateTitle, withTracker} from './Utilities'
+import { updateTitle, withTracker } from './Utilities'
 
 // Load i18next instance for translations to work
 import './i18n'
@@ -29,7 +29,7 @@ export default function App(props: Props) {
   const [menuHidden, setMenuHidden] = useState(false)
 
   // Initialize Google Analytics
-  ReactGA.initialize('G-WCJ8J8DSM1', {testMode: props.testMode})
+  ReactGA.initialize('G-WCJ8J8DSM1', { testMode: props.testMode })
 
   // All website sections are defined below
   const sections: readonly Section[] = [{
@@ -43,7 +43,7 @@ export default function App(props: Props) {
   }]
 
   const renderSection = (sectionPath: string) => {
-    switch(sectionPath) {
+    switch (sectionPath) {
       case 'interior-design':
         const PreviewsWithTracker = withTracker(Previews)
         return <PreviewsWithTracker setMenuHidden={setMenuHidden} />
@@ -72,9 +72,9 @@ export default function App(props: Props) {
           } />
           {sections.map(section => (
             <Route
-                key={section.path}
-                path={`${currentLanguage}/${section.path}/${section.exact ? '' : '*'}`}
-                element={renderSection(section.path)} />
+              key={section.path}
+              path={`${currentLanguage}/${section.path}/${section.exact ? '' : '*'}`}
+              element={renderSection(section.path)} />
           ))}
           <Route path="*" element={<PageNotFound />} />
         </AnimatedSwitch>

@@ -3,5 +3,5 @@
 import '@testing-library/jest-dom'
 
 // Stub window scrolling during testing
-const noop = () => {}
-Object.defineProperty(window, 'scrollTo', {value: noop, writable: true})
+const noop = () => { }
+Object.defineProperty(window, 'scrollTo', { value: noop, writable: true })

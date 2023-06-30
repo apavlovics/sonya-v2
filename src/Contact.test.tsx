@@ -1,5 +1,5 @@
-import {render, screen} from '@testing-library/react'
-import {HelmetProvider} from 'react-helmet-async'
+import { render, screen } from '@testing-library/react'
+import { HelmetProvider } from 'react-helmet-async'
 import Contact from './Contact'
 
 // Load i18next instance for translations to work
