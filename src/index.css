@@ -78,7 +78,8 @@ a {
   transition-duration: var(--max-transition-duration);
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   --link-color: var(--green);
 
   background-color: rgba(var(--link-color), var(--min-opacity));
@@ -106,7 +107,9 @@ strong {
   font-weight: var(--bold-font-weight);
 }
 
-nav > div, main, footer {
+nav > div,
+main,
+footer {
   margin: 0 auto 0;
   max-width: var(--default-max-width);
 }
@@ -178,7 +181,8 @@ nav a {
   border: none;
 }
 
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
   background: none;
 }
 
@@ -187,11 +191,16 @@ nav a div span {
   border-color: rgba(var(--link-color), var(--min-opacity));
 }
 
-nav, .main-menu, .language-menu {
+nav,
+.main-menu,
+.language-menu {
   transition-duration: var(--mid-transition-duration);
 }
 
-nav > div, .logo, .main-menu, .language-menu {
+nav > div,
+.logo,
+.main-menu,
+.language-menu {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -258,7 +267,8 @@ nav.hidden {
 
 /* Footer */
 
-footer, .social {
+footer,
+.social {
   display: flex;
   align-items: flex-start;
 }
@@ -283,7 +293,8 @@ footer {
   fill: rgb(var(--light-green));
 }
 
-.social a:hover, .social a:focus {
+.social a:hover,
+.social a:focus {
   fill: rgb(var(--green));
 }
 
@@ -314,7 +325,8 @@ main.previews {
   --preview-max-width: calc((var(--previews-max-width) - var(--default-spacing)) / 2);
 }
 
-.preview.large, .preview.medium {
+.preview.large,
+.preview.medium {
   position: relative;
   margin-bottom: var(--default-spacing);
   overflow: hidden;
@@ -328,7 +340,8 @@ main.previews {
   height: 100%;
 }
 
-.preview a:hover, .preview a:focus {
+.preview a:hover,
+.preview a:focus {
   background: none;
 }
 
@@ -597,7 +610,11 @@ main.previews {
     --default-max-width: 996px;
   }
 
-  nav > div, main > h1, main > p, .contact, footer {
+  nav > div,
+  main > h1,
+  main > p,
+  .contact,
+  footer {
     padding-right: var(--default-spacing);
     padding-left: var(--default-spacing);
   }
@@ -639,7 +656,8 @@ main.previews {
     flex-wrap: wrap;
   }
 
-  .logo, .language-menu {
+  .logo,
+  .language-menu {
     width: 100%;
   }
 
@@ -655,11 +673,13 @@ main.previews {
     flex-direction: column;
   }
 
-  .main-menu.maximized, .language-menu.maximized {
+  .main-menu.maximized,
+  .language-menu.maximized {
     opacity: 1;
   }
 
-  .main-menu.minimized, .language-menu.minimized {
+  .main-menu.minimized,
+  .language-menu.minimized {
     visibility: hidden;
     opacity: 0;
   }

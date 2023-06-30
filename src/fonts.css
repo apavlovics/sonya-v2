@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 100 700;
   src: url('fonts/JosefinSans-Variable.woff2') format('woff2 supports variations'),
-       url('fonts/JosefinSans-Variable.woff2') format('woff2-variations');
+    url('fonts/JosefinSans-Variable.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: italic;
   font-weight: 100 700;
   src: url('fonts/JosefinSans-Italic-Variable.woff2') format('woff2 supports variations'),
-       url('fonts/JosefinSans-Italic-Variable.woff2') format('woff2-variations');
+    url('fonts/JosefinSans-Italic-Variable.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 400 800;
   src: url('fonts/EBGaramond-Variable.woff2') format('woff2 supports variations'),
-       url('fonts/EBGaramond-Variable.woff2') format('woff2-variations');
+    url('fonts/EBGaramond-Variable.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -27,5 +27,5 @@
   font-style: italic;
   font-weight: 400 800;
   src: url('fonts/EBGaramond-Italic-Variable.woff2') format('woff2 supports variations'),
-       url('fonts/EBGaramond-Italic-Variable.woff2') format('woff2-variations');
+    url('fonts/EBGaramond-Italic-Variable.woff2') format('woff2-variations');
 }
