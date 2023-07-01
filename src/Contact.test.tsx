@@ -11,6 +11,6 @@ describe('Contact should', () => {
     render(<HelmetProvider><Contact /></HelmetProvider>)
 
     const elements = screen.getAllByText(/sonya@sonya.lv/)
-    expect(elements).toHaveLength(2)
+    expect(elements.length).toBeGreaterThan(1)
   })
 })

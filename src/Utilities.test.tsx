@@ -1,4 +1,4 @@
-import { stripPrefix, stripSlashes } from './Utilities'
+import { stripPrefix, stripSlashes, stripWhitespace } from './Utilities'
 
 describe('Utilities should', () => {
 
@@ -26,6 +26,18 @@ describe('Utilities should', () => {
     test('do not change the path when the prefix is not present', () => {
       const path = 'some/test/path'
       expect(stripPrefix(path, 'prefix')).toBe(path)
+    })
+  })
+
+  describe('given stripWhitespace function', () => {
+
+    test('strip whitespace from the string when it is present', () => {
+      expect(stripWhitespace(' test -string ')).toBe('test-string')
+    })
+
+    test('do not change the string when the whitespace is not present', () => {
+      const string = 'test-string'
+      expect(stripWhitespace(string)).toBe(string)
     })
   })
 })
