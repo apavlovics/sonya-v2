@@ -26,11 +26,11 @@ The project uses [Prettier](https://prettier.io/) for code formatting.
 
 To reformat all files, execute:
 
-    npx prettier . --write
+    npm run format
 
 To check that all files are correctly formatted, execute:
 
-    npx prettier . --check
+    npm run check-format
 
 ## Linting
 
