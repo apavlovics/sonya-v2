@@ -12,6 +12,10 @@ After the initial checkout of the project, execute:
 
 This downloads and installs all the required dependencies in the local _node_modules_ folder.
 
+To check for outdated dependencies, execute:
+
+    npm outdated
+
 ## Converting Images
 
 To convert JPEG images for use on the web, refer to the _scripts/convert-images.sh_ script.
@@ -27,6 +31,12 @@ To reformat all files, execute:
 To check that all files are correctly formatted, execute:
 
     npx prettier . --check
+
+## Linting
+
+The project uses [ESLint](https://eslint.org/) for linting. Linting warnings and errors are reported when running the application. Alternatively, execute:
+
+    npm run lint
 
 ## Testing
 
