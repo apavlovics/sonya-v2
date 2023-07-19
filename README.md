@@ -18,9 +18,15 @@ To convert JPEG images for use on the web, refer to the _scripts/convert-images.
 
 ## Code Formatting
 
-The project uses [Prettier](https://prettier.io/) for code formatting. To reformat all files, execute:
+The project uses [Prettier](https://prettier.io/) for code formatting.
 
-    npx prettier --write .
+To reformat all files, execute:
+
+    npx prettier . --write
+
+To check that all files are correctly formatted, execute:
+
+    npx prettier . --check
 
 ## Testing
 
