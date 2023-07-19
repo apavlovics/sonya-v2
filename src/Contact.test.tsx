@@ -1,17 +1,20 @@
-import { render, screen } from '@testing-library/react'
-import { HelmetProvider } from 'react-helmet-async'
-import Contact from './Contact'
+import { render, screen } from "@testing-library/react";
+import { HelmetProvider } from "react-helmet-async";
+import Contact from "./Contact";
 
 // Load i18next instance for translations to work
-import './i18n'
+import "./i18n";
 
-describe('Contact should', () => {
+describe("Contact should", () => {
+  test("render the email", () => {
+    render(
+      <HelmetProvider>
+        <Contact />
+      </HelmetProvider>,
+    );
 
-  test('render the email', () => {
-    render(<HelmetProvider><Contact /></HelmetProvider>)
-
-    const elements = screen.getAllByText(/sonya@sonya.lv/)
-    expect(elements).not.toBeEmpty()
-    elements.forEach(element => expect(element).toBeInTheDocument())
-  })
-})
+    const elements = screen.getAllByText(/sonya@sonya.lv/);
+    expect(elements).not.toBeEmpty();
+    elements.forEach((element) => expect(element).toBeInTheDocument());
+  });
+});

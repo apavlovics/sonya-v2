@@ -1,13 +1,14 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-  const [t] = useTranslation()
-  const currentYear = Math.max(new Date().getFullYear(), 2021)
+  const [t] = useTranslation();
+  const currentYear = Math.max(new Date().getFullYear(), 2021);
   return (
     <footer>
       <div className="copyright">
-        <span className="no-wrap">© 2014–{currentYear}</span> <span className="no-wrap">{t('Main Title')}</span><br />
-        <a href={`mailto:${t('Email')}`}>{t('Email')}</a>
+        <span className="no-wrap">© 2014–{currentYear}</span> <span className="no-wrap">{t("Main Title")}</span>
+        <br />
+        <a href={`mailto:${t("Email")}`}>{t("Email")}</a>
       </div>
       <div className="social">
         <a href="https://www.linkedin.com/in/sonyabolotnikova/" target="_blank" rel="noreferrer">
@@ -22,5 +23,5 @@ export default function Footer() {
         </a>
       </div>
     </footer>
-  )
+  );
 }

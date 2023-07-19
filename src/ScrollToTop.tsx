@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 /**
  * Scrolls to the top of the page on every transition.
@@ -8,9 +8,9 @@ import { useLocation } from 'react-router-dom'
  * https://stackoverflow.com/a/54343182
  */
 export default function ScrollToTop() {
-  const location = useLocation()
+  const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location])
-  return (null)
+    window.scrollTo(0, 0);
+  }, [location]);
+  return null;
 }
