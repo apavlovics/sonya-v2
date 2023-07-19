@@ -107,7 +107,10 @@ function Previews(props: PreviewsProps) {
                   size={preview.size}
                   url={`${preview.url}/`}
                   imageSrc={`/projects/${preview.url}/${preview.cover}`}
-                  title={preview.title.get(currentLanguage)!}
+                  title={
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                    preview.title.get(currentLanguage)!
+                  }
                   year={preview.year}
                   focused={preview.focused}
                   desaturated={preview.desaturated}
@@ -126,7 +129,10 @@ function Previews(props: PreviewsProps) {
           path={preview.url}
           element={
             <>
-              {updateTitle(preview.title.get(currentLanguage)!)}
+              {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                updateTitle(preview.title.get(currentLanguage)!)
+              }
               <Gallery preview={preview} setMenuHidden={props.setMenuHidden} />
             </>
           }

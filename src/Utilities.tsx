@@ -48,9 +48,10 @@ export const setErrorModeEnabled = (enabled: boolean) => {
 };
 
 /** Higher-order component (HOC) that adds Google Analytics tracking to the provided component. */
-export const withTracker =
-  (Component: ComponentType<any>) =>
-  ({ ...props }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function withTracker(Component: ComponentType<any>) {
+  return ({ ...props }) => {
     useEffect(() => ReactGA.send({ hitType: "pageview", page: window.location.pathname }));
     return <Component {...props} />;
   };
+}
