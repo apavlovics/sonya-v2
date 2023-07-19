@@ -21,7 +21,7 @@ export default function PageNotFound() {
         <h1>{t('Page Not Found')}</h1>
         <p>
           <Trans i18nKey="Page Not Found Text">
-            This page is not found. Visit <Link to="/">the main page</Link> instead.
+            This page is&nbsp;not found. Visit <Link to="/">the main page</Link> instead.
           </Trans>
         </p>
       </main>

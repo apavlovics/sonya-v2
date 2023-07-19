@@ -44,12 +44,14 @@ export default function App(props: Props) {
 
   const renderSection = (sectionPath: string) => {
     switch (sectionPath) {
-      case 'interior-design':
+      case 'interior-design': {
         const PreviewsWithTracker = withTracker(Previews)
         return <PreviewsWithTracker setMenuHidden={setMenuHidden} />
-      case 'contact':
+      }
+      case 'contact': {
         const ContactWithTracker = withTracker(Contact)
         return <ContactWithTracker />
+      }
       default:
         throw new Error(`Unexpected section path: ${sectionPath}`)
     }

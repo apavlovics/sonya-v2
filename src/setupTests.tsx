@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 import * as matchers from 'jest-extended';
 
 // Stub window scrolling during testing
-const noop = () => { }
+const noop = () => { /* Do nothing */ }
 Object.defineProperty(window, 'scrollTo', { value: noop, writable: true })
 
 // Add matchers from Jest Extended

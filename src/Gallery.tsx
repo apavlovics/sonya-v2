@@ -73,9 +73,13 @@ export default function Gallery(props: Props) {
         <DotGroup
           className="dot-group"
           renderDots={props => {
+
+            /* eslint-disable @typescript-eslint/no-non-null-assertion */
             const currentSlide = props.currentSlide!
             const totalSlides = props.totalSlides!
             const visibleSlides = props.visibleSlides!
+            /* eslint-enable @typescript-eslint/no-non-null-assertion */
+
             const dots = []
             for (let i = 0; i < totalSlides; i += 1) {
               const multipleSelected = i >= currentSlide && i < (currentSlide + visibleSlides)

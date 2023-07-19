@@ -1,5 +1,5 @@
 {
-  "name": "smart-casual",
+  "name": "sonya-v2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -56,6 +56,10 @@
     "@types/react-lazy-load-image-component": "^1.5.3",
     "@types/react-transition-group": "^4.4.6",
     "@types/scroll-lock": "^2.1.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "jest-extended": "^4.0.0",
     "typescript": "^5.1.3"
   }
