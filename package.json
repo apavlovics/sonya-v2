@@ -1,6 +1,7 @@
 {
   "name": "sonya-v2",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@react-hook/hotkey": "^3.1.0",

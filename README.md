@@ -16,7 +16,7 @@ This downloads and installs all the required dependencies in the local _node_mod
 
 To convert JPEG images for use on the web, refer to the _scripts/convert-images.sh_ script.
 
-## Formatting
+## Code Formatting
 
 The project uses [Prettier](https://prettier.io/) for code formatting. To reformat all files, execute:
 
