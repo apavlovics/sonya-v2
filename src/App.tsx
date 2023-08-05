@@ -69,6 +69,10 @@ export default function App(props: Props) {
 
         <ScrollToTop />
         <AnimatedSwitch>
+          {
+            // Client-side redirects kick in during local development and are meant as a backup
+            // In production, when running on Apache HTTP Server, server-side redirects replace them, see .htaccess
+          }
           <Route path="/" element={<Navigate replace to={`${currentLanguage}/${sections[0].path}/`} />} />
           <Route path={currentLanguage} element={<Navigate replace to={`${sections[0].path}/`} />} />
           {sections.map((section) => (
