@@ -12,20 +12,20 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^sonya\.continuum\.lv(.*)$ [NC]
 RewriteRule ^(.*)$ https://sonya.lv/$1 [R=301,L]
 
-# Permanent redirect from "/" to "/en/interior-design/" when i18next cookie is not set
+# Temporary redirect from "/" to "/en/interior-design/" when i18next cookie is not set
 # Example: "curl https://sonya.lv" should redirect to https://sonya.lv/en/interior-design/
 RewriteCond %{HTTP_COOKIE} !i18next [NC]
-RewriteRule ^$ /en/interior-design/ [R=301,L]
+RewriteRule ^$ /en/interior-design/ [R,L]
 
-# Permanent redirect from "/" to "/{{language}}/interior-design/" when i18next cookie is set
+# Temporary redirect from "/" to "/{{language}}/interior-design/" when i18next cookie is set
 # Example: "curl --cookie "i18next=lv" https://sonya.lv/" should redirect to https://sonya.lv/lv/interior-design/
 RewriteCond %{HTTP_COOKIE} i18next=([a-z]{2});? [NC]
-RewriteRule ^$ /%1/interior-design/ [R=301,L]
+RewriteRule ^$ /%1/interior-design/ [R,L]
 
-# Permanent redirect from "/{{language}}/" to "/{{language}}/interior-design/"
+# Temporary redirect from "/{{language}}/" to "/{{language}}/interior-design/"
 # Example: "curl https://sonya.lv/en" should redirect to https://sonya.lv/en/interior-design/
 # Example: "curl https://sonya.lv/lv/" should redirect to https://sonya.lv/lv/interior-design/
-RewriteRule ^([a-z]{2})/?$ /$1/interior-design/ [R=301,L]
+RewriteRule ^([a-z]{2})/?$ /$1/interior-design/ [R,L]
 
 # Send all requests for nonexistent files to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
