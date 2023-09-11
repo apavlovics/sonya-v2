@@ -33,6 +33,19 @@ function Previews(props: PreviewsProps) {
     new Array<Preview>(
       {
         size: "large",
+        url: "aguacate",
+        title: new Map([
+          ["en", "Aguacate"],
+          ["lv", "Aguacate"],
+        ]),
+        year: 2023,
+        cover: "5-v1.jpg",
+        slides: ["1-v1.jpg", "2-v1.jpg", "3-v1.jpg", "4-v1.jpg", "5-v1.jpg", "6-v1.jpg", "7-v1.jpg", "8-v1.jpg", "9-v1.jpg"],
+        focused: false,
+        desaturated: false,
+      },
+      {
+        size: "medium",
         url: "jurmala",
         title: new Map([
           ["en", "Jurmala"],
@@ -58,7 +71,7 @@ function Previews(props: PreviewsProps) {
         desaturated: false,
       },
       {
-        size: "medium",
+        size: "large",
         url: "jauna-teika",
         title: new Map([
           ["en", "Jauna Teika"],
